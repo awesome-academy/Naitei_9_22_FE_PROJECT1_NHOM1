@@ -422,10 +422,7 @@
       "price": 370000,
       "originalPrice": 450000,
       "image": "Image_Rudu/wine1.jpg",
-      "images": [
-        "Image_Rudu/wine1.jpg",
-        "Image_Rudu/wine2.jpg"
-      ],
+      "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
       "categoryId": 19,
       "stock": 50,
       "isNew": false,
@@ -446,10 +443,7 @@
       "price": 370000,
       "originalPrice": 450000,
       "image": "Image_Rudu/wine3.jpg",
-      "images": [
-        "Image_Rudu/wine3.jpg",
-        "Image_Rudu/wine4.jpg"
-      ],
+      "images": ["Image_Rudu/wine3.jpg", "Image_Rudu/wine4.jpg"],
       "categoryId": 19,
       "stock": 30,
       "isNew": true,
@@ -470,10 +464,7 @@
       "price": 370000,
       "originalPrice": 450000,
       "image": "Image_Rudu/wine5.jpg",
-      "images": [
-        "Image_Rudu/wine5.jpg",
-        "Image_Rudu/wine6.jpg"
-      ],
+      "images": ["Image_Rudu/wine5.jpg", "Image_Rudu/wine6.jpg"],
       "categoryId": 19,
       "stock": 40,
       "isNew": false,
@@ -494,10 +485,7 @@
       "price": 370000,
       "originalPrice": 450000,
       "image": "Image_Rudu/wine8.jpg",
-      "images": [
-        "Image_Rudu/wine8.jpg",
-        "Image_Rudu/wine9.jpg"
-      ],
+      "images": ["Image_Rudu/wine8.jpg", "Image_Rudu/wine9.jpg"],
       "categoryId": 19,
       "stock": 25,
       "isNew": false,
@@ -518,10 +506,7 @@
       "price": 2500000,
       "originalPrice": 2800000,
       "image": "Image_Rudu/wine10.jpg",
-      "images": [
-        "Image_Rudu/wine10.jpg",
-        "Image_Rudu/wine11.jpg"
-      ],
+      "images": ["Image_Rudu/wine10.jpg", "Image_Rudu/wine11.jpg"],
       "categoryId": 15,
       "stock": 15,
       "isNew": true,
@@ -542,10 +527,7 @@
       "price": 4500000,
       "originalPrice": 5000000,
       "image": "Image_Rudu/wine12.jpg",
-      "images": [
-        "Image_Rudu/wine12.jpg",
-        "Image_Rudu/wine13.jpg"
-      ],
+      "images": ["Image_Rudu/wine12.jpg", "Image_Rudu/wine13.jpg"],
       "categoryId": 15,
       "stock": 8,
       "isNew": false,
@@ -566,10 +548,7 @@
       "price": 1200000,
       "originalPrice": 1350000,
       "image": "Image_Rudu/wine14.jpg",
-      "images": [
-        "Image_Rudu/wine14.jpg",
-        "Image_Rudu/wine15.jpg"
-      ],
+      "images": ["Image_Rudu/wine14.jpg", "Image_Rudu/wine15.jpg"],
       "categoryId": 19,
       "stock": 20,
       "isNew": false,
@@ -590,10 +569,7 @@
       "price": 890000,
       "originalPrice": 990000,
       "image": "Image_Rudu/wine16.jpg",
-      "images": [
-        "Image_Rudu/wine16.jpg",
-        "Image_Rudu/wine17.jpg"
-      ],
+      "images": ["Image_Rudu/wine16.jpg", "Image_Rudu/wine17.jpg"],
       "categoryId": 19,
       "stock": 35,
       "isNew": true,
@@ -614,10 +590,7 @@
       "price": 1150000,
       "originalPrice": 1250000,
       "image": "Image_Rudu/wine18.jpeg",
-      "images": [
-        "Image_Rudu/wine18.jpeg",
-        "Image_Rudu/wine19.jpg"
-      ],
+      "images": ["Image_Rudu/wine18.jpeg", "Image_Rudu/wine19.jpg"],
       "categoryId": 19,
       "stock": 28,
       "isNew": false,
@@ -638,10 +611,7 @@
       "price": 3200000,
       "originalPrice": 3500000,
       "image": "Image_Rudu/wine20.png",
-      "images": [
-        "Image_Rudu/wine20.png",
-        "Image_Rudu/wine21.jpg"
-      ],
+      "images": ["Image_Rudu/wine20.png", "Image_Rudu/wine21.jpg"],
       "categoryId": 15,
       "stock": 12,
       "isNew": false,
@@ -653,6 +623,196 @@
       "status": "active",
       "createdAt": "2024-06-01T10:00:00.000Z",
       "updatedAt": "2024-07-27T10:00:00.000Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 2,
+      "addressId": 1,
+      "status": "Đã hoàn thành",
+      "store": "HÀ ĐÔNG",
+      "totalPrice": 2365000,
+      "totalItem": 7,
+      "shippingFee": 15000,
+      "discount": 0,
+      "paymentMethod": "Thanh toán khi nhận hàng",
+      "orderDate": "2024-02-15T08:30:00.000Z",
+      "updatedAt": "2024-02-15T08:30:00.000Z"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "addressId": 2,
+      "status": "Đã hoàn thành",
+      "store": "HÀ ĐÔNG",
+      "totalPrice": 350000,
+      "totalItem": 1,
+      "shippingFee": 15000,
+      "discount": 0,
+      "paymentMethod": "Thanh toán khi nhận hàng",
+      "orderDate": "2024-02-15T08:30:00.000Z",
+      "updatedAt": "2024-02-15T08:30:00.000Z"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "addressId": 3,
+      "status": "Đã hoàn thành",
+      "store": "HÀ ĐÔNG",
+      "totalPrice": 715000,
+      "totalItem": 2,
+      "shippingFee": 15000,
+      "discount": 0,
+      "paymentMethod": "Thanh toán khi nhận hàng",
+      "orderDate": "2024-03-10T10:15:00.000Z",
+      "updatedAt": "2024-03-10T10:15:00.000Z"
+    },
+    {
+      "id": 4,
+      "userId": 4,
+      "addressId": 4,
+      "status": "Đã hoàn thành",
+      "store": "HÀ ĐÔNG",
+      "totalPrice": 775000,
+      "totalItem": 3,
+      "shippingFee": 15000,
+      "discount": 0.2,
+      "paymentMethod": "Thanh toán khi nhận hàng",
+      "orderDate": "2024-04-05T14:20:00.000Z",
+      "updatedAt": "2024-04-05T14:20:00.000Z"
+    },
+    {
+      "id": 5,
+      "userId": 6,
+      "addressId": 5,
+      "status": "Đã hoàn thành",
+      "store": "HÀ ĐÔNG",
+      "totalPrice": 1615000,
+      "totalItem": 5,
+      "shippingFee": 15000,
+      "discount": 0,
+      "paymentMethod": "Thanh toán khi nhận hàng",
+      "orderDate": "2024-05-20T16:45:00.000Z",
+      "updatedAt": "2024-05-20T16:45:00.000Z"
+    },
+    {
+      "id": 6,
+      "userId": 8,
+      "addressId": 6,
+      "status": "Đã hoàn thành",
+      "store": "HÀ ĐÔNG",
+      "totalPrice": 1315000,
+      "totalItem": 4,
+      "shippingFee": 15000,
+      "discount": 0,
+      "paymentMethod": "Thanh toán khi nhận hàng",
+      "orderDate": "2024-06-10T11:30:00.000Z",
+      "updatedAt": "2024-06-10T11:30:00.000Z"
+    },
+    {
+      "id": 7,
+      "userId": 2,
+      "addressId": 1,
+      "status": "Đã hủy",
+      "store": "HÀ ĐÔNG",
+      "totalPrice": 615000,
+      "totalItem": 2,
+      "shippingFee": 15000,
+      "discount": 0,
+      "paymentMethod": "Thanh toán khi nhận hàng",
+      "orderDate": "2024-07-01T09:00:00.000Z",
+      "updatedAt": "2024-07-01T09:00:00.000Z"
+    }
+  ],
+  "orderDetail": [
+    {
+      "id": 1,
+      "orderId": 1,
+      "productId": 1,
+      "quantity": 5,
+      "price": 350000,
+      "totalPrice": 1750000
+    },
+    {
+      "id": 2,
+      "orderId": 1,
+      "productId": 2,
+      "quantity": 2,
+      "price": 300000,
+      "totalPrice": 600000
+    },
+    {
+      "id": 3,
+      "orderId": 2,
+      "productId": 1,
+      "quantity": 1,
+      "price": 350000,
+      "totalPrice": 350000
+    },
+    {
+      "id": 4,
+      "orderId": 3,
+      "productId": 1,
+      "quantity": 2,
+      "price": 350000,
+      "totalPrice": 700000
+    },
+    {
+      "id": 5,
+      "orderId": 4,
+      "productId": 1,
+      "quantity": 1,
+      "price": 350000,
+      "totalPrice": 350000
+    },
+    {
+      "id": 6,
+      "orderId": 4,
+      "productId": 2,
+      "quantity": 2,
+      "price": 300000,
+      "totalPrice": 600000
+    },
+    {
+      "id": 7,
+      "orderId": 5,
+      "productId": 1,
+      "quantity": 2,
+      "price": 350000,
+      "totalPrice": 700000
+    },
+    {
+      "id": 8,
+      "orderId": 5,
+      "productId": 2,
+      "quantity": 3,
+      "price": 300000,
+      "totalPrice": 900000
+    },
+    {
+      "id": 9,
+      "orderId": 6,
+      "productId": 2,
+      "quantity": 2,
+      "price": 300000,
+      "totalPrice": 600000
+    },
+    {
+      "id": 10,
+      "orderId": 6,
+      "productId": 1,
+      "quantity": 2,
+      "price": 350000,
+      "totalPrice": 700000
+    },
+    {
+      "id": 11,
+      "orderId": 7,
+      "productId": 2,
+      "quantity": 2,
+      "price": 300000,
+      "totalPrice": 600000
     }
   ]
 }
