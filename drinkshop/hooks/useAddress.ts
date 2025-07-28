@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Address } from "@/types/user.types";
 
 export const useAddress = (userId: number) => {
   const [address, setAddress] = useState<string>("");

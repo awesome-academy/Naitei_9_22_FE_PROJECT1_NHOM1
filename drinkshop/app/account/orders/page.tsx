@@ -85,7 +85,7 @@ const OrdersPage = () => {
   }, [orders, status]);
 
   return (
-    <div className="lg:max-w-6xl mx-auto sm:max-w-4xl lg:px-6 sm:px-4 px-2">
+    <div className="lg:max-w-6xl mx-auto sm:max-w-4xl lg:px-6 sm:px-4 px-2 py-6">
       <BreadcrumbComponent
         items={[
           { label: "Trang chủ", href: "/" },

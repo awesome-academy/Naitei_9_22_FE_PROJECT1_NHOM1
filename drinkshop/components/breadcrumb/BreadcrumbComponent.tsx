@@ -18,7 +18,7 @@ type BreadcrumbComponentProps = {
 
 const BreadcrumbComponent = ({ items }: BreadcrumbComponentProps) => {
   return (
-    <Breadcrumb className="mt-6">
+    <Breadcrumb>
       <BreadcrumbList>
         {items.map((item, index) => (
           <div key={index} className="flex items-center">
