@@ -9,8 +9,7 @@ import Link from 'next/link';
 import { ReactNode } from 'react';
 import { Button } from "@/components/ui/button";
 import { CiMenuBurger } from "react-icons/ci";
-
-
+import { useRouter } from 'next/navigation';
 
 import {
     Chart as ChartJS,
@@ -49,17 +48,17 @@ const menuItems: MenuItem[] = [
     {
         icon: FaHome,
         text: "Dashboard",
-        href: "/",
+        href: "/admin",
     },
     {
         icon: FaPlus,
         text: "Thêm sản phẩm",
-        href: "/add-product",
+        href: "/admin/add-product",
     },
     {
         icon: FaUser,
         text: "Thêm người dùng",
-        href: "/add-user",
+        href: "/admin/users",
     },
 ];
 
@@ -87,10 +86,17 @@ const stats: StatItem[] = [
 ];
 export default function Dashboard() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const router = useRouter();
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
+
+    const handleAddProduct = () => {
+        router.push('/add-product');
+    }
+
+
     // chưa có data thực 
     const chartData = {
         labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
