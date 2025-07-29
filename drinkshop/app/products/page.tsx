@@ -1,155 +1,154 @@
-'use client';
+"use client"
 
-import { useState, useEffect } from 'react';
-import BreadcrumbComponent from "@/components/breadcrumb/BreadcrumbComponent";
-import FilterSidebar from "@/components/FilterSidebar";
-import ProductGrid from "@/components/ProductGrid";
+import { useState, useEffect } from "react"
+import { useSearchParams } from "next/navigation"
+import Image from "next/image"
+import BreadcrumbComponent from "@/components/breadcrumb/BreadcrumbComponent"
+import { products } from "@/lib/products"
+import styles from "./products.module.css"
+import CustomPagination from "@/components/pagination/CustomPagination"
+import ProductSidebar from "@/components/products/ProductSidebar"
+import ProductToolbar from "@/components/products/ProductToolbar"
+import ProductGrid from "@/components/products/ProductGrid"
 
-interface Product {
-    id: number;
-    name: string;
-    slug: string;
-    description: string;
-    price: number;
-    originalPrice: number;
-    image: string;
-    images: string[];
-    categoryId: number;
-    stock: number;
-    isNew: boolean;
-    isHot: boolean;
-    isSale: boolean;
-    discount: number;
-    rating: number;
-    reviewCount: number;
-    status: string;
-}
+export default function ProductsPage() {
+  const searchParams = useSearchParams()
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
+  const [selectedCategory, setSelectedCategory] = useState<string>("all")
+  const [sortBy, setSortBy] = useState<string>("default")
+  const [currentPage, setCurrentPage] = useState<number>(1)
+  const itemsPerPage = 6
 
-const ProductsPage = () => {
-    const [products, setProducts] = useState<Product[]>([]);
-    const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [sortBy, setSortBy] = useState('name');
-    const [filterBy, setFilterBy] = useState('all');
-    const productsPerPage = 12;
-
-    useEffect(() => {
-        fetchProducts();
-    }, []);
-
-    useEffect(() => {
-        filterProducts();
-    }, [products, filterBy, sortBy]);
-
-    const fetchProducts = async () => {
-        try {
-            const response = await fetch('/database/db.json');
-            const data = await response.json();
-            setProducts(data.products);
-            setLoading(false);
-        } catch (error) {
-            console.error('Error fetching products:', error);
-            setLoading(false);
-        }
-    };
-
-    const filterProducts = () => {
-        let filtered = [...products];
-
-        // Filter by type
-        switch (filterBy) {
-            case 'hot':
-                filtered = filtered.filter(product => product.isHot);
-                break;
-            case 'new':
-                filtered = filtered.filter(product => product.isNew);
-                break;
-            case 'sale':
-                filtered = filtered.filter(product => product.isSale);
-                break;
-            default:
-                break;
-        }
-
-        // Sort products
-        switch (sortBy) {
-            case 'price-low':
-                filtered.sort((a, b) => a.price - b.price);
-                break;
-            case 'price-high':
-                filtered.sort((a, b) => b.price - a.price);
-                break;
-            case 'rating':
-                filtered.sort((a, b) => b.rating - a.rating);
-                break;
-            case 'name':
-            default:
-                filtered.sort((a, b) => a.name.localeCompare(b.name));
-                break;
-        }
-
-        setFilteredProducts(filtered);
-        setCurrentPage(1);
-    };
-
-    // Pagination
-    const indexOfLastProduct = currentPage * productsPerPage;
-    const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-    const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
-    const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
-
-    if (loading) {
-        return (
-            <div className="flex justify-center items-center min-h-screen">
-                <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-amber-600"></div>
-            </div>
-        );
+  // Set category from URL params when component mounts
+  useEffect(() => {
+    const categoryFromUrl = searchParams.get('category')
+    if (categoryFromUrl) {
+      setSelectedCategory(decodeURIComponent(categoryFromUrl))
     }
+  }, [searchParams])
 
-    return (
-        <div className="min-h-screen bg-gray-50">
-            <BreadcrumbComponent
-                items={[
-                    { label: "Trang chủ", href: "/" },
-                    { label: "Sản phẩm" },
-                ]}
+  const categories = [
+    { name: "Tất cả", value: "all", count: products.length },
+    {
+      name: "Rượu Vang Đỏ",
+      value: "Rượu Vang Đỏ",
+      count: products.filter((p) => p.category === "Rượu Vang Đỏ").length,
+    },
+    {
+      name: "Rượu Vang Trắng",
+      value: "Rượu Vang Trắng",
+      count: products.filter((p) => p.category === "Rượu Vang Trắng").length,
+    },
+    { name: "Champagne", value: "Champagne", count: products.filter((p) => p.category === "Champagne").length },
+    {
+      name: "Rượu Vang Rosé",
+      value: "Rượu Vang Rosé",
+      count: products.filter((p) => p.category === "Rượu Vang Rosé").length,
+    },
+    {
+      name: "Rượu Vang Ngọt",
+      value: "Rượu Vang Ngọt",
+      count: products.filter((p) => p.category === "Rượu Vang Ngọt").length,
+    },
+  ]
+
+  const tags = ["Rượu Ngoại", "Tết", "Phụ kiện", "Cao cấp", "Giá tốt", "Ấn tượng", "Thơm ngon", "Tết mới", "Đặc biệt"]
+
+  // Filter and sort products
+  let filteredProducts =
+    selectedCategory === "all" ? products : products.filter((product) => product.category === selectedCategory)
+
+  // Sort products
+  if (sortBy === "price-low") {
+    filteredProducts = [...filteredProducts].sort(
+      (a, b) => Number.parseInt(a.price.replace(/\./g, "")) - Number.parseInt(b.price.replace(/\./g, "")),
+    )
+  } else if (sortBy === "price-high") {
+    filteredProducts = [...filteredProducts].sort(
+      (a, b) => Number.parseInt(b.price.replace(/\./g, "")) - Number.parseInt(a.price.replace(/\./g, "")),
+    )
+  } else if (sortBy === "name") {
+    filteredProducts = [...filteredProducts].sort((a, b) => a.name.localeCompare(b.name))
+  }
+
+  // Pagination logic
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage)
+  const indexOfLastItem = currentPage * itemsPerPage
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage
+  const currentProducts = filteredProducts.slice(indexOfFirstItem, indexOfLastItem)
+
+  // Handle page change
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  // Prepare breadcrumb items
+  const breadcrumbItems: Array<{ label: string, href?: string }> = [
+    { label: "Trang chủ", href: "/" }
+  ];
+
+  if (selectedCategory !== "all") {
+    // Khi có category được chọn, "Sản phẩm" là link và category là trang hiện tại
+    breadcrumbItems.push({ label: "Sản phẩm", href: "/products" });
+    breadcrumbItems.push({ label: selectedCategory });
+  } else {
+    // Khi không có category (all), "Sản phẩm" là trang hiện tại
+    breadcrumbItems.push({ label: "Sản phẩm" });
+  }
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Breadcrumb */}
+      <div className="bg-gray-50 py-4">
+        <div className="container mx-auto px-4">
+          <BreadcrumbComponent items={breadcrumbItems} />
+        </div>
+      </div>
+
+      {/* Hero Image */}
+      <div className="relative overflow-hidden">
+        <Image
+          src="/Image_Rudu/slide-3.jpg"
+          alt="Banner rượu vang cao cấp"
+          width={800}
+          height={400}
+          className={styles.heroBanner}
+        />
+      </div>
+
+      <div className="container mx-auto px-4 py-6 lg:py-8">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+          {/* Sidebar */}
+          <ProductSidebar
+            categories={categories}
+            selectedCategory={selectedCategory}
+            onSelectCategory={setSelectedCategory}
+            tags={tags}
+          />
+
+          {/* Main Content */}
+          <div className="lg:w-3/4">
+            {/* Toolbar */}
+            <ProductToolbar
+              totalProducts={filteredProducts.length}
+              indexOfFirstItem={indexOfFirstItem}
+              indexOfLastItem={indexOfLastItem}
+              sortBy={sortBy}
+              setSortBy={setSortBy}
+              viewMode={viewMode}
+              setViewMode={setViewMode}
             />
 
-            <div className="container mx-auto px-4 py-8">
-                <div className="flex flex-col lg:flex-row gap-8">
-                    {/* Filter Sidebar */}
-                    <div className="lg:w-1/4">
-                        <FilterSidebar
-                            filterBy={filterBy}
-                            setFilterBy={setFilterBy}
-                            sortBy={sortBy}
-                            setSortBy={setSortBy}
-                        />
-                    </div>
+            {/* Products Grid */}
+            <ProductGrid products={currentProducts} viewMode={viewMode} />
 
-                    {/* Products Grid */}
-                    <div className="lg:w-3/4">
-                        <div className="flex justify-between items-center mb-6">
-                            <h1 className="text-3xl font-bold text-gray-800">
-                                Sản phẩm {filterBy === 'hot' ? 'Hot Trend' : filterBy === 'new' ? 'Mới' : filterBy === 'sale' ? 'Khuyến mãi' : ''}
-                            </h1>
-                            <div className="text-gray-600">
-                                Hiển thị {indexOfFirstProduct + 1}-{Math.min(indexOfLastProduct, filteredProducts.length)} của {filteredProducts.length} sản phẩm
-                            </div>
-                        </div>
-
-                        <ProductGrid
-                            products={currentProducts}
-                            currentPage={currentPage}
-                            totalPages={totalPages}
-                            onPageChange={setCurrentPage}
-                        />
-                    </div>
-                </div>
-            </div>
+            {/* Pagination */}
+            <CustomPagination />
+          </div>
         </div>
-    );
-};
+      </div>
+    </div>
+  )
+}
 
-export default ProductsPage;

@@ -9,7 +9,6 @@ import { Button } from "../ui/button";
 
 const commonNavItems = [
   { href: "/account", label: "Tài khoản của tôi" },
-  { href: "/account/addresses", label: "Địa chỉ" },
   { href: "/account/orders", label: "Trạng thái đơn hàng" },
   { href: "/account/wishlist", label: "Danh sách ưa thích" },
   { href: "/cart", label: "Giỏ hàng" },
@@ -43,6 +42,9 @@ const TopNavbar = () => {
           ))}
           {user ? (
             <>
+              <div className="text-gray-700">
+                Xin chào, <span className="font-medium">{user.email}</span>
+              </div>
               <Button
                 variant="link"
                 className="text-xs p-0 h-auto cursor-pointer text-red-700"

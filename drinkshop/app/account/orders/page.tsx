@@ -28,6 +28,7 @@ const OrdersPage = () => {
 
   const [status, setStatus] = useState<string>("all");
 
+  const user = useUser(userId);
   const orders = useOrders(userId);
   const { address } = useAddress(userId);
 
@@ -35,10 +36,8 @@ const OrdersPage = () => {
     {
       icon: <User className="w-6 h-6 text-[var(--foreground)]" />,
       content: [
-        `${currentUser?.firstName ?? "First Name"} ${
-          currentUser?.lastName ?? "Last Name"
-        }`,
-        currentUser?.email ?? "Email",
+        user?.firstName ?? "First Name" + " " + user?.lastName ?? "Last Name",
+        user?.email ?? "Email",
       ],
     },
     {
