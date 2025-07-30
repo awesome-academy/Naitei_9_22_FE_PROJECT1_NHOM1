@@ -36,7 +36,7 @@ export interface ApiResponse<T> {
   message?: string;
 }
 
-export interface UsersResponse extends ApiResponse<User[]> {}
-export interface UserResponse extends ApiResponse<User> {}
-export interface AddressesResponse extends ApiResponse<Address[]> {}
-export interface AddressResponse extends ApiResponse<Address> {}
+export interface UsersResponse extends ApiResponse<User[]> { }
+export interface UserResponse extends ApiResponse<User> { }
+export interface AddressesResponse extends ApiResponse<Address[]> { }
+export interface AddressResponse extends ApiResponse<Address> { }

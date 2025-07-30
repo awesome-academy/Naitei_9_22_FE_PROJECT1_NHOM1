@@ -1,8 +1,7 @@
 'use client';
-import DashBoard from "./admin/Dashboard";
 
 export default function Home() {
   return (
-    <DashBoard />
+    <h1>Hello</h1>
   );
 }
