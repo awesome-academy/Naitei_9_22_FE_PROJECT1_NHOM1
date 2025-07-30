@@ -71,7 +71,7 @@ const OrderDetailPage = ({ params }: { params: { id: string } }) => {
   }, [order]);
 
   return (
-    <div className="lg:max-w-6xl mx-auto sm:max-w-4xl lg:px-6 sm:px-4 px-2 py-6">
+    <div className="py-6">
       <BreadcrumbComponent
         items={[
           { label: "Trang chủ", href: "/" },
@@ -81,7 +81,7 @@ const OrderDetailPage = ({ params }: { params: { id: string } }) => {
       />
 
       <div className="my-6">
-        <h1 className="text-2xl font-semibold mb-2">ĐƠN HÀNG</h1>
+        <h1 className="text-2xl font-semibold mb-2">CHI TIẾT ĐƠN HÀNG</h1>
         <Image src={titleleftdark} alt="Underline" width={70} height={20} />
       </div>
 
@@ -129,8 +129,9 @@ const OrderDetailPage = ({ params }: { params: { id: string } }) => {
                     <Image
                       src={`/${product.image || "default-product.png"}`}
                       alt={product.name}
-                      width={50}
-                      height={50}
+                      width={70}
+                      height={140}
+                      className="w-[70px] h-[140px]"
                     />
                   </TableCell>
                   <TableCell className="text-center">{product.name}</TableCell>
