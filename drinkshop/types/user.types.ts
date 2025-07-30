@@ -14,6 +14,8 @@ export interface User {
   status: UserStatus;
 }
 
+export type UserWithoutPassword = Omit<User, "password">;
+
 export interface Address {
   id: number;
   userId: number;
@@ -36,7 +38,11 @@ export interface ApiResponse<T> {
   message?: string;
 }
 
-export interface UsersResponse extends ApiResponse<User[]> { }
-export interface UserResponse extends ApiResponse<User> { }
-export interface AddressesResponse extends ApiResponse<Address[]> { }
-export interface AddressResponse extends ApiResponse<Address> { }
+export interface UsersResponse extends ApiResponse<User[]> {}
+export interface UserResponse {
+  success: boolean;
+  data: UserWithoutPassword;
+  message: string;
+}
+export interface AddressesResponse extends ApiResponse<Address[]> {}
+export interface AddressResponse extends ApiResponse<Address> {}
