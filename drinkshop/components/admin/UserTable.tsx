@@ -1,8 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { User } from '../../../types/user.types';
-import { getUsers, deleteUser } from '../../../app/services/userApi';
+import { User } from '../../types/user.types';
+import { getUsers, deleteUser } from '../../services/userApi';
 import { Button } from "@/components/ui/button";
 import {
     Table,

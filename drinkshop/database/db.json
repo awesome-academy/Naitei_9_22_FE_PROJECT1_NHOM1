@@ -215,14 +215,14 @@
   ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "RƯỢU NGOẠI",
       "slug": "ruou-ngoai",
       "description": "Các loại rượu ngoại nhập khẩu",
       "status": "active"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Rượu Chivas",
       "slug": "ruou-chivas",
       "description": "Dòng rượu Chivas Regal",
@@ -230,7 +230,7 @@
       "parentId": 1
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Hàng độc - Rượu độc đáo",
       "slug": "hang-doc-ruou-doc-dao",
       "description": "Những loại rượu độc đáo hiếm có",
@@ -238,7 +238,7 @@
       "parentId": 1
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Johnnie Walker",
       "slug": "johnnie-walker",
       "description": "Dòng rượu Johnnie Walker",
@@ -246,7 +246,7 @@
       "parentId": 1
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Rượu Whisky",
       "slug": "ruou-whisky",
       "description": "Các loại rượu Whisky",
@@ -254,7 +254,7 @@
       "parentId": 1
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Rượu Remy Martin",
       "slug": "ruou-remy-martin",
       "description": "Dòng rượu Remy Martin",
@@ -262,7 +262,7 @@
       "parentId": 1
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Rượu Gewurztraminer",
       "slug": "ruou-gewurztraminer",
       "description": "Rượu vang trắng Gewurztraminer",
@@ -270,7 +270,7 @@
       "parentId": 1
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Rượu Ballantine's",
       "slug": "ruou-ballantines",
       "description": "Dòng rượu Ballantine's",
@@ -278,7 +278,7 @@
       "parentId": 1
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Rượu Cognac",
       "slug": "ruou-cognac",
       "description": "Các loại rượu Cognac",
@@ -286,7 +286,7 @@
       "parentId": 1
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Rượu Vodka",
       "slug": "ruou-vodka",
       "description": "Các loại rượu Vodka",
@@ -294,7 +294,7 @@
       "parentId": 1
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Rượu Macallan",
       "slug": "ruou-macallan",
       "description": "Dòng rượu Macallan",
@@ -302,7 +302,7 @@
       "parentId": 1
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Rượu Brandy",
       "slug": "ruou-brandy",
       "description": "Các loại rượu Brandy",
@@ -310,7 +310,7 @@
       "parentId": 1
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Rượu Hennessy",
       "slug": "ruou-hennessy",
       "description": "Dòng rượu Hennessy",
@@ -318,7 +318,7 @@
       "parentId": 1
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "RượuGin - Tequila - Liqueur - Rượu mùi",
       "slug": "ruou-gin-tequila-liqueur-ruou-mui",
       "description": "Các loại rượu Gin, Tequila, Liqueur và rượu mùi",
@@ -326,7 +326,7 @@
       "parentId": 1
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Rượu Champagne",
       "slug": "ruou-champagne",
       "description": "Các loại rượu Champagne",
@@ -334,7 +334,7 @@
       "parentId": 1
     },
     {
-      "id": 16,
+      "id": "16",
       "name": "Rượu Single malt Scotch whisky",
       "slug": "ruou-single-malt-scotch-whisky",
       "description": "Rượu Single malt Scotch whisky",
@@ -342,7 +342,7 @@
       "parentId": 1
     },
     {
-      "id": 17,
+      "id": "17",
       "name": "Rượu Spirits",
       "slug": "ruou-spirits",
       "description": "Các loại rượu Spirits",
@@ -350,14 +350,14 @@
       "parentId": 1
     },
     {
-      "id": 18,
+      "id": "18",
       "name": "RƯỢU VANG",
       "slug": "ruou-vang",
       "description": "Các loại rượu vang",
       "status": "active"
     },
     {
-      "id": 19,
+      "id": "19",
       "name": "Rượu Vang Pháp",
       "slug": "ruou-vang-phap",
       "description": "Rượu vang từ Pháp",
@@ -365,7 +365,7 @@
       "parentId": 18
     },
     {
-      "id": 20,
+      "id": "20",
       "name": "Rượu Vang Úc",
       "slug": "ruou-vang-uc",
       "description": "Rượu vang từ Úc",
@@ -373,7 +373,7 @@
       "parentId": 18
     },
     {
-      "id": 21,
+      "id": "21",
       "name": "Rượu Vang Mỹ",
       "slug": "ruou-vang-my",
       "description": "Rượu vang từ Mỹ",
@@ -381,7 +381,7 @@
       "parentId": 18
     },
     {
-      "id": 22,
+      "id": "22",
       "name": "Rượu Vang Chile",
       "slug": "ruou-vang-chile",
       "description": "Rượu vang từ Chile",
@@ -389,7 +389,7 @@
       "parentId": 18
     },
     {
-      "id": 23,
+      "id": "23",
       "name": "Rượu Vang Philips",
       "slug": "ruou-vang-philips",
       "description": "Dòng rượu vang Philips",
@@ -397,7 +397,7 @@
       "parentId": 18
     },
     {
-      "id": 24,
+      "id": "24",
       "name": "Rượu Vang Nam Phi",
       "slug": "ruou-vang-nam-phi",
       "description": "Rượu vang từ Nam Phi",
@@ -405,7 +405,7 @@
       "parentId": 18
     },
     {
-      "id": 25,
+      "id": "25",
       "name": "Rượu Vang Y",
       "slug": "ruou-vang-y",
       "description": "Rượu vang từ Ý",
@@ -415,14 +415,17 @@
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Rượu vang Đà Lạt Cabernet Sauvignon",
       "slug": "ruou-vang-da-lat-cabernet-sauvignon",
       "description": "Rượu vang đỏ Đà Lạt với hương vị đậm đà, thích hợp cho các bữa tiệc trang trọng.",
       "price": 370000,
       "originalPrice": 450000,
       "image": "Image_Rudu/wine1.jpg",
-      "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
+      "images": [
+        "Image_Rudu/wine1.jpg",
+        "Image_Rudu/wine2.jpg"
+      ],
       "categoryId": 19,
       "stock": 50,
       "isNew": false,
@@ -436,14 +439,17 @@
       "updatedAt": "2024-07-15T10:00:00.000Z"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Rượu vang Đà Lạt Reserve",
       "slug": "ruou-vang-da-lat-reserve",
       "description": "Rượu vang đỏ cao cấp từ Đà Lạt với quy trình sản xuất đặc biệt.",
       "price": 370000,
       "originalPrice": 450000,
       "image": "Image_Rudu/wine3.jpg",
-      "images": ["Image_Rudu/wine3.jpg", "Image_Rudu/wine4.jpg"],
+      "images": [
+        "Image_Rudu/wine3.jpg",
+        "Image_Rudu/wine4.jpg"
+      ],
       "categoryId": 19,
       "stock": 30,
       "isNew": true,
@@ -457,14 +463,17 @@
       "updatedAt": "2024-07-20T10:00:00.000Z"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Rượu vang trắng Đà Lạt Chardonnay",
       "slug": "ruou-vang-trang-da-lat-chardonnay",
       "description": "Rượu vang trắng Đà Lạt với hương vị tươi mát, thích hợp cho mùa hè.",
       "price": 370000,
       "originalPrice": 450000,
       "image": "Image_Rudu/wine5.jpg",
-      "images": ["Image_Rudu/wine5.jpg", "Image_Rudu/wine6.jpg"],
+      "images": [
+        "Image_Rudu/wine5.jpg",
+        "Image_Rudu/wine6.jpg"
+      ],
       "categoryId": 19,
       "stock": 40,
       "isNew": false,
@@ -478,14 +487,17 @@
       "updatedAt": "2024-07-18T10:00:00.000Z"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Rượu vang Đà Lạt Rosé",
       "slug": "ruou-vang-da-lat-rose",
       "description": "Rượu vang hồng Đà Lạt với màu sắc quyến rũ và hương vị nhẹ nhàng.",
       "price": 370000,
       "originalPrice": 450000,
       "image": "Image_Rudu/wine8.jpg",
-      "images": ["Image_Rudu/wine8.jpg", "Image_Rudu/wine9.jpg"],
+      "images": [
+        "Image_Rudu/wine8.jpg",
+        "Image_Rudu/wine9.jpg"
+      ],
       "categoryId": 19,
       "stock": 25,
       "isNew": false,
@@ -499,56 +511,65 @@
       "updatedAt": "2024-07-22T10:00:00.000Z"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Champagne Moët & Chandon",
       "slug": "champagne-moet-chandon",
       "description": "Champagne cao cấp từ Pháp với hương vị tinh tế và bọt khí mịn màng.",
       "price": 2500000,
       "originalPrice": 2800000,
       "image": "Image_Rudu/wine10.jpg",
-      "images": ["Image_Rudu/wine10.jpg", "Image_Rudu/wine11.jpg"],
+      "images": [
+        "Image_Rudu/wine10.jpg",
+        "Image_Rudu/wine11.jpg"
+      ],
       "categoryId": 15,
       "stock": 15,
       "isNew": true,
       "isHot": true,
       "isSale": false,
       "discount": 0,
-      "rating": 5.0,
+      "rating": 5,
       "reviewCount": 5,
       "status": "active",
       "createdAt": "2024-04-01T10:00:00.000Z",
       "updatedAt": "2024-07-25T10:00:00.000Z"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Champagne Dom Pérignon",
       "slug": "champagne-dom-perignon",
       "description": "Champagne siêu cao cấp với lịch sử lâu đời và chất lượng tuyệt vời.",
       "price": 4500000,
       "originalPrice": 5000000,
       "image": "Image_Rudu/wine12.jpg",
-      "images": ["Image_Rudu/wine12.jpg", "Image_Rudu/wine13.jpg"],
+      "images": [
+        "Image_Rudu/wine12.jpg",
+        "Image_Rudu/wine13.jpg"
+      ],
       "categoryId": 15,
       "stock": 8,
       "isNew": false,
       "isHot": true,
       "isSale": true,
       "discount": 10,
-      "rating": 5.0,
+      "rating": 5,
       "reviewCount": 3,
       "status": "active",
       "createdAt": "2024-02-28T10:00:00.000Z",
       "updatedAt": "2024-07-20T10:00:00.000Z"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Rượu vang đỏ Bordeaux",
       "slug": "ruou-vang-do-bordeaux",
       "description": "Rượu vang đỏ Bordeaux từ Pháp với hương vị cổ điển và thanh lịch.",
       "price": 1200000,
       "originalPrice": 1350000,
       "image": "Image_Rudu/wine14.jpg",
-      "images": ["Image_Rudu/wine14.jpg", "Image_Rudu/wine15.jpg"],
+      "images": [
+        "Image_Rudu/wine14.jpg",
+        "Image_Rudu/wine15.jpg"
+      ],
       "categoryId": 19,
       "stock": 20,
       "isNew": false,
@@ -562,14 +583,17 @@
       "updatedAt": "2024-07-15T10:00:00.000Z"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Rượu vang trắng Sauvignon Blanc",
       "slug": "ruou-vang-trang-sauvignon-blanc",
       "description": "Rượu vang trắng với hương vị tươi mát và chua nhẹ, rất thích hợp làm aperitif.",
       "price": 890000,
       "originalPrice": 990000,
       "image": "Image_Rudu/wine16.jpg",
-      "images": ["Image_Rudu/wine16.jpg", "Image_Rudu/wine17.jpg"],
+      "images": [
+        "Image_Rudu/wine16.jpg",
+        "Image_Rudu/wine17.jpg"
+      ],
       "categoryId": 19,
       "stock": 35,
       "isNew": true,
@@ -583,14 +607,17 @@
       "updatedAt": "2024-07-26T10:00:00.000Z"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Rượu vang đỏ Pinot Noir",
       "slug": "ruou-vang-do-pinot-noir",
       "description": "Rượu vang đỏ Pinot Noir với hương vị nhẹ nhàng và tinh tế.",
       "price": 1150000,
       "originalPrice": 1250000,
       "image": "Image_Rudu/wine18.jpeg",
-      "images": ["Image_Rudu/wine18.jpeg", "Image_Rudu/wine19.jpg"],
+      "images": [
+        "Image_Rudu/wine18.jpeg",
+        "Image_Rudu/wine19.jpg"
+      ],
       "categoryId": 19,
       "stock": 28,
       "isNew": false,
@@ -604,14 +631,17 @@
       "updatedAt": "2024-07-23T10:00:00.000Z"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Champagne Veuve Clicquot",
       "slug": "champagne-veuve-clicquot",
       "description": "Champagne nổi tiếng với nhãn hiệu vàng đặc trưng và hương vị cân bằng.",
       "price": 3200000,
       "originalPrice": 3500000,
       "image": "Image_Rudu/wine20.png",
-      "images": ["Image_Rudu/wine20.png", "Image_Rudu/wine21.jpg"],
+      "images": [
+        "Image_Rudu/wine20.png",
+        "Image_Rudu/wine21.jpg"
+      ],
       "categoryId": 15,
       "stock": 12,
       "isNew": false,
@@ -627,7 +657,7 @@
   ],
   "orders": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 2,
       "addressId": 1,
       "status": "Đã hoàn thành",
@@ -642,7 +672,7 @@
       "updatedAt": "2024-02-15T08:30:00.000Z"
     },
     {
-      "id": 2,
+      "id": "2",
       "userId": 2,
       "addressId": 2,
       "status": "Đã hoàn thành",
@@ -657,7 +687,7 @@
       "updatedAt": "2024-02-15T08:30:00.000Z"
     },
     {
-      "id": 3,
+      "id": "3",
       "userId": 3,
       "addressId": 3,
       "status": "Đã hoàn thành",
@@ -672,7 +702,7 @@
       "updatedAt": "2024-03-10T10:15:00.000Z"
     },
     {
-      "id": 4,
+      "id": "4",
       "userId": 4,
       "addressId": 4,
       "status": "Đã hoàn thành",
@@ -687,7 +717,7 @@
       "updatedAt": "2024-04-05T14:20:00.000Z"
     },
     {
-      "id": 5,
+      "id": "5",
       "userId": 6,
       "addressId": 5,
       "status": "Đã hoàn thành",
@@ -702,7 +732,7 @@
       "updatedAt": "2024-05-20T16:45:00.000Z"
     },
     {
-      "id": 6,
+      "id": "6",
       "userId": 8,
       "addressId": 6,
       "status": "Đã hoàn thành",
@@ -717,7 +747,7 @@
       "updatedAt": "2024-06-10T11:30:00.000Z"
     },
     {
-      "id": 7,
+      "id": "7",
       "userId": 2,
       "addressId": 1,
       "status": "Đã hủy",
@@ -732,7 +762,6 @@
       "updatedAt": "2024-07-01T09:00:00.000Z"
     }
   ],
-
   "orderDetails": [
     {
       "id": "1",
@@ -746,7 +775,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine1.jpg",
-        "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
+        "images": [
+          "Image_Rudu/wine1.jpg",
+          "Image_Rudu/wine2.jpg"
+        ],
         "categoryId": 19,
         "stock": 50,
         "isNew": false,
@@ -775,7 +807,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine3.jpg",
-        "images": ["Image_Rudu/wine3.jpg", "Image_Rudu/wine4.jpg"],
+        "images": [
+          "Image_Rudu/wine3.jpg",
+          "Image_Rudu/wine4.jpg"
+        ],
         "categoryId": 19,
         "stock": 30,
         "isNew": true,
@@ -804,7 +839,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine1.jpg",
-        "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
+        "images": [
+          "Image_Rudu/wine1.jpg",
+          "Image_Rudu/wine2.jpg"
+        ],
         "categoryId": 19,
         "stock": 50,
         "isNew": false,
@@ -833,7 +871,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine1.jpg",
-        "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
+        "images": [
+          "Image_Rudu/wine1.jpg",
+          "Image_Rudu/wine2.jpg"
+        ],
         "categoryId": 19,
         "stock": 50,
         "isNew": false,
@@ -862,7 +903,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine1.jpg",
-        "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
+        "images": [
+          "Image_Rudu/wine1.jpg",
+          "Image_Rudu/wine2.jpg"
+        ],
         "categoryId": 19,
         "stock": 50,
         "isNew": false,
@@ -891,7 +935,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine3.jpg",
-        "images": ["Image_Rudu/wine3.jpg", "Image_Rudu/wine4.jpg"],
+        "images": [
+          "Image_Rudu/wine3.jpg",
+          "Image_Rudu/wine4.jpg"
+        ],
         "categoryId": 19,
         "stock": 30,
         "isNew": true,
@@ -920,7 +967,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine1.jpg",
-        "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
+        "images": [
+          "Image_Rudu/wine1.jpg",
+          "Image_Rudu/wine2.jpg"
+        ],
         "categoryId": 19,
         "stock": 50,
         "isNew": false,
@@ -949,7 +999,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine3.jpg",
-        "images": ["Image_Rudu/wine3.jpg", "Image_Rudu/wine4.jpg"],
+        "images": [
+          "Image_Rudu/wine3.jpg",
+          "Image_Rudu/wine4.jpg"
+        ],
         "categoryId": 19,
         "stock": 30,
         "isNew": true,
@@ -978,7 +1031,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine3.jpg",
-        "images": ["Image_Rudu/wine3.jpg", "Image_Rudu/wine4.jpg"],
+        "images": [
+          "Image_Rudu/wine3.jpg",
+          "Image_Rudu/wine4.jpg"
+        ],
         "categoryId": 19,
         "stock": 30,
         "isNew": true,
@@ -1007,7 +1063,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine1.jpg",
-        "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
+        "images": [
+          "Image_Rudu/wine1.jpg",
+          "Image_Rudu/wine2.jpg"
+        ],
         "categoryId": 19,
         "stock": 50,
         "isNew": false,
@@ -1036,7 +1095,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine3.jpg",
-        "images": ["Image_Rudu/wine3.jpg", "Image_Rudu/wine4.jpg"],
+        "images": [
+          "Image_Rudu/wine3.jpg",
+          "Image_Rudu/wine4.jpg"
+        ],
         "categoryId": 19,
         "stock": 30,
         "isNew": true,
