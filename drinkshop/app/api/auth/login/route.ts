@@ -29,13 +29,6 @@ export async function POST(request: NextRequest) {
 
     const user = users[0];
 
-    if (user.status !== "active") {
-      return NextResponse.json(
-        { success: false, message: "Account is inactive" },
-        { status: 403 }
-      );
-    }
-
     // Create session data
     const sessionData = {
       id: user.id,
