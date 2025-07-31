@@ -42,7 +42,7 @@ const OrdersPage = () => {
   ];
   const tableHeaders = [
     { label: "STT", center: true },
-    { label: "MÃ HÓA ĐƠN/NGÀY MUA" },
+    { label: "MÃ / NGÀY ĐẶT" },
     { label: "KHO NHẬN HÀNG", center: true },
     { label: "SỐ SP", center: true },
     { label: "TỔNG TIỀN", center: true },
@@ -85,7 +85,7 @@ const OrdersPage = () => {
   }, [orders, status]);
 
   return (
-    <div className="lg:max-w-6xl mx-auto sm:max-w-4xl lg:px-6 sm:px-4 px-2 py-6">
+    <div className="py-6">
       <BreadcrumbComponent
         items={[
           { label: "Trang chủ", href: "/" },

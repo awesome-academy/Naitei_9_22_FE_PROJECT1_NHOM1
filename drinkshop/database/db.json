@@ -786,7 +786,6 @@
       "updatedAt": "2024-07-01T09:00:00.000Z"
     }
   ],
-
   "orderDetails": [
     {
       "id": "1",
@@ -800,7 +799,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine1.jpg",
-        "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
+        "images": [
+          "Image_Rudu/wine1.jpg",
+          "Image_Rudu/wine2.jpg"
+        ],
         "categoryId": 19,
         "stock": 50,
         "isNew": false,
@@ -829,7 +831,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine3.jpg",
-        "images": ["Image_Rudu/wine3.jpg", "Image_Rudu/wine4.jpg"],
+        "images": [
+          "Image_Rudu/wine3.jpg",
+          "Image_Rudu/wine4.jpg"
+        ],
         "categoryId": 19,
         "stock": 30,
         "isNew": true,
@@ -858,7 +863,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine1.jpg",
-        "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
+        "images": [
+          "Image_Rudu/wine1.jpg",
+          "Image_Rudu/wine2.jpg"
+        ],
         "categoryId": 19,
         "stock": 50,
         "isNew": false,
@@ -887,7 +895,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine1.jpg",
-        "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
+        "images": [
+          "Image_Rudu/wine1.jpg",
+          "Image_Rudu/wine2.jpg"
+        ],
         "categoryId": 19,
         "stock": 50,
         "isNew": false,
@@ -916,7 +927,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine1.jpg",
-        "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
+        "images": [
+          "Image_Rudu/wine1.jpg",
+          "Image_Rudu/wine2.jpg"
+        ],
         "categoryId": 19,
         "stock": 50,
         "isNew": false,
@@ -945,7 +959,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine3.jpg",
-        "images": ["Image_Rudu/wine3.jpg", "Image_Rudu/wine4.jpg"],
+        "images": [
+          "Image_Rudu/wine3.jpg",
+          "Image_Rudu/wine4.jpg"
+        ],
         "categoryId": 19,
         "stock": 30,
         "isNew": true,
@@ -974,7 +991,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine1.jpg",
-        "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
+        "images": [
+          "Image_Rudu/wine1.jpg",
+          "Image_Rudu/wine2.jpg"
+        ],
         "categoryId": 19,
         "stock": 50,
         "isNew": false,
@@ -1003,7 +1023,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine3.jpg",
-        "images": ["Image_Rudu/wine3.jpg", "Image_Rudu/wine4.jpg"],
+        "images": [
+          "Image_Rudu/wine3.jpg",
+          "Image_Rudu/wine4.jpg"
+        ],
         "categoryId": 19,
         "stock": 30,
         "isNew": true,
@@ -1032,7 +1055,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine3.jpg",
-        "images": ["Image_Rudu/wine3.jpg", "Image_Rudu/wine4.jpg"],
+        "images": [
+          "Image_Rudu/wine3.jpg",
+          "Image_Rudu/wine4.jpg"
+        ],
         "categoryId": 19,
         "stock": 30,
         "isNew": true,
@@ -1061,7 +1087,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine1.jpg",
-        "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
+        "images": [
+          "Image_Rudu/wine1.jpg",
+          "Image_Rudu/wine2.jpg"
+        ],
         "categoryId": 19,
         "stock": 50,
         "isNew": false,
@@ -1090,7 +1119,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine3.jpg",
-        "images": ["Image_Rudu/wine3.jpg", "Image_Rudu/wine4.jpg"],
+        "images": [
+          "Image_Rudu/wine3.jpg",
+          "Image_Rudu/wine4.jpg"
+        ],
         "categoryId": 19,
         "stock": 30,
         "isNew": true,
@@ -1106,6 +1138,175 @@
       "quantity": 2,
       "price": 300000,
       "totalPrice": 600000
+    }
+  ],
+  "carts": [
+    {
+      "id": "1",
+      "userId": 2,
+      "items": [
+        {
+          "productId": 4,
+          "product": {
+            "id": "4",
+            "name": "Rượu vang Đà Lạt Rosé",
+            "slug": "ruou-vang-da-lat-rose",
+            "description": "Rượu vang hồng Đà Lạt với màu sắc quyến rũ và hương vị nhẹ nhàng.",
+            "price": 370000,
+            "originalPrice": 450000,
+            "image": "Image_Rudu/wine8.jpg",
+            "images": [
+              "Image_Rudu/wine8.jpg",
+              "Image_Rudu/wine9.jpg"
+            ],
+            "categoryId": 19,
+            "stock": 25,
+            "isNew": false,
+            "isHot": false,
+            "isSale": true,
+            "discount": 18,
+            "rating": 4.6,
+            "reviewCount": 10,
+            "status": "active",
+            "createdAt": "2024-03-05T10:00:00.000Z",
+            "updatedAt": "2024-07-22T10:00:00.000Z"
+          },
+          "quantity": 3
+        },
+        {
+          "productId": 5,
+          "product": {
+            "id": "5",
+            "name": "Champagne Moët & Chandon",
+            "slug": "champagne-moet-chandon",
+            "description": "Champagne cao cấp từ Pháp với hương vị tinh tế và bọt khí mịn màng.",
+            "price": 2500000,
+            "originalPrice": 2800000,
+            "image": "Image_Rudu/wine10.jpg",
+            "images": [
+              "Image_Rudu/wine10.jpg",
+              "Image_Rudu/wine11.jpg"
+            ],
+            "categoryId": 15,
+            "stock": 15,
+            "isNew": true,
+            "isHot": true,
+            "isSale": false,
+            "discount": 0,
+            "rating": 5,
+            "reviewCount": 5,
+            "status": "active",
+            "createdAt": "2024-04-01T10:00:00.000Z",
+            "updatedAt": "2024-07-25T10:00:00.000Z"
+          },
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 3610000,
+      "createdAt": "2024-02-15T08:30:00.000Z",
+      "updatedAt": "2025-07-30T04:46:09.233Z"
+    },
+    {
+      "id": "2",
+      "userId": 3,
+      "items": [
+        {
+          "productId": 3,
+          "product": {
+            "id": "3",
+            "name": "Rượu vang trắng Đà Lạt Chardonnay",
+            "slug": "ruou-vang-trang-da-lat-chardonnay",
+            "description": "Rượu vang trắng Đà Lạt với hương vị tươi mát, thích hợp cho mùa hè.",
+            "price": 370000,
+            "originalPrice": 450000,
+            "image": "Image_Rudu/wine5.jpg",
+            "images": [
+              "Image_Rudu/wine5.jpg",
+              "Image_Rudu/wine6.jpg"
+            ],
+            "categoryId": 19,
+            "stock": 40,
+            "isNew": false,
+            "isHot": true,
+            "isSale": false,
+            "discount": 0,
+            "rating": 4.3,
+            "reviewCount": 15,
+            "status": "active",
+            "createdAt": "2024-01-20T10:00:00.000Z",
+            "updatedAt": "2024-07-18T10:00:00.000Z"
+          },
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 370000,
+      "createdAt": "2024-03-10T10:15:00.000Z",
+      "updatedAt": "2024-03-10T10:15:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": 4,
+      "items": [
+        {
+          "productId": 4,
+          "product": {
+            "id": "4",
+            "name": "Rượu vang Đà Lạt Rosé",
+            "slug": "ruou-vang-da-lat-rose",
+            "description": "Rượu vang hồng Đà Lạt với màu sắc quyến rũ và hương vị nhẹ nhàng.",
+            "price": 370000,
+            "originalPrice": 450000,
+            "image": "Image_Rudu/wine8.jpg",
+            "images": [
+              "Image_Rudu/wine8.jpg",
+              "Image_Rudu/wine9.jpg"
+            ],
+            "categoryId": 19,
+            "stock": 25,
+            "isNew": false,
+            "isHot": false,
+            "isSale": true,
+            "discount": 18,
+            "rating": 4.6,
+            "reviewCount": 10,
+            "status": "active",
+            "createdAt": "2024-03-05T10:00:00.000Z",
+            "updatedAt": "2024-07-22T10:00:00.000Z"
+          },
+          "quantity": 1
+        },
+        {
+          "productId": 5,
+          "product": {
+            "id": "5",
+            "name": "Champagne Moët & Chandon",
+            "slug": "champagne-moet-chandon",
+            "description": "Champagne cao cấp từ Pháp với hương vị tinh tế và bọt khí mịn màng.",
+            "price": 2500000,
+            "originalPrice": 2800000,
+            "image": "Image_Rudu/wine10.jpg",
+            "images": [
+              "Image_Rudu/wine10.jpg",
+              "Image_Rudu/wine11.jpg"
+            ],
+            "categoryId": 15,
+            "stock": 15,
+            "isNew": true,
+            "isHot": true,
+            "isSale": false,
+            "discount": 0,
+            "rating": 5,
+            "reviewCount": 5,
+            "status": "active",
+            "createdAt": "2024-04-01T10:00:00.000Z",
+            "updatedAt": "2024-07-25T10:00:00.000Z"
+          },
+          "quantity": 2
+        }
+      ],
+      "totalPrice": 5370000,
+      "createdAt": "2024-03-10T10:15:00.000Z",
+      "updatedAt": "2024-03-10T10:15:00.000Z"
     }
   ]
 }
