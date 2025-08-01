@@ -158,6 +158,21 @@
       "zipCode": "012345",
       "phone": "0999888777",
       "isDefault": false
+    },
+    {
+      "id": "6",
+      "userId": "8",
+      "firstName": "Linh",
+      "lastName": "Nguyễn",
+      "company": "Chung cư STU",
+      "address": "777 Đường PQR",
+      "country": "Việt Nam",
+      "city": "TP. Hồ Chí Minh",
+      "zipCode": "700000",
+      "phone": "0923456789",
+      "isDefault": true,
+      "createdAt": "2024-06-10T11:30:00.000Z",
+      "updatedAt": "2024-06-10T11:30:00.000Z"
     }
   ],
   "categories": [
