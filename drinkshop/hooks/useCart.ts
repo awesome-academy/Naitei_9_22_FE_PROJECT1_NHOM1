@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Cart } from "@/types/cart.type";
 
-export const useCart = (userId: number) => {
+export const useCart = (userId: string) => {
   const [cart, setCart] = useState<Cart | null>(null);
 
   useEffect(() => {
