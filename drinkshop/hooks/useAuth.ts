@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { User, UserResponse } from "@/types/user.types";
+import { User, UserResponse, UserWithoutPassword } from "@/types/user.types";
+import { useUser } from "@/contexts/UserContext";
+import { removeToken, setToken } from "@/lib/utils";
 
 interface RegisterData {
   email: string;
@@ -17,7 +19,7 @@ interface LoginData {
 }
 
 interface UseAuth {
-  user: User | null;
+  user: UserWithoutPassword | null;
   loading: boolean;
   error: string | null;
   register: (data: RegisterData) => Promise<void>;
@@ -27,7 +29,7 @@ interface UseAuth {
 
 export const useAuth = (): UseAuth => {
   const router = useRouter();
-  const [user, setUser] = useState<User | null>(null);
+  const { user, setUser, clearUser } = useUser();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -80,7 +82,8 @@ export const useAuth = (): UseAuth => {
         throw new Error(result.message || "Login failed");
       }
 
-      setUser(result.data as User);
+      setToken(result.data);
+      setUser(result.data);
 
       // Redirect based on user role
       if (result.data.role === "admin") {
@@ -114,7 +117,8 @@ export const useAuth = (): UseAuth => {
         throw new Error(result.message || "Logout failed");
       }
 
-      setUser(null);
+      clearUser();
+      removeToken();
       router.push("/login");
     } catch (err: any) {
       const message = err.message || "Logout failed";

@@ -29,14 +29,7 @@ export async function POST(request: NextRequest) {
 
     const user = users[0];
 
-    // Create session data
-    const sessionData = {
-      id: user.id,
-      email: user.email,
-      role: user.role,
-    };
-
-    // Return user data with session cookie
+    // Return user data without password
     const { password: _, ...userWithoutPassword } = user;
     const successResponse: UserResponse = {
       success: true,
@@ -44,20 +37,7 @@ export async function POST(request: NextRequest) {
       message: "Login successful",
     };
 
-    const responseWithCookie = NextResponse.json(successResponse);
-
-    responseWithCookie.cookies.set(
-      "user_session",
-      JSON.stringify(sessionData),
-      {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
-        sameSite: "strict",
-        maxAge: 60 * 60 * 24, // 24 hours
-      }
-    );
-
-    return responseWithCookie;
+    return NextResponse.json(successResponse);
   } catch (error) {
     console.error("Login error:", error);
     return NextResponse.json(
