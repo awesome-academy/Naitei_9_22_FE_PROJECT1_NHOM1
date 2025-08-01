@@ -1,8 +1,8 @@
 import { Product } from "@/types/product.types";
 export interface Order {
-  id: number;
-  userId: number;
-  addressId: number;
+  id: string;
+  userId: string;
+  addressId: string;
   status: string;
   store: string;
   totalPrice: number;
@@ -16,11 +16,24 @@ export interface Order {
 }
 
 export interface OrderDetail {
-  id: number;
-  orderId: number;
-  productId: number;
+  id: string;
+  orderId: string;
+  productId: string;
   product: Product;
   quantity: number;
   price: number;
   total: number;
 }
+
+export enum OrderStatus {
+  PENDING = "Đã đặt, chưa duyệt",
+  APPROVED = "Đã duyệt",
+  SHIPPING = "Đang giao hàng",
+  COMPLETED = "Hoàn tất",
+  CANCELED = "Đã hủy",
+}
+export enum OrderStore {
+  HADONG = "HÀ ĐÔNG",
+}
+export type OrderCreate = Omit<Order, "id">;
+export type OrderDetailCreate = Omit<OrderDetail, "id">;
