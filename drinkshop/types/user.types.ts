@@ -1,17 +1,14 @@
 export type UserRole = "admin" | "customer";
-export type UserStatus = "active" | "inactive";
 
 export interface User {
   id: number;
-  username: string;
   email: string;
   password: string;
   firstName: string;
   lastName: string;
-  phone: string;
   avatar: string;
   role: UserRole;
-  status: UserStatus;
+  receiveNews: boolean;
 }
 
 export type UserWithoutPassword = Omit<User, "password">;
@@ -28,8 +25,6 @@ export interface Address {
   zipCode: string;
   phone: string;
   isDefault: boolean;
-  createdAt: string;
-  updatedAt: string;
 }
 
 export interface ApiResponse<T> {

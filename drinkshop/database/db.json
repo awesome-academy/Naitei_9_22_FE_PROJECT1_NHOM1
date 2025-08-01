@@ -2,147 +2,73 @@
   "users": [
     {
       "id": "1",
-      "username": "admin",
       "email": "admin@drinkshop.com",
       "password": "12345678",
       "firstName": "Admin",
       "lastName": "User",
-      "phone": "0123456789",
       "avatar": "placeholder/avatar.png",
       "role": "admin",
-      "status": "active"
+      "receiveNews": false
     },
     {
       "id": "2",
-      "username": "thanh_user",
       "email": "thanh@gmail.com",
       "password": "12345678",
       "firstName": "Thành",
       "lastName": "Phạm",
-      "phone": "0987654321",
       "avatar": "placeholder/avatar.png",
       "role": "customer",
-      "status": "active"
+      "receiveNews": true
     },
     {
       "id": "3",
-      "username": "dong_customer",
       "email": "dong@gmail.com",
       "password": "12345678",
       "firstName": "Đông",
       "lastName": "Dương",
-      "phone": "0912345678",
       "avatar": "placeholder/avatar.png",
       "role": "customer",
-      "status": "active"
+      "receiveNews": false
     },
     {
       "id": "4",
-      "username": "phu_buyer",
       "email": "phu@gmail.com",
       "password": "12345678",
       "firstName": "Phú",
       "lastName": "Trần",
-      "phone": "0934567890",
       "avatar": "placeholder/avatar.png",
       "role": "customer",
-      "status": "active"
+      "receiveNews": true
     },
     {
       "id": "5",
-      "username": "bach_admin",
       "email": "bach@drinkshop.com",
       "password": "12345678",
       "firstName": "Bách",
       "lastName": "Nguyễn",
-      "phone": "0956789012",
       "avatar": "placeholder/avatar.png",
       "role": "admin",
-      "status": "active"
+      "receiveNews": false
     },
     {
       "id": "6",
-      "username": "maria_nguyen",
       "email": "maria@gmail.com",
       "password": "12345678",
       "firstName": "Maria",
       "lastName": "Nguyễn",
-      "phone": "0978123456",
       "avatar": "placeholder/avatar.png",
       "role": "customer",
-      "status": "active"
+      "receiveNews": true
     },
     {
       "id": "7",
-      "username": "inactive_user",
-      "email": "inactive@gmail.com",
-      "password": "12345678",
-      "firstName": "Inactive",
-      "lastName": "User",
-      "phone": "0901234567",
-      "avatar": "placeholder/avatar.png",
-      "role": "customer",
-      "status": "inactive"
-    },
-    {
-      "id": "8",
-      "username": "linh_customer",
       "email": "linh@gmail.com",
       "password": "12345678",
       "firstName": "Linh",
       "lastName": "Nguyễn",
-      "phone": "0923456789",
       "avatar": "placeholder/avatar.png",
       "role": "customer",
-      "status": "active"
-    },
-    {
-      "id": "9",
-      "username": "test_user",
-      "email": "test@gmail.com",
-      "password": "12345678",
-      "firstName": "Test",
-      "lastName": "User",
-      "phone": "0945678901",
-      "avatar": "placeholder/avatar.png",
-      "role": "customer",
-      "status": "active"
-    },
-    {
-      "id": "10",
-      "username": "new_customer",
-      "email": "newcustomer@gmail.com",
-      "password": "12345678",
-      "firstName": "New",
-      "lastName": "Customer",
-      "phone": "0967890123",
-      "avatar": "placeholder/avatar.png",
-      "role": "customer",
-      "status": "active"
-    },
-    {
-      "id": "13c3",
-      "username": "test_user",
-      "email": "test@example.com",
-      "password": "12345678",
-      "firstName": "Test",
-      "lastName": "User",
-      "phone": "0123456789",
-      "avatar": "placeholder/avatar.png",
-      "role": "customer",
-      "status": "active"
-    },
-    {
-      "id": "613b",
-      "username": "test_user2",
-      "email": "test2@example.com",
-      "password": "12345678",
-      "firstName": "Test",
-      "lastName": "User",
-      "phone": "0123456789",
-      "avatar": "placeholder/avatar.png",
-      "role": "admin",
-      "status": "active"
+      "receiveNews": false
     }
   ],
   "addresses": [
@@ -220,21 +146,6 @@
       "isDefault": true,
       "createdAt": "2024-05-20T16:45:00.000Z",
       "updatedAt": "2024-05-20T16:45:00.000Z"
-    },
-    {
-      "id": "6",
-      "userId": 8,
-      "firstName": "Linh",
-      "lastName": "Nguyễn",
-      "company": "Chung cư STU",
-      "address": "777 Đường PQR",
-      "country": "Việt Nam",
-      "city": "TP. Hồ Chí Minh",
-      "zipCode": "700000",
-      "phone": "0923456789",
-      "isDefault": true,
-      "createdAt": "2024-06-10T11:30:00.000Z",
-      "updatedAt": "2024-06-10T11:30:00.000Z"
     }
   ],
   "categories": [
@@ -446,10 +357,7 @@
       "price": 370000,
       "originalPrice": 450000,
       "image": "Image_Rudu/wine1.jpg",
-      "images": [
-        "Image_Rudu/wine1.jpg",
-        "Image_Rudu/wine2.jpg"
-      ],
+      "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
       "categoryId": 19,
       "stock": 50,
       "isNew": false,
@@ -470,10 +378,7 @@
       "price": 370000,
       "originalPrice": 450000,
       "image": "Image_Rudu/wine3.jpg",
-      "images": [
-        "Image_Rudu/wine3.jpg",
-        "Image_Rudu/wine4.jpg"
-      ],
+      "images": ["Image_Rudu/wine3.jpg", "Image_Rudu/wine4.jpg"],
       "categoryId": 19,
       "stock": 30,
       "isNew": true,
@@ -494,10 +399,7 @@
       "price": 370000,
       "originalPrice": 450000,
       "image": "Image_Rudu/wine5.jpg",
-      "images": [
-        "Image_Rudu/wine5.jpg",
-        "Image_Rudu/wine6.jpg"
-      ],
+      "images": ["Image_Rudu/wine5.jpg", "Image_Rudu/wine6.jpg"],
       "categoryId": 19,
       "stock": 40,
       "isNew": false,
@@ -518,10 +420,7 @@
       "price": 370000,
       "originalPrice": 450000,
       "image": "Image_Rudu/wine8.jpg",
-      "images": [
-        "Image_Rudu/wine8.jpg",
-        "Image_Rudu/wine9.jpg"
-      ],
+      "images": ["Image_Rudu/wine8.jpg", "Image_Rudu/wine9.jpg"],
       "categoryId": 19,
       "stock": 25,
       "isNew": false,
@@ -542,10 +441,7 @@
       "price": 2500000,
       "originalPrice": 2800000,
       "image": "Image_Rudu/wine10.jpg",
-      "images": [
-        "Image_Rudu/wine10.jpg",
-        "Image_Rudu/wine11.jpg"
-      ],
+      "images": ["Image_Rudu/wine10.jpg", "Image_Rudu/wine11.jpg"],
       "categoryId": 15,
       "stock": 15,
       "isNew": true,
@@ -566,10 +462,7 @@
       "price": 4500000,
       "originalPrice": 5000000,
       "image": "Image_Rudu/wine12.jpg",
-      "images": [
-        "Image_Rudu/wine12.jpg",
-        "Image_Rudu/wine13.jpg"
-      ],
+      "images": ["Image_Rudu/wine12.jpg", "Image_Rudu/wine13.jpg"],
       "categoryId": 15,
       "stock": 8,
       "isNew": false,
@@ -590,10 +483,7 @@
       "price": 1200000,
       "originalPrice": 1350000,
       "image": "Image_Rudu/wine14.jpg",
-      "images": [
-        "Image_Rudu/wine14.jpg",
-        "Image_Rudu/wine15.jpg"
-      ],
+      "images": ["Image_Rudu/wine14.jpg", "Image_Rudu/wine15.jpg"],
       "categoryId": 19,
       "stock": 20,
       "isNew": false,
@@ -614,10 +504,7 @@
       "price": 890000,
       "originalPrice": 990000,
       "image": "Image_Rudu/wine16.jpg",
-      "images": [
-        "Image_Rudu/wine16.jpg",
-        "Image_Rudu/wine17.jpg"
-      ],
+      "images": ["Image_Rudu/wine16.jpg", "Image_Rudu/wine17.jpg"],
       "categoryId": 19,
       "stock": 35,
       "isNew": true,
@@ -638,10 +525,7 @@
       "price": 1150000,
       "originalPrice": 1250000,
       "image": "Image_Rudu/wine18.jpeg",
-      "images": [
-        "Image_Rudu/wine18.jpeg",
-        "Image_Rudu/wine19.jpg"
-      ],
+      "images": ["Image_Rudu/wine18.jpeg", "Image_Rudu/wine19.jpg"],
       "categoryId": 19,
       "stock": 28,
       "isNew": false,
@@ -662,10 +546,7 @@
       "price": 3200000,
       "originalPrice": 3500000,
       "image": "Image_Rudu/wine20.png",
-      "images": [
-        "Image_Rudu/wine20.png",
-        "Image_Rudu/wine21.jpg"
-      ],
+      "images": ["Image_Rudu/wine20.png", "Image_Rudu/wine21.jpg"],
       "categoryId": 15,
       "stock": 12,
       "isNew": false,

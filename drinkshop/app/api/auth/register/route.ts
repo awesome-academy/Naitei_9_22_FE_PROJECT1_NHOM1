@@ -5,19 +5,17 @@ import { User, UserResponse } from "@/types/user.types";
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { username, email, password, firstName, lastName, phone, role } =
-      body;
+    const {
+      email,
+      password,
+      firstName,
+      lastName,
+      role,
+      receiveNews = false,
+    } = body;
 
     // Validate required fields
-    if (
-      !username ||
-      !email ||
-      !password ||
-      !firstName ||
-      !lastName ||
-      !phone ||
-      !role
-    ) {
+    if (!email || !password || !firstName || !lastName || !role) {
       return NextResponse.json(
         { success: false, message: "Missing required fields" },
         { status: 400 }
@@ -35,37 +33,29 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check if username or email already exists
-    const existingUsers: User[] = await publicApi.get(
-      `/users?email=${email}&username=${username}`
-    );
+    // Check if email already exists
+    const existingUsers: User[] = await publicApi.get(`/users?email=${email}`);
 
     if (existingUsers && existingUsers.length > 0) {
       return NextResponse.json(
-        { success: false, message: "Username or email already exists" },
+        { success: false, message: "Email already exists" },
         { status: 409 }
       );
     }
 
     // Create new user
     const newUser: Partial<User> = {
-      username,
       email,
       password, // Note: In production, password should be hashed
       firstName,
       lastName,
-      phone,
       avatar: "placeholder/avatar.png",
       role,
-      status: "active",
+      receiveNews,
     };
 
     // Send POST request to json-server
     const createdUser: User = await publicApi.post("/users", newUser);
-
-    if (!createdUser) {
-      throw new Error("Failed to create user");
-    }
 
     // Return success response (excluding password)
     const { password: _, ...userWithoutPassword } = createdUser;
