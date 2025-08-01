@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { User } from '../../../types/user.types';
-import { addUser, updateUser } from '../../../app/services/userApi';
+import { User } from '../../types/user.types';
+import { addUser, updateUser } from '../../services/userApi';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";

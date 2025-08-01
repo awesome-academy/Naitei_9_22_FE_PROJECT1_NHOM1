@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import UserTable from '../../../components/ui/admin/UserTable';
+import UserTable from '../../../components/admin/UserTable';
 import { User } from '../../../types/user.types';
-import UserForm from '../../../components/ui/admin/UserForm';
+import UserForm from '../../../components/admin/UserForm';
 
 export default function AdminUserPage() {
     const [editingUser, setEditingUser] = useState<User | null>(null);

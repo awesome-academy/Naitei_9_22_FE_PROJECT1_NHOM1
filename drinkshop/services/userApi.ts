@@ -1,4 +1,4 @@
-import { User } from '../../types/user.types';
+import { User } from '../types/user.types';
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE as string;
 
@@ -45,8 +45,6 @@ export const updateUser = async (id: number, form: Omit<User, "id">, user: User)
         }),
     });
     const updatedUser = await response.json();
-    console.log(typeof user.id);
-
 
     return {
         ...updatedUser,

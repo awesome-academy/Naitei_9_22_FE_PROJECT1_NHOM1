@@ -163,11 +163,10 @@ export default function Dashboard() {
       <aside
         className={`fixed inset-y-0 right-0 w-64 bg-gray-800 text-white p-4 z-50
                 transform transition-transform duration-300 ease-in-out
-                ${
-                  isSidebarOpen
-                    ? "translate-x-0 block"
-                    : "translate-x-full hidden"
-                }
+                ${isSidebarOpen
+            ? "translate-x-0 block"
+            : "translate-x-full hidden"
+          }
                 md:static md:translate-x-0 md:block`}
       >
         <div className="mb-6 flex justify-between items-center">
