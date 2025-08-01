@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Address } from "@/types/user.types";
 
-export const useAddress = (userId: number) => {
-  const [address, setAddress] = useState<string>("");
+export const useAddress = (userId: string) => {
+  const [address, setAddress] = useState<Address | null>(null);
 
   useEffect(() => {
     const fetchAddress = async () => {
@@ -12,9 +13,7 @@ export const useAddress = (userId: number) => {
         );
         if (response.data.length > 0) {
           const addressData = response.data[0];
-          setAddress(
-            `${addressData.address}, ${addressData.city}, ${addressData.country}`
-          );
+          setAddress(addressData as Address);
         }
       } catch (error) {
         console.error("Error fetching address:", error);

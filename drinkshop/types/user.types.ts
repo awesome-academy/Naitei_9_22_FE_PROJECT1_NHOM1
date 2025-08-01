@@ -1,7 +1,7 @@
 export type UserRole = "admin" | "customer";
 
 export interface User {
-  id: number;
+  id: string;
   email: string;
   password: string;
   firstName: string;
@@ -14,8 +14,8 @@ export interface User {
 export type UserWithoutPassword = Omit<User, "password">;
 
 export interface Address {
-  id: number;
-  userId: number;
+  id: string;
+  userId: string;
   firstName: string;
   lastName: string;
   company: string;
