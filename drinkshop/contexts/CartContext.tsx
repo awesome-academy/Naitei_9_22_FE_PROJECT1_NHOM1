@@ -4,7 +4,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { Cart } from "@/types/cart.type";
 import { useCart } from "@/hooks/useCart";
 
-const userId = 2; // Sau này lấy từ AuthContext hoặc session...
+const userId = "2"; // Sau này lấy từ AuthContext hoặc session...
 
 interface CartContextType {
   cart: Cart | null;
