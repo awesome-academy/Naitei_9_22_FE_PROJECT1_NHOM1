@@ -4,7 +4,7 @@ import axios, {
   AxiosResponse,
 } from "axios";
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_ENDPOINT;
+const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 // Create public axios instance (no auth required)
 export const publicApi = axios.create({
