@@ -13,7 +13,6 @@
     {
       "id": "2",
       "email": "thanh@gmail.com",
-      "password": "12345678",
       "firstName": "Thành",
       "lastName": "Phạm",
       "avatar": "placeholder/avatar.png",
@@ -78,10 +77,10 @@
       "firstName": "Thành",
       "lastName": "Phạm",
       "company": "Công ty TNHH ABC",
-      "address": "123 Đường ABC",
+      "address": "1 Đại Cồ Việt",
       "country": "Việt Nam",
-      "city": "TP. Hồ Chí Minh",
-      "zipCode": "700000",
+      "city": "Hà Nội",
+      "zipCode": "700001",
       "phone": "0987654321",
       "isDefault": true,
       "createdAt": "2024-02-15T08:30:00.000Z",
@@ -146,6 +145,19 @@
       "isDefault": true,
       "createdAt": "2024-05-20T16:45:00.000Z",
       "updatedAt": "2024-05-20T16:45:00.000Z"
+    },
+    {
+      "id": "6ad1",
+      "userId": "2",
+      "firstName": "Thành",
+      "lastName": "Phạm Lê",
+      "company": "Sun Asterisk",
+      "address": "Số 345 đường XYZ",
+      "city": "Hà Nội",
+      "country": "Việt Nam",
+      "zipCode": "012345",
+      "phone": "0999888777",
+      "isDefault": false
     }
   ],
   "categories": [
@@ -357,7 +369,10 @@
       "price": 370000,
       "originalPrice": 450000,
       "image": "Image_Rudu/wine1.jpg",
-      "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
+      "images": [
+        "Image_Rudu/wine1.jpg",
+        "Image_Rudu/wine2.jpg"
+      ],
       "categoryId": 19,
       "stock": 50,
       "isNew": false,
@@ -378,7 +393,10 @@
       "price": 370000,
       "originalPrice": 450000,
       "image": "Image_Rudu/wine3.jpg",
-      "images": ["Image_Rudu/wine3.jpg", "Image_Rudu/wine4.jpg"],
+      "images": [
+        "Image_Rudu/wine3.jpg",
+        "Image_Rudu/wine4.jpg"
+      ],
       "categoryId": 19,
       "stock": 30,
       "isNew": true,
@@ -399,7 +417,10 @@
       "price": 370000,
       "originalPrice": 450000,
       "image": "Image_Rudu/wine5.jpg",
-      "images": ["Image_Rudu/wine5.jpg", "Image_Rudu/wine6.jpg"],
+      "images": [
+        "Image_Rudu/wine5.jpg",
+        "Image_Rudu/wine6.jpg"
+      ],
       "categoryId": 19,
       "stock": 40,
       "isNew": false,
@@ -420,7 +441,10 @@
       "price": 370000,
       "originalPrice": 450000,
       "image": "Image_Rudu/wine8.jpg",
-      "images": ["Image_Rudu/wine8.jpg", "Image_Rudu/wine9.jpg"],
+      "images": [
+        "Image_Rudu/wine8.jpg",
+        "Image_Rudu/wine9.jpg"
+      ],
       "categoryId": 19,
       "stock": 25,
       "isNew": false,
@@ -441,7 +465,10 @@
       "price": 2500000,
       "originalPrice": 2800000,
       "image": "Image_Rudu/wine10.jpg",
-      "images": ["Image_Rudu/wine10.jpg", "Image_Rudu/wine11.jpg"],
+      "images": [
+        "Image_Rudu/wine10.jpg",
+        "Image_Rudu/wine11.jpg"
+      ],
       "categoryId": 15,
       "stock": 15,
       "isNew": true,
@@ -462,7 +489,10 @@
       "price": 4500000,
       "originalPrice": 5000000,
       "image": "Image_Rudu/wine12.jpg",
-      "images": ["Image_Rudu/wine12.jpg", "Image_Rudu/wine13.jpg"],
+      "images": [
+        "Image_Rudu/wine12.jpg",
+        "Image_Rudu/wine13.jpg"
+      ],
       "categoryId": 15,
       "stock": 8,
       "isNew": false,
@@ -483,7 +513,10 @@
       "price": 1200000,
       "originalPrice": 1350000,
       "image": "Image_Rudu/wine14.jpg",
-      "images": ["Image_Rudu/wine14.jpg", "Image_Rudu/wine15.jpg"],
+      "images": [
+        "Image_Rudu/wine14.jpg",
+        "Image_Rudu/wine15.jpg"
+      ],
       "categoryId": 19,
       "stock": 20,
       "isNew": false,
@@ -504,7 +537,10 @@
       "price": 890000,
       "originalPrice": 990000,
       "image": "Image_Rudu/wine16.jpg",
-      "images": ["Image_Rudu/wine16.jpg", "Image_Rudu/wine17.jpg"],
+      "images": [
+        "Image_Rudu/wine16.jpg",
+        "Image_Rudu/wine17.jpg"
+      ],
       "categoryId": 19,
       "stock": 35,
       "isNew": true,
@@ -525,7 +561,10 @@
       "price": 1150000,
       "originalPrice": 1250000,
       "image": "Image_Rudu/wine18.jpeg",
-      "images": ["Image_Rudu/wine18.jpeg", "Image_Rudu/wine19.jpg"],
+      "images": [
+        "Image_Rudu/wine18.jpeg",
+        "Image_Rudu/wine19.jpg"
+      ],
       "categoryId": 19,
       "stock": 28,
       "isNew": false,
@@ -546,7 +585,10 @@
       "price": 3200000,
       "originalPrice": 3500000,
       "image": "Image_Rudu/wine20.png",
-      "images": ["Image_Rudu/wine20.png", "Image_Rudu/wine21.jpg"],
+      "images": [
+        "Image_Rudu/wine20.png",
+        "Image_Rudu/wine21.jpg"
+      ],
       "categoryId": 15,
       "stock": 12,
       "isNew": false,
