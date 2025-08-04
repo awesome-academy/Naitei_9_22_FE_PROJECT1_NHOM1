@@ -9,7 +9,7 @@ export const useOrders = (userId: string) => {
     const fetchOrders = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/orders?userId=${userId}`
+          `${process.env.NEXT_PUBLIC_API_BASE}/orders?userId=${userId}`
         );
         setOrders(response.data);
       } catch (error) {

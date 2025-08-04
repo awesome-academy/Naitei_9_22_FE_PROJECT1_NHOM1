@@ -31,10 +31,11 @@ import { toast } from "sonner";
 import { ConfirmDialog } from "@/components/confirmdialog/ConfirmDialog";
 import { useRouter } from "next/navigation";
 import { formatCurrency } from "@/ultis/format.currency";
-
+import { useRequireAuth } from "@/hooks/useRequireAuth";
 const CartPage = () => {
   const router = useRouter();
   const { cart, setCart, isChange, setIsChange } = useCartContext();
+  const ready = useRequireAuth();
 
   const cartLabel = useMemo(
     () => [
@@ -107,7 +108,7 @@ const CartPage = () => {
 
     try {
       await axios.put(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/carts/${cart.id}`,
+        `${process.env.NEXT_PUBLIC_API_BASE}/carts/${cart.id}`,
         updatedCart
       );
       toast.success("Cập nhật giỏ hàng thành công");
@@ -123,6 +124,8 @@ const CartPage = () => {
     if (isChange) await handleSaveCart();
     router.push("/cart/checkout");
   };
+
+  if (!ready) return null;
   return (
     <div className="py-6">
       <BreadcrumbComponent

@@ -9,7 +9,7 @@ export const useCart = (userId: string) => {
     if (!userId) return;
     const fetchCart = async () => {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/carts?userId=${userId}`
+        `${process.env.NEXT_PUBLIC_API_BASE}/carts?userId=${userId}`
       );
       setCart(res.data[0] || null);
     };
