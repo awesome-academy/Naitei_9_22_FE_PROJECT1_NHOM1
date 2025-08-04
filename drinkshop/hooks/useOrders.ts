@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Order } from "@/types/order.types";
 
-export const useOrders = (userId: number) => {
+export const useOrders = (userId: string) => {
   const [orders, setOrders] = useState<Order[]>([]);
 
   useEffect(() => {

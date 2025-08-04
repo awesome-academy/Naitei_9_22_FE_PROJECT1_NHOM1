@@ -16,9 +16,10 @@ import { useOrders } from "@/hooks/useOrders";
 import { useAddress } from "@/hooks/useAddress";
 import BreadcrumbComponent from "@/components/breadcrumb/BreadcrumbComponent";
 import titleleftdark from "@/public/Image_Rudu/titleleft-dark.png";
-
+import { formatCurrency } from "@/ultis/format.currency";
+import { OrderStatus } from "@/types/order.types";
 const OrdersPage = () => {
-  const userId = 2; // Thay thế bằng cách lấy userId thực tế Giả sử lấy được userId từ session hoặc context
+  const userId = "2"; // Thay thế bằng cách lấy userId thực tế Giả sử lấy được userId từ session hoặc context
 
   const [status, setStatus] = useState<string>("all");
 
@@ -29,15 +30,21 @@ const OrdersPage = () => {
   const customerInfo = [
     {
       icon: <User className="w-6 h-6 text-[var(--foreground)]" />,
-      content: [user?.username ?? "Name", user?.email ?? "Email"],
+      content: [
+        user?.firstName ?? "First Name" + " " + user?.lastName ?? "Last Name",
+        user?.email ?? "Email",
+      ],
     },
     {
       icon: <MapPin className="w-6 h-6 text-[var(--foreground)]" />,
-      content: [address || "Address"],
+      content: [
+        address?.address + ", " + address?.city + ", " + address?.country ||
+          "Address",
+      ],
     },
     {
       icon: <Phone className="w-6 h-6 text-[var(--foreground)]" />,
-      content: [user?.phone ?? "Phone"],
+      content: [address?.phone ?? "Phone"],
     },
   ];
   const tableHeaders = [
@@ -51,19 +58,19 @@ const OrdersPage = () => {
   ];
   const statusMap: Record<string, string> = {
     all: "Tất cả",
-    pending: "Đã đặt, chưa duyệt",
-    confirmed: "Đã duyệt",
-    delivering: "Đang giao",
-    completed: "Đã hoàn thành",
-    canceled: "Đã hủy",
+    pending: OrderStatus.PENDING,
+    approved: OrderStatus.APPROVED,
+    shipping: OrderStatus.SHIPPING,
+    completed: OrderStatus.COMPLETED,
+    canceled: OrderStatus.CANCELED,
   };
 
   const statusCount = useMemo(() => {
     const count: Record<string, number> = {
       all: orders.length,
       pending: 0,
-      confirmed: 0,
-      delivering: 0,
+      approved: 0,
+      shipping: 0,
       completed: 0,
       canceled: 0,
     };
@@ -163,7 +170,7 @@ const OrdersPage = () => {
                       {order.totalItem}
                     </TableCell>
                     <TableCell className="text-center">
-                      {order.totalPrice.toLocaleString("vi-VN")}đ
+                      {formatCurrency(order.totalPrice)}
                     </TableCell>
                     <TableCell className="text-center">
                       {order.status}

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { OrderDetail } from "@/types/order.types";
 
-export const useOrderDetails = (orderId: number) => {
+export const useOrderDetails = (orderId: string) => {
   const [orderDetails, setOrderDetails] = useState<OrderDetail[]>([]);
 
   useEffect(() => {
