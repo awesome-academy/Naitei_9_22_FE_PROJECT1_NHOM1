@@ -5,8 +5,7 @@ import axios, {
 } from "axios";
 import { getToken } from "@/lib/utils";
 
-const BASE_URL =
-  process.env.NEXT_PUBLIC_API_ENDPOINT || "http://localhost:3001";
+const BASE_URL = process.env.NEXT_PUBLIC_API_BASE;
 
 // Create public axios instance (no auth required)
 export const publicApi = axios.create({
