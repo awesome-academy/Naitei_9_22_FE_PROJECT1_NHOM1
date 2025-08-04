@@ -15,6 +15,7 @@ import { TableCell, TableRow } from "@/components/ui/table";
 import { useOrderDetails } from "@/hooks/useOrderDetails";
 import { ConfirmDialog } from "@/components/confirmdialog/ConfirmDialog";
 import { formatCurrency } from "@/ultis/format.currency";
+import { useRequireAuth } from "@/hooks/useRequireAuth";
 import { OrderStatus } from "@/types/order.types";
 import { useOrder } from "@/hooks/useOrder";
 import { toast } from "sonner";
@@ -28,6 +29,7 @@ const OrderDetailPage = ({ params }: { params: Promise<{ id: string }> }) => {
   const [status, setStatus] = useState("");
   const [isReviewed, setIsReviewed] = useState(false);
   const [open, setOpen] = useState(false);
+  const ready = useRequireAuth();
 
   const orderLabels = useMemo(() => {
     if (!order) return [];
@@ -93,6 +95,7 @@ const OrderDetailPage = ({ params }: { params: Promise<{ id: string }> }) => {
       console.error(error);
     }
   };
+  if (!ready) return null;
   return (
     <div className="py-6">
       <BreadcrumbComponent

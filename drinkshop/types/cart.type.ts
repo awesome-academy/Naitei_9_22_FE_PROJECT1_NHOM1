@@ -1,5 +1,5 @@
 import { Product } from "@/types/product.types";
-interface CartItem {
+export interface CartItem {
   productId: string;
   product: Product | null;
   quantity: number;
@@ -13,3 +13,5 @@ export interface Cart {
   createdAt: string;
   updatedAt: string;
 }
+
+export type CartCreate = Omit<Cart, "id">;

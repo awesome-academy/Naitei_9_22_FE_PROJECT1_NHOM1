@@ -8,24 +8,29 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import Link from "next/link";
-import { useState, useMemo } from "react";
 import Image from "next/image";
-import { MapPin, Phone, User } from "lucide-react";
-import { useUser } from "@/hooks/useUser";
-import { useOrders } from "@/hooks/useOrders";
-import { useAddress } from "@/hooks/useAddress";
-import BreadcrumbComponent from "@/components/breadcrumb/BreadcrumbComponent";
 import titleleftdark from "@/public/Image_Rudu/titleleft-dark.png";
+import BreadcrumbComponent from "@/components/breadcrumb/BreadcrumbComponent";
+import { useState, useMemo } from "react";
+import { useUser as useUserContext } from "@/contexts/UserContext";
+import { MapPin, Phone, User } from "lucide-react";
 import { formatCurrency } from "@/ultis/format.currency";
+import { useRequireAuth } from "@/hooks/useRequireAuth";
 import { OrderStatus } from "@/types/order.types";
+import { useAddress } from "@/hooks/useAddressByUser";
+import { useOrders } from "@/hooks/useOrders";
+import { useUser } from "@/hooks/useUser";
+
 const OrdersPage = () => {
-  const userId = "2"; // Thay thế bằng cách lấy userId thực tế Giả sử lấy được userId từ session hoặc context
+  const ready = useRequireAuth();
+  const { user: currentUser } = useUserContext();
+  const userId = currentUser?.id || "";
 
   const [status, setStatus] = useState<string>("all");
 
   const user = useUser(userId);
   const orders = useOrders(userId);
-  const address = useAddress(userId);
+  const { address } = useAddress(userId);
 
   const customerInfo = [
     {
@@ -38,13 +43,15 @@ const OrdersPage = () => {
     {
       icon: <MapPin className="w-6 h-6 text-[var(--foreground)]" />,
       content: [
-        address?.address + ", " + address?.city + ", " + address?.country ||
-          "Address",
+        address?.address ??
+          "Chưa có địa chỉ" + ", " + address?.city ??
+          "" + ", " + address?.country ??
+          "",
       ],
     },
     {
       icon: <Phone className="w-6 h-6 text-[var(--foreground)]" />,
-      content: [address?.phone ?? "Phone"],
+      content: [address?.phone ?? "Chưa có số điện thoại"],
     },
   ];
   const tableHeaders = [
@@ -90,7 +97,7 @@ const OrdersPage = () => {
       (order) => status === "all" || order.status === statusMap[status]
     );
   }, [orders, status]);
-
+  if (!ready) return null;
   return (
     <div className="py-6">
       <BreadcrumbComponent

@@ -16,9 +16,10 @@ import { createOrder, createOrderDetails } from "@/ultis/api/order.api";
 import { useState, useMemo } from "react";
 import { useCartContext } from "@/contexts/CartContext";
 import { formatCurrency } from "@/ultis/format.currency";
+import { useRequireAuth } from "@/hooks/useRequireAuth";
 import { fetchVoucher } from "@/ultis/api/voucher.api";
 import { ProductItem } from "@/components/ordertable/OrderTable";
-import { useAddress } from "@/hooks/useAddress";
+import { useAddress } from "@/hooks/useAddressByUser";
 import { clearCart } from "@/ultis/api/cart.api";
 import { useRouter } from "next/navigation";
 import { useUser } from "@/hooks/useUser";
@@ -26,10 +27,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { X } from "lucide-react";
+import { useUser as useUserContext } from "@/contexts/UserContext";
 
 const CheckoutPage = () => {
-  const userId = "2"; //Tạm hardcode
+  const { user: currentUser } = useUserContext();
+  const userId = currentUser?.id;
   const router = useRouter();
+  const ready = useRequireAuth();
 
   const [paymentMethod, setPaymentMethod] = useState(
     "Thanh toán khi nhận hàng"
@@ -41,8 +45,8 @@ const CheckoutPage = () => {
   const [voucherError, setVoucherError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const address = useAddress(userId);
-  const user = useUser(userId);
+  const { address } = useAddress(userId!);
+  const user = useUser(userId!);
 
   const { cart, setCart, setIsChange } = useCartContext();
   const cartItems: ProductItem[] = useMemo(() => {
@@ -150,9 +154,14 @@ const CheckoutPage = () => {
       router.push("/");
       return;
     }
+    if (!address?.id) {
+      toast.error("Vui lòng thêm địa chỉ giao hàng trước khi đặt hàng");
+      router.push("/account/addresses");
+      return;
+    }
 
     const orderData: OrderCreate = {
-      userId: userId,
+      userId: userId!,
       addressId: address?.id || "",
       status: OrderStatus.PENDING,
       store: OrderStore.HADONG,
@@ -196,8 +205,8 @@ const CheckoutPage = () => {
       setLoading(false);
     }
   };
+  if (!ready) return null;
   if (!cart || cart.items.length === 0) return <Loading />;
-
   return (
     <div className="py-6">
       <BreadcrumbComponent

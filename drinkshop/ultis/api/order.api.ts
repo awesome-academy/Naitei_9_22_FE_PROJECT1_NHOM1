@@ -1,7 +1,7 @@
 import axios from "axios";
 import { OrderCreate, OrderDetailCreate } from "@/types/order.types";
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const BASE_URL = process.env.NEXT_PUBLIC_API_BASE;
 
 export const createOrder = async (data: OrderCreate) => {
   const res = await axios.post(`${BASE_URL}/orders`, data);

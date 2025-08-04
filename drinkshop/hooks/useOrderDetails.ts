@@ -9,7 +9,7 @@ export const useOrderDetails = (orderId: string) => {
     const fetchOrder = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/orderDetails?orderId=${orderId}`
+          `${process.env.NEXT_PUBLIC_API_BASE}/orderDetails?orderId=${orderId}`
         );
         setOrderDetails(response.data);
       } catch (error) {
