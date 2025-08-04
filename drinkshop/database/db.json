@@ -384,7 +384,10 @@
       "price": 370000,
       "originalPrice": 450000,
       "image": "Image_Rudu/wine1.jpg",
-      "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
+      "images": [
+        "Image_Rudu/wine1.jpg",
+        "Image_Rudu/wine2.jpg"
+      ],
       "categoryId": "19",
       "stock": 50,
       "isNew": false,
@@ -405,7 +408,10 @@
       "price": 370000,
       "originalPrice": 450000,
       "image": "Image_Rudu/wine3.jpg",
-      "images": ["Image_Rudu/wine3.jpg", "Image_Rudu/wine4.jpg"],
+      "images": [
+        "Image_Rudu/wine3.jpg",
+        "Image_Rudu/wine4.jpg"
+      ],
       "categoryId": "19",
       "stock": 30,
       "isNew": true,
@@ -426,7 +432,10 @@
       "price": 370000,
       "originalPrice": 450000,
       "image": "Image_Rudu/wine5.jpg",
-      "images": ["Image_Rudu/wine5.jpg", "Image_Rudu/wine6.jpg"],
+      "images": [
+        "Image_Rudu/wine5.jpg",
+        "Image_Rudu/wine6.jpg"
+      ],
       "categoryId": "19",
       "stock": 40,
       "isNew": false,
@@ -447,7 +456,10 @@
       "price": 370000,
       "originalPrice": 450000,
       "image": "Image_Rudu/wine8.jpg",
-      "images": ["Image_Rudu/wine8.jpg", "Image_Rudu/wine9.jpg"],
+      "images": [
+        "Image_Rudu/wine8.jpg",
+        "Image_Rudu/wine9.jpg"
+      ],
       "categoryId": "19",
       "stock": 25,
       "isNew": false,
@@ -468,7 +480,10 @@
       "price": 2500000,
       "originalPrice": 2800000,
       "image": "Image_Rudu/wine10.jpg",
-      "images": ["Image_Rudu/wine10.jpg", "Image_Rudu/wine11.jpg"],
+      "images": [
+        "Image_Rudu/wine10.jpg",
+        "Image_Rudu/wine11.jpg"
+      ],
       "categoryId": "15",
       "stock": 15,
       "isNew": true,
@@ -489,7 +504,10 @@
       "price": 4500000,
       "originalPrice": 5000000,
       "image": "Image_Rudu/wine12.jpg",
-      "images": ["Image_Rudu/wine12.jpg", "Image_Rudu/wine13.jpg"],
+      "images": [
+        "Image_Rudu/wine12.jpg",
+        "Image_Rudu/wine13.jpg"
+      ],
       "categoryId": "15",
       "stock": 8,
       "isNew": false,
@@ -510,7 +528,10 @@
       "price": 1200000,
       "originalPrice": 1350000,
       "image": "Image_Rudu/wine14.jpg",
-      "images": ["Image_Rudu/wine14.jpg", "Image_Rudu/wine15.jpg"],
+      "images": [
+        "Image_Rudu/wine14.jpg",
+        "Image_Rudu/wine15.jpg"
+      ],
       "categoryId": "19",
       "stock": 20,
       "isNew": false,
@@ -531,7 +552,10 @@
       "price": 890000,
       "originalPrice": 990000,
       "image": "Image_Rudu/wine16.jpg",
-      "images": ["Image_Rudu/wine16.jpg", "Image_Rudu/wine17.jpg"],
+      "images": [
+        "Image_Rudu/wine16.jpg",
+        "Image_Rudu/wine17.jpg"
+      ],
       "categoryId": "19",
       "stock": 35,
       "isNew": true,
@@ -552,7 +576,10 @@
       "price": 1150000,
       "originalPrice": 1250000,
       "image": "Image_Rudu/wine18.jpeg",
-      "images": ["Image_Rudu/wine18.jpeg", "Image_Rudu/wine19.jpg"],
+      "images": [
+        "Image_Rudu/wine18.jpeg",
+        "Image_Rudu/wine19.jpg"
+      ],
       "categoryId": "19",
       "stock": 28,
       "isNew": false,
@@ -573,7 +600,10 @@
       "price": 3200000,
       "originalPrice": 3500000,
       "image": "Image_Rudu/wine20.png",
-      "images": ["Image_Rudu/wine20.png", "Image_Rudu/wine21.jpg"],
+      "images": [
+        "Image_Rudu/wine20.png",
+        "Image_Rudu/wine21.jpg"
+      ],
       "categoryId": "15",
       "stock": 12,
       "isNew": false,
@@ -724,7 +754,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine1.jpg",
-        "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
+        "images": [
+          "Image_Rudu/wine1.jpg",
+          "Image_Rudu/wine2.jpg"
+        ],
         "categoryId": "19",
         "stock": 50,
         "isNew": false,
@@ -753,7 +786,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine3.jpg",
-        "images": ["Image_Rudu/wine3.jpg", "Image_Rudu/wine4.jpg"],
+        "images": [
+          "Image_Rudu/wine3.jpg",
+          "Image_Rudu/wine4.jpg"
+        ],
         "categoryId": "19",
         "stock": 30,
         "isNew": true,
@@ -782,7 +818,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine1.jpg",
-        "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
+        "images": [
+          "Image_Rudu/wine1.jpg",
+          "Image_Rudu/wine2.jpg"
+        ],
         "categoryId": "19",
         "stock": 50,
         "isNew": false,
@@ -811,7 +850,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine1.jpg",
-        "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
+        "images": [
+          "Image_Rudu/wine1.jpg",
+          "Image_Rudu/wine2.jpg"
+        ],
         "categoryId": "19",
         "stock": 50,
         "isNew": false,
@@ -840,7 +882,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine1.jpg",
-        "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
+        "images": [
+          "Image_Rudu/wine1.jpg",
+          "Image_Rudu/wine2.jpg"
+        ],
         "categoryId": "19",
         "stock": 50,
         "isNew": false,
@@ -869,7 +914,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine3.jpg",
-        "images": ["Image_Rudu/wine3.jpg", "Image_Rudu/wine4.jpg"],
+        "images": [
+          "Image_Rudu/wine3.jpg",
+          "Image_Rudu/wine4.jpg"
+        ],
         "categoryId": "19",
         "stock": 30,
         "isNew": true,
@@ -898,7 +946,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine1.jpg",
-        "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
+        "images": [
+          "Image_Rudu/wine1.jpg",
+          "Image_Rudu/wine2.jpg"
+        ],
         "categoryId": "19",
         "stock": 50,
         "isNew": false,
@@ -927,7 +978,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine3.jpg",
-        "images": ["Image_Rudu/wine3.jpg", "Image_Rudu/wine4.jpg"],
+        "images": [
+          "Image_Rudu/wine3.jpg",
+          "Image_Rudu/wine4.jpg"
+        ],
         "categoryId": "19",
         "stock": 30,
         "isNew": true,
@@ -956,7 +1010,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine3.jpg",
-        "images": ["Image_Rudu/wine3.jpg", "Image_Rudu/wine4.jpg"],
+        "images": [
+          "Image_Rudu/wine3.jpg",
+          "Image_Rudu/wine4.jpg"
+        ],
         "categoryId": "19",
         "stock": 30,
         "isNew": true,
@@ -985,7 +1042,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine1.jpg",
-        "images": ["Image_Rudu/wine1.jpg", "Image_Rudu/wine2.jpg"],
+        "images": [
+          "Image_Rudu/wine1.jpg",
+          "Image_Rudu/wine2.jpg"
+        ],
         "categoryId": "19",
         "stock": 50,
         "isNew": false,
@@ -1014,7 +1074,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine3.jpg",
-        "images": ["Image_Rudu/wine3.jpg", "Image_Rudu/wine4.jpg"],
+        "images": [
+          "Image_Rudu/wine3.jpg",
+          "Image_Rudu/wine4.jpg"
+        ],
         "categoryId": 19,
         "stock": 30,
         "isNew": true,
@@ -1043,7 +1106,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine8.jpg",
-        "images": ["Image_Rudu/wine8.jpg", "Image_Rudu/wine9.jpg"],
+        "images": [
+          "Image_Rudu/wine8.jpg",
+          "Image_Rudu/wine9.jpg"
+        ],
         "categoryId": "19",
         "stock": 25,
         "isNew": false,
@@ -1072,7 +1138,10 @@
         "price": 2500000,
         "originalPrice": 2800000,
         "image": "Image_Rudu/wine10.jpg",
-        "images": ["Image_Rudu/wine10.jpg", "Image_Rudu/wine11.jpg"],
+        "images": [
+          "Image_Rudu/wine10.jpg",
+          "Image_Rudu/wine11.jpg"
+        ],
         "categoryId": "15",
         "stock": 15,
         "isNew": true,
@@ -1101,7 +1170,10 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine5.jpg",
-        "images": ["Image_Rudu/wine5.jpg", "Image_Rudu/wine6.jpg"],
+        "images": [
+          "Image_Rudu/wine5.jpg",
+          "Image_Rudu/wine6.jpg"
+        ],
         "categoryId": "19",
         "stock": 40,
         "isNew": false,
@@ -1142,7 +1214,10 @@
             "price": 370000,
             "originalPrice": 450000,
             "image": "Image_Rudu/wine5.jpg",
-            "images": ["Image_Rudu/wine5.jpg", "Image_Rudu/wine6.jpg"],
+            "images": [
+              "Image_Rudu/wine5.jpg",
+              "Image_Rudu/wine6.jpg"
+            ],
             "categoryId": "19",
             "stock": 40,
             "isNew": false,
@@ -1176,7 +1251,10 @@
             "price": 370000,
             "originalPrice": 450000,
             "image": "Image_Rudu/wine8.jpg",
-            "images": ["Image_Rudu/wine8.jpg", "Image_Rudu/wine9.jpg"],
+            "images": [
+              "Image_Rudu/wine8.jpg",
+              "Image_Rudu/wine9.jpg"
+            ],
             "categoryId": "19",
             "stock": 25,
             "isNew": false,
@@ -1201,7 +1279,10 @@
             "price": 2500000,
             "originalPrice": 2800000,
             "image": "Image_Rudu/wine10.jpg",
-            "images": ["Image_Rudu/wine10.jpg", "Image_Rudu/wine11.jpg"],
+            "images": [
+              "Image_Rudu/wine10.jpg",
+              "Image_Rudu/wine11.jpg"
+            ],
             "categoryId": "15",
             "stock": 15,
             "isNew": true,
@@ -1287,6 +1368,108 @@
       "rating": 4,
       "comment": "ngon",
       "createdAt": "2025-08-01T11:35:52.485Z"
+    }
+  ],
+  "favorites": [
+    {
+      "id": 1,
+      "userId": 2,
+      "productId": "1"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "productId": "3"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "productId": "2"
+    },
+    {
+      "id": 4,
+      "userId": 3,
+      "productId": "4"
+    },
+    {
+      "id": 5,
+      "userId": 4,
+      "productId": "5"
+    },
+    {
+      "id": 6,
+      "userId": 4,
+      "productId": "6"
+    },
+    {
+      "id": 7,
+      "userId": 5,
+      "productId": "2"
+    },
+    {
+      "id": 8,
+      "userId": 5,
+      "productId": "8"
+    },
+    {
+      "id": 9,
+      "userId": 6,
+      "productId": "7"
+    },
+    {
+      "id": 10,
+      "userId": 6,
+      "productId": "9"
+    },
+    {
+      "id": 11,
+      "userId": 8,
+      "productId": "4"
+    },
+    {
+      "id": 12,
+      "userId": 8,
+      "productId": "6"
+    },
+    {
+      "id": 13,
+      "userId": 9,
+      "productId": "1"
+    },
+    {
+      "id": 14,
+      "userId": 9,
+      "productId": "10"
+    },
+    {
+      "id": 15,
+      "userId": 10,
+      "productId": "3"
+    },
+    {
+      "id": 16,
+      "userId": 10,
+      "productId": "5"
+    },
+    {
+      "id": 17,
+      "userId": 11,
+      "productId": "2"
+    },
+    {
+      "id": 18,
+      "userId": 11,
+      "productId": "9"
+    },
+    {
+      "id": 19,
+      "userId": 6,
+      "productId": "10"
+    },
+    {
+      "id": 20,
+      "userId": 2,
+      "productId": "7"
     }
   ]
 }

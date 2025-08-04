@@ -33,11 +33,11 @@ export interface ApiResponse<T> {
   message?: string;
 }
 
-export interface UsersResponse extends ApiResponse<User[]> {}
+export interface UsersResponse extends ApiResponse<User[]> { }
 export interface UserResponse {
   success: boolean;
   data: UserWithoutPassword;
   message: string;
 }
-export interface AddressesResponse extends ApiResponse<Address[]> {}
-export interface AddressResponse extends ApiResponse<Address> {}
+export interface AddressesResponse extends ApiResponse<Address[]> { }
+export interface AddressResponse extends ApiResponse<Address> { }
