@@ -62,7 +62,7 @@ export default function AddressesPage() {
     deleteAddress,
   } = useAddress(currentUser?.id);
 
-  const [editingAddressId, setEditingAddressId] = useState<number | null>(null);
+  const [editingAddressId, setEditingAddressId] = useState<string | null>(null);
   const [editedAddress, setEditedAddress] = useState<Partial<Address>>({});
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
 
@@ -111,7 +111,7 @@ export default function AddressesPage() {
   };
 
   // Handle update address
-  const handleUpdateAddress = async (addressId: number) => {
+  const handleUpdateAddress = async (addressId: string) => {
     try {
       const updatedAddress = await updateAddress(addressId, editedAddress);
       if (updatedAddress) {
@@ -154,7 +154,7 @@ export default function AddressesPage() {
   };
 
   // Handle delete address
-  const handleDeleteAddress = async (addressId: number) => {
+  const handleDeleteAddress = async (addressId: string) => {
     if (confirm("Bạn có chắc chắn muốn xóa địa chỉ này?")) {
       const success = await deleteAddress(addressId);
       if (success) {

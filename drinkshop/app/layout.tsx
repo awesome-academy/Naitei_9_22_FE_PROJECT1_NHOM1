@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Gideon_Roman } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import { CartProvider } from "@/contexts/CartContext";
-import { UserProvider } from "@/contexts/UserContext";
-import { Toaster } from "sonner";
+import ClientLayout from "@/components/layout/ClientLayout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,14 +33,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${gideonRoman.variable} antialiased`}
       >
         <div className="font-roman">
-          <UserProvider>
-            <CartProvider>
-              <Header />
-              <Toaster position="top-right" richColors />
-              <div className="px-72">{children}</div>
-              <Footer />
-            </CartProvider>
-          </UserProvider>
+          <ClientLayout>{children}</ClientLayout>
         </div>
       </body>
     </html>
