@@ -17,6 +17,7 @@ import { IoIosMail } from "react-icons/io";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import GoogleMap from "@/components/ui/GoogleMap";
+import { Button } from "@/components/ui/button";
 
 const socialIcons = [
   { Icon: FaTwitter },
@@ -30,7 +31,11 @@ export default function LienHePage() {
   return (
     <div className="flex flex-col items-start py-4">
       <BreadcrumbComponent
-        items={[{ label: "Trang chủ", href: "/" }, { label: "Liên hệ" }]}
+        items={[
+          { label: "Trang chủ", href: "/" },
+          { label: "Liên hệ" },
+          { label: "Đề xuất sản phẩm", href: "/lien-he/de-xuat" },
+        ]}
       />
 
       <div className="my-6">
@@ -59,6 +64,9 @@ export default function LienHePage() {
             <div className="text-sm text-nowrap">Your Message</div>
             <Textarea className="w-[80%] rounded-none border border-gray-300 bg-gray-100" />
           </div>
+          <Button className="ml-[20%] w-fit bg-black text-white hover:bg-gray-800">
+            GỬI
+          </Button>
         </div>
         <div className="flex flex-col gap-4">
           <Image src={logo3} alt="logo" width={120} height={120} />
