@@ -3,7 +3,7 @@ import { privateApi } from "@/lib/api/axios";
 import { Address } from "@/types/user.types";
 
 interface AddAddressData {
-  userId: string;
+  userId: number;
   firstName: string;
   lastName: string;
   company?: string;
@@ -27,7 +27,7 @@ interface UpdateAddressData {
   isDefault?: boolean;
 }
 
-export const useAddress = (userId?: string) => {
+export const useAddress = (userId?: number) => {
   const [address, setAddress] = useState<string>("");
   const [addresses, setAddresses] = useState<Address[]>([]);
   const [loading, setLoading] = useState(false);
@@ -66,7 +66,7 @@ export const useAddress = (userId?: string) => {
 
   // Get all addresses for a user
   const getAddressesByUserId = async (
-    targetUserId: string
+    targetUserId: number
   ): Promise<Address[] | null> => {
     try {
       setLoading(true);
@@ -95,7 +95,9 @@ export const useAddress = (userId?: string) => {
   };
 
   // Get a specific address by ID
-  const getAddressById = async (addressId: string): Promise<Address | null> => {
+  const getAddressById = async (
+    addressId: string | number
+  ): Promise<Address | null> => {
     try {
       setLoading(true);
       setError(null);
@@ -168,7 +170,7 @@ export const useAddress = (userId?: string) => {
 
   // Update existing address
   const updateAddress = async (
-    addressId: string,
+    addressId: string | number,
     data: UpdateAddressData
   ): Promise<Address | null> => {
     try {
@@ -227,7 +229,9 @@ export const useAddress = (userId?: string) => {
   };
 
   // Delete address
-  const deleteAddress = async (addressId: string): Promise<boolean> => {
+  const deleteAddress = async (
+    addressId: string | number
+  ): Promise<boolean> => {
     try {
       setLoading(true);
       setError(null);
