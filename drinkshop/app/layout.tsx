@@ -18,9 +18,8 @@ const gideonRoman = Gideon_Roman({
 });
 
 export const metadata: Metadata = {
-  title: "Wine House - Cửa hàng rượu vang hàng đầu",
-  description:
-    "Wine House cung cấp các loại rượu vang chất lượng cao từ khắp nơi trên thế giới",
+  title: "Drink Shop - Rượu vang và rượu ngoại cao cấp",
+  description: "Chuyên cung cấp các loại rượu vang và rượu ngoại cao cấp với chất lượng tuyệt vời",
 };
 
 export default function RootLayout({
@@ -29,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="vi">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${gideonRoman.variable} antialiased`}
       >
