@@ -17,8 +17,6 @@ export const useAddress = (userId: string) => {
         const response = await axios.get(
           `${process.env.NEXT_PUBLIC_API_BASE}/addresses?userId=${userId}&isDefault=true`
         );
-        console.log("Address:", response.data[0]);
-
         setAddress(response.data[0] || null);
       } catch (error) {
         console.error("Error fetching address:", error);

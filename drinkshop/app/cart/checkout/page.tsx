@@ -179,7 +179,7 @@ const CheckoutPage = () => {
       const res = await createOrder(orderData);
       const orderId = res.id.toString();
 
-      await router.prefetch(`/account/orders/${orderId}`);
+      router.prefetch(`/account/orders/${orderId}`);
 
       const orderDetails: OrderDetailCreate[] = cart.items.map((item) => ({
         orderId: orderId,
@@ -190,8 +190,7 @@ const CheckoutPage = () => {
         total: item.quantity * (item.product?.price || 0),
       }));
 
-      await createOrderDetails(orderDetails);
-      await clearCart(cart);
+      await Promise.all([createOrderDetails(orderDetails), clearCart(cart)]);
 
       setCart({ ...cart, items: [], totalPrice: 0 });
       setIsChange(false);
