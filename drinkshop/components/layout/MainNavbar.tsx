@@ -6,11 +6,11 @@ import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 
 const menuItems = [
-  { href: "/home", label: "TRANG CHỦ" },
+  { href: "/", label: "TRANG CHỦ" },
   { href: "/ruou-vang-do", label: "RƯỢU VANG ĐỎ" },
   { href: "/ruou-trang", label: "RƯỢU TRẮNG" },
   { href: "/champagne", label: "CHAMPAGNE" },
-  { href: "/thong-tin", label: "THÔNG TIN" },
+  { href: "/gioi-thieu", label: "GIỚI THIỆU" },
   { href: "/blog", label: "BLOG" },
   { href: "/lien-he", label: "LIÊN HỆ" },
 ];
@@ -22,7 +22,7 @@ const MainNavbar = () => {
     <nav className="w-full bg-black">
       <div className="w-full flex items-center justify-between px-72">
         {/* Logo */}
-        <Link href="/home">
+        <Link href="/">
           <Image
             src="/Image_Rudu/logo2.jpg"
             alt="Wine House Logo"
