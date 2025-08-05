@@ -25,7 +25,7 @@ import { useRouter } from "next/navigation";
 import { toast, Toaster } from "sonner";
 
 const formSchema = z.object({
-  email: z.string().email({ message: "Email không hợp lệ" }).optional(),
+  email: z.email({ message: "Email không hợp lệ" }).optional(),
   firstName: z.string().min(1, "Vui lòng nhập tên"),
   lastName: z.string().min(1, "Vui lòng nhập họ"),
   receiveNews: z.boolean(),
