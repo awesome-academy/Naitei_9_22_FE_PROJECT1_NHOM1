@@ -771,6 +771,21 @@
       "paymentMethod": "Thanh toán khi nhận hàng",
       "orderDate": "2025-08-05T08:11:09.835Z",
       "updatedAt": "2025-08-05T08:11:09.835Z"
+    },
+    {
+      "id": "13d0",
+      "userId": "2",
+      "addressId": "2",
+      "status": "Đã đặt, chưa duyệt",
+      "store": "HÀ ĐÔNG",
+      "totalPrice": 905000,
+      "subtotal": 890000,
+      "totalItem": 1,
+      "shippingFee": 15000,
+      "discount": 0,
+      "paymentMethod": "Thanh toán khi nhận hàng",
+      "orderDate": "2025-08-06T05:51:39.333Z",
+      "updatedAt": "2025-08-06T05:51:39.333Z"
     }
   ],
   "orderDetails": [
@@ -1304,6 +1319,32 @@
       "quantity": 1,
       "price": "590.000",
       "total": 590
+    },
+    {
+      "id": "c8af",
+      "orderId": "13d0",
+      "productId": "10",
+      "product": {
+        "id": "10",
+        "name": "PRIMARIO PUGLIA 2000",
+        "price": 890000,
+        "originalPrice": 980000,
+        "image": "/Product/10.jpg",
+        "category": "Rượu Vang Đỏ",
+        "description": "Rượu vang đỏ vintage từ vùng Puglia, Italia. Được sản xuất từ năm 2000 với hương vị đậm đà và truyền thống.",
+        "rating": 4,
+        "reviews": 15,
+        "inStock": true,
+        "features": [
+          "Xuất xứ: Italia",
+          "Độ cồn: 13.5%",
+          "Dung tích: 750ml",
+          "Năm sản xuất: 2000"
+        ]
+      },
+      "quantity": 1,
+      "price": 890000,
+      "total": 890000
     }
   ],
   "carts": [
@@ -1312,31 +1353,31 @@
       "userId": "2",
       "items": [
         {
-          "productId": "10",
+          "productId": 2,
           "product": {
-            "id": "10",
-            "name": "PRIMARIO PUGLIA 2000",
-            "price": 890000,
-            "originalPrice": 980000,
-            "image": "/Product/10.jpg",
+            "id": 2,
+            "name": "RAMONDA ROURES",
+            "price": "680.000",
+            "originalPrice": "750.000",
+            "image": "/Product/2.jpg",
             "category": "Rượu Vang Đỏ",
-            "description": "Rượu vang đỏ vintage từ vùng Puglia, Italia. Được sản xuất từ năm 2000 với hương vị đậm đà và truyền thống.",
-            "rating": 4,
-            "reviews": 15,
+            "description": "Rượu vang đỏ cao cấp với thiết kế nhãn nghệ thuật độc đáo. Hương vị phức hợp với note của trái cây chín và gia vị.",
+            "rating": 5,
+            "reviews": 18,
             "inStock": true,
             "features": [
-              "Xuất xứ: Italia",
-              "Độ cồn: 13.5%",
+              "Xuất xứ: Tây Ban Nha",
+              "Độ cồn: 14%",
               "Dung tích: 750ml",
-              "Năm sản xuất: 2000"
+              "Thời gian ủ: 12 tháng"
             ]
           },
           "quantity": 1
         }
       ],
-      "totalPrice": 890000,
+      "totalPrice": "0680.000",
       "createdAt": "2024-02-15T08:30:00.000Z",
-      "updatedAt": "2025-08-05T08:23:55.759Z"
+      "updatedAt": "2025-08-06T06:13:57.146Z"
     },
     {
       "id": "2",
