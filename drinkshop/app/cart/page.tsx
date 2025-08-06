@@ -158,7 +158,7 @@ const CartPage = () => {
               <TableRow key={index}>
                 <TableCell className="flex justify-center">
                   <Image
-                    src={`/${cartItem.product?.image}`}
+                    src={`${cartItem.product?.image}`}
                     alt={cartItem.product?.name || "Product Image"}
                     width={70}
                     height={140}
@@ -171,19 +171,21 @@ const CartPage = () => {
                 <TableCell className="text-center">
                   {formatCurrency(cartItem.product?.price) || "0 đ"}
                 </TableCell>
-                <TableCell>
-                  <Input
-                    type="number"
-                    value={cartItem.quantity}
-                    min={1}
-                    className="w-20 text-center"
-                    onChange={(e) => {
-                      const newQuantity = parseInt(e.target.value);
-                      if (!isNaN(newQuantity) && newQuantity > 0) {
-                        handleQuantityChange(index, newQuantity);
-                      }
-                    }}
-                  />
+                <TableCell className="text-center">
+                  <div className="grid place-items-center">
+                    <Input
+                      type="number"
+                      value={cartItem.quantity}
+                      min={1}
+                      className="w-20 text-center"
+                      onChange={(e) => {
+                        const newQuantity = parseInt(e.target.value);
+                        if (!isNaN(newQuantity) && newQuantity > 0) {
+                          handleQuantityChange(index, newQuantity);
+                        }
+                      }}
+                    />
+                  </div>
                 </TableCell>
                 <TableCell className="text-center">
                   {cartItem.product?.price

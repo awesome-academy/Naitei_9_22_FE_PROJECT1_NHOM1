@@ -61,7 +61,7 @@ const OrderTable = (props: OrderTableProps) => {
             <TableRow key={item.id}>
               <TableCell className="flex justify-center">
                 <Image
-                  src={`/${product.image || "default-product.png"}`}
+                  src={`${product.image || "default-product.png"}`}
                   alt={product.name}
                   width={70}
                   height={140}

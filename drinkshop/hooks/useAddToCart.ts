@@ -9,7 +9,11 @@ import { toast } from "sonner";
 export const useAddToCart = () => {
   const { cart, setCart, setIsChange } = useCartContext();
 
-  const addToCart = async (product: Product) => {
+  const addToCart = async (product: Product | null) => {
+    if (!product) {
+      toast.error("Sản phẩm không hợp lệ!");
+      return;
+    }
     if (!cart) {
       toast.error("Không tìm thấy giỏ hàng!");
       return;
@@ -39,7 +43,7 @@ export const useAddToCart = () => {
 
     try {
       // Cập nhật DB
-      await axios.patch(`/api/carts/${cart.id}`, updatedCart);
+      await axios.patch(`${process.env.NEXT_PUBLIC_API_BASE}/carts/${cart.id}`, updatedCart);
 
       // Cập nhật context
       setCart(updatedCart);
