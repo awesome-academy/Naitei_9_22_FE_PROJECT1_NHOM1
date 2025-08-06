@@ -19,7 +19,6 @@ import { useRequireAuth } from "@/hooks/useRequireAuth";
 import { OrderStatus } from "@/types/order.types";
 import { useAddress } from "@/hooks/useAddressByUser";
 import { useOrders } from "@/hooks/useOrders";
-import { useUser } from "@/hooks/useUser";
 
 const OrdersPage = () => {
   const ready = useRequireAuth();
@@ -29,7 +28,9 @@ const OrdersPage = () => {
   const [status, setStatus] = useState<string>("all");
 
   const orders = useOrders(userId);
-  const { address } = useAddress(userId);
+  const { addresses } = useAddress(userId);
+  const address =
+    addresses.find((addr) => addr.isDefault) || addresses[0] || null;
 
   const customerInfo = [
     {
@@ -44,10 +45,9 @@ const OrdersPage = () => {
     {
       icon: <MapPin className="w-6 h-6 text-[var(--foreground)]" />,
       content: [
-        address?.address ??
-          "Chưa có địa chỉ" + ", " + address?.city ??
-          "" + ", " + address?.country ??
-          "",
+        address
+          ? `${address.address}, ${address.city}, ${address.country}`
+          : "Chưa có địa chỉ",
       ],
     },
     {

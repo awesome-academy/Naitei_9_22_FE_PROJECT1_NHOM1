@@ -21,6 +21,8 @@ import { useOrder } from "@/hooks/useOrder";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import Link from "next/dist/client/link";
+import { fetchAddress } from "@/ultis/api/address.api";
+import { Address } from "@/types/user.types";
 
 const OrderDetailPage = ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = use(params);
@@ -29,7 +31,22 @@ const OrderDetailPage = ({ params }: { params: Promise<{ id: string }> }) => {
   const [status, setStatus] = useState("");
   const [isReviewed, setIsReviewed] = useState(false);
   const [open, setOpen] = useState(false);
+  const [address, setAddress] = useState<Address | null>(null);
   const ready = useRequireAuth();
+
+  useEffect(() => {
+    const getAddress = async () => {
+      if (order?.addressId) {
+        try {
+          const data = await fetchAddress(order.addressId);
+          setAddress(data);
+        } catch (error) {
+          console.error("Lỗi khi lấy địa chỉ:", error);
+        }
+      }
+    };
+    getAddress();
+  }, [order?.addressId]);
 
   const orderLabels = useMemo(() => {
     if (!order) return [];
@@ -43,8 +60,18 @@ const OrderDetailPage = ({ params }: { params: Promise<{ id: string }> }) => {
       },
       { label: "KHO HÀNG", value: order?.store ?? "Kho hàng" },
       { label: "TRẠNG THÁI", value: status },
+      {
+        label: "SỐ ĐIỆN THOẠI",
+        value: address ? address.phone : "Chưa có số điện thoại",
+      },
+      {
+        label: "ĐỊA CHỈ GIAO HÀNG",
+        value: address
+          ? `${address.address}, ${address.city}, ${address.country}`
+          : "Chưa có địa chỉ",
+      },
     ];
-  }, [order, status]);
+  }, [order, status, address]);
 
   const orderDetailsItems: ProductItem[] = orderDetails.map((item) => ({
     id: item.id,
