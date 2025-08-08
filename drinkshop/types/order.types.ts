@@ -17,6 +17,7 @@ export interface Order {
 }
 
 export interface OrderDetail {
+  totalPrice: number;
   id: string;
   orderId: string;
   productId: string;
@@ -33,6 +34,7 @@ export enum OrderStatus {
   COMPLETED = "Đã hoàn thành",
   CANCELED = "Đã hủy",
 }
+
 export enum OrderStore {
   HADONG = "HÀ ĐÔNG",
 }

@@ -1,4 +1,6 @@
 export interface Product {
+  status: string
+  reviewCount: number
   id: string
   name: string
   price: number
@@ -8,7 +10,7 @@ export interface Product {
   description: string
   rating: number
   reviews: number
-  inStock: boolean
+  stock: number
   features: string[]
   discount?: number
 }
