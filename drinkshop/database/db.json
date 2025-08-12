@@ -8,7 +8,8 @@
       "lastName": "User",
       "avatar": "placeholder/avatar.png",
       "role": "admin",
-      "receiveNews": false
+      "receiveNews": false,
+      "twoFactorEnabled": false
     },
     {
       "id": "2",
@@ -18,7 +19,8 @@
       "lastName": "Phạm",
       "avatar": "placeholder/avatar.png",
       "role": "customer",
-      "receiveNews": true
+      "receiveNews": true,
+      "twoFactorEnabled": true
     },
     {
       "id": "3",
@@ -28,7 +30,8 @@
       "lastName": "Dương",
       "avatar": "placeholder/avatar.png",
       "role": "customer",
-      "receiveNews": false
+      "receiveNews": false,
+      "twoFactorEnabled": false
     },
     {
       "id": "4",
@@ -38,7 +41,8 @@
       "lastName": "Trần",
       "avatar": "placeholder/avatar.png",
       "role": "customer",
-      "receiveNews": true
+      "receiveNews": true,
+      "twoFactorEnabled": false
     },
     {
       "id": "5",
@@ -48,7 +52,8 @@
       "lastName": "Nguyễn",
       "avatar": "placeholder/avatar.png",
       "role": "admin",
-      "receiveNews": false
+      "receiveNews": false,
+      "twoFactorEnabled": false
     },
     {
       "id": "6",
@@ -69,6 +74,17 @@
       "avatar": "placeholder/avatar.png",
       "role": "customer",
       "receiveNews": false
+    },
+    {
+      "id": "a367",
+      "email": "kagoko1505@cotasen.com",
+      "password": "1q2w3e4r",
+      "firstName": "Kagoyo",
+      "lastName": "Uchiha",
+      "avatar": "placeholder/avatar.png",
+      "role": "customer",
+      "receiveNews": false,
+      "twoFactorEnabled": false
     }
   ],
   "addresses": [
@@ -1510,6 +1526,14 @@
       "totalPrice": 0,
       "createdAt": "2025-08-04T09:38:19.398Z",
       "updatedAt": "2025-08-04T09:42:29.028Z"
+    },
+    {
+      "id": "8bce",
+      "userId": "a367",
+      "items": [],
+      "totalPrice": 0,
+      "createdAt": "2025-08-10T16:02:16.441Z",
+      "updatedAt": "2025-08-10T16:02:16.441Z"
     }
   ],
   "vouchers": [
@@ -1679,6 +1703,139 @@
       "id": "20",
       "userId": 2,
       "productId": "7"
+    }
+  ],
+  "emailTokens": [
+    {
+      "id": "8df4",
+      "userId": "2",
+      "token": "192795",
+      "type": "2fa",
+      "email": "thanh@gmail.com",
+      "expiresAt": "2025-08-10T16:06:10.012Z",
+      "used": false,
+      "createdAt": "2025-08-10T16:01:10.012Z"
+    },
+    {
+      "id": "d33e",
+      "userId": "a367",
+      "token": "320780",
+      "type": "2fa",
+      "email": "kagoko1505@cotasen.com",
+      "expiresAt": "2025-08-11T07:36:53.497Z",
+      "used": true,
+      "createdAt": "2025-08-11T07:31:53.497Z",
+      "usedAt": "2025-08-11T07:32:28.620Z"
+    },
+    {
+      "id": "a357",
+      "userId": "a367",
+      "token": "955281",
+      "type": "2fa",
+      "email": "kagoko1505@cotasen.com",
+      "expiresAt": "2025-08-11T07:38:22.694Z",
+      "used": true,
+      "createdAt": "2025-08-11T07:33:22.694Z",
+      "usedAt": "2025-08-11T07:34:13.656Z"
+    },
+    {
+      "id": "48ee",
+      "userId": "a367",
+      "token": "250984",
+      "type": "2fa",
+      "email": "kagoko1505@cotasen.com",
+      "expiresAt": "2025-08-11T07:49:46.810Z",
+      "used": true,
+      "createdAt": "2025-08-11T07:44:46.810Z",
+      "usedAt": "2025-08-11T07:45:39.081Z"
+    },
+    {
+      "id": "84a8",
+      "userId": "a367",
+      "token": "7DLVSQEJYURC4Pgl_g8IWUnSSV8l1S5z",
+      "type": "reset",
+      "email": "kagoko1505@cotasen.com",
+      "expiresAt": "2025-08-11T15:30:06.659Z",
+      "used": true,
+      "createdAt": "2025-08-11T15:15:06.659Z",
+      "usedAt": "2025-08-11T15:16:45.589Z"
+    },
+    {
+      "id": "8988",
+      "userId": "a367",
+      "token": "758593",
+      "type": "2fa",
+      "email": "kagoko1505@cotasen.com",
+      "expiresAt": "2025-08-11T15:23:34.526Z",
+      "used": true,
+      "createdAt": "2025-08-11T15:18:34.526Z",
+      "usedAt": "2025-08-11T15:19:53.042Z"
+    },
+    {
+      "id": "cf82",
+      "userId": "a367",
+      "token": "797125",
+      "type": "2fa",
+      "email": "kagoko1505@cotasen.com",
+      "expiresAt": "2025-08-11T15:45:02.782Z",
+      "used": true,
+      "createdAt": "2025-08-11T15:40:02.782Z",
+      "usedAt": "2025-08-11T15:40:58.218Z"
+    },
+    {
+      "id": "8adb",
+      "userId": "a367",
+      "token": "983062",
+      "type": "2fa",
+      "email": "kagoko1505@cotasen.com",
+      "expiresAt": "2025-08-13T01:58:38.190Z",
+      "used": true,
+      "createdAt": "2025-08-13T01:53:38.190Z",
+      "usedAt": "2025-08-13T01:53:58.371Z"
+    },
+    {
+      "id": "aeee",
+      "userId": "a367",
+      "token": "521370",
+      "type": "2fa",
+      "email": "kagoko1505@cotasen.com",
+      "expiresAt": "2025-08-13T02:01:55.210Z",
+      "used": true,
+      "createdAt": "2025-08-13T01:56:55.210Z",
+      "usedAt": "2025-08-13T01:57:19.247Z"
+    },
+    {
+      "id": "8d79",
+      "userId": "a367",
+      "token": "mvOMBgC8Wk_xCf6T3JMMKFYqNGTRknoA",
+      "type": "reset",
+      "email": "kagoko1505@cotasen.com",
+      "expiresAt": "2025-08-13T02:13:25.020Z",
+      "used": true,
+      "createdAt": "2025-08-13T01:58:25.020Z",
+      "usedAt": "2025-08-13T01:59:15.459Z"
+    },
+    {
+      "id": "1a7c",
+      "userId": "a367",
+      "token": "113414",
+      "type": "2fa",
+      "email": "kagoko1505@cotasen.com",
+      "expiresAt": "2025-08-13T09:16:57.768Z",
+      "used": true,
+      "createdAt": "2025-08-13T09:11:57.768Z",
+      "usedAt": "2025-08-13T09:14:01.371Z"
+    },
+    {
+      "id": "b5b4",
+      "userId": "a367",
+      "token": "158873",
+      "type": "2fa",
+      "email": "kagoko1505@cotasen.com",
+      "expiresAt": "2025-08-13T09:34:06.645Z",
+      "used": true,
+      "createdAt": "2025-08-13T09:29:06.645Z",
+      "usedAt": "2025-08-13T09:30:51.273Z"
     }
   ]
 }

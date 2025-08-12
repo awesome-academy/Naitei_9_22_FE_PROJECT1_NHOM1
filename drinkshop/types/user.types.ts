@@ -1,7 +1,6 @@
 export type UserRole = "admin" | "customer";
 
 export interface User {
-  username: string;
   id: string;
   email: string;
   password: string;
@@ -10,6 +9,7 @@ export interface User {
   avatar: string;
   role: UserRole;
   receiveNews: boolean;
+  twoFactorEnabled: boolean;
 }
 
 export type UserWithoutPassword = Omit<User, "password">;
@@ -34,11 +34,11 @@ export interface ApiResponse<T> {
   message?: string;
 }
 
-export interface UsersResponse extends ApiResponse<User[]> { }
+export interface UsersResponse extends ApiResponse<User[]> {}
 export interface UserResponse {
   success: boolean;
   data: UserWithoutPassword;
   message: string;
 }
-export interface AddressesResponse extends ApiResponse<Address[]> { }
-export interface AddressResponse extends ApiResponse<Address> { }
+export interface AddressesResponse extends ApiResponse<Address[]> {}
+export interface AddressResponse extends ApiResponse<Address> {}

@@ -123,13 +123,21 @@ export default function RegisterPage() {
               )}
             />
 
-            <div className="flex items-center gap-2 px-20">
-              <FormControl>
-                <Checkbox className="border-gray-500 size-3 rounded-none" />
-              </FormControl>
-              <FormLabel className="text-sm text-nowrap">
-                Quên mật khẩu
-              </FormLabel>
+            <div className="flex items-center justify-between px-20">
+              <div className="flex items-center gap-2">
+                <FormControl>
+                  <Checkbox className="border-gray-500 size-3 rounded-none" />
+                </FormControl>
+                <FormLabel className="text-sm text-nowrap">
+                  Ghi nhớ đăng nhập
+                </FormLabel>
+              </div>
+              <Link
+                href="/forgot-password"
+                className="text-sm text-blue-600 hover:text-blue-800"
+              >
+                Quên mật khẩu?
+              </Link>
             </div>
 
             {serverError && (
