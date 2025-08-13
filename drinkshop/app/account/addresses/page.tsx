@@ -29,7 +29,7 @@ import {
 import Image from "next/image";
 import titleleftdark from "@/public/Image_Rudu/titleleft-dark.png";
 import { useAddress } from "@/hooks/useAddress";
-import { useUser } from "@/contexts/UserContext";
+import { useUserStore } from "@/stores/user.store";
 import { useEffect, useState } from "react";
 import { toast, Toaster } from "sonner";
 import { Address } from "@/types/user.types";
@@ -52,7 +52,7 @@ const addAddressSchema = z.object({
 type AddAddressFormValues = z.infer<typeof addAddressSchema>;
 
 export default function AddressesPage() {
-  const { user: currentUser } = useUser();
+  const { user: currentUser } = useUserStore();
   const {
     addresses,
     loading,

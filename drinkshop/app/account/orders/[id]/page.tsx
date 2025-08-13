@@ -10,18 +10,18 @@ import OrderTable, {
 } from "@/components/ordertable/OrderTable";
 import { useEffect, useState, useMemo, use } from "react";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
-import { setStatusCancelOrder } from "@/ultis/api/order.api";
+import { setStatusCancelOrder } from "@/utils/api/order.api";
 import { TableCell, TableRow } from "@/components/ui/table";
 import { useOrderDetails } from "@/hooks/useOrderDetails";
 import { ConfirmDialog } from "@/components/confirmdialog/ConfirmDialog";
-import { formatCurrency } from "@/ultis/format.currency";
+import { formatCurrency } from "@/utils/format.currency";
 import { useRequireAuth } from "@/hooks/useRequireAuth";
 import { OrderStatus } from "@/types/order.types";
 import { useOrder } from "@/hooks/useOrder";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import Link from "next/dist/client/link";
-import { fetchAddress } from "@/ultis/api/address.api";
+import { fetchAddress } from "@/utils/api/address.api";
 import { Address } from "@/types/user.types";
 
 const OrderDetailPage = ({ params }: { params: Promise<{ id: string }> }) => {
@@ -77,7 +77,7 @@ const OrderDetailPage = ({ params }: { params: Promise<{ id: string }> }) => {
     id: item.id,
     product: item.product,
     quantity: item.quantity,
-    totalPrice: item.total,
+    totalPrice: item.totalPrice,
   }));
   useEffect(() => {
     if (order) {

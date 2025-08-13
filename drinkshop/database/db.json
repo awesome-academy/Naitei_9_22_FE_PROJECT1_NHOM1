@@ -808,6 +808,21 @@
       "paymentMethod": "Thanh toán khi nhận hàng",
       "orderDate": "2025-08-06T05:51:39.333Z",
       "updatedAt": "2025-08-06T05:51:39.333Z"
+    },
+    {
+      "id": "fa04",
+      "userId": "2",
+      "addressId": "2",
+      "status": "Đã đặt, chưa duyệt",
+      "store": "HÀ ĐÔNG",
+      "totalPrice": 6765000,
+      "subtotal": 6750000,
+      "totalItem": 7,
+      "shippingFee": 15000,
+      "discount": 0,
+      "paymentMethod": "Thanh toán khi nhận hàng",
+      "orderDate": "2025-08-13T05:51:32.149Z",
+      "updatedAt": "2025-08-13T05:51:32.149Z"
     }
   ],
   "orderDetails": [
@@ -1367,6 +1382,84 @@
       "quantity": 1,
       "price": 890000,
       "total": 890000
+    },
+    {
+      "id": "7ba9",
+      "orderId": "fa04",
+      "productId": "9",
+      "product": {
+        "id": "9",
+        "name": "ROOT:1 CABERNET SAUVIGNON",
+        "price": 1580000,
+        "originalPrice": 1750000,
+        "image": "/Product/9.jpg",
+        "category": "Rượu Vang Đỏ",
+        "description": "Rượu vang đỏ cao cấp từ nho Cabernet Sauvignon, ủ trong thùng gỗ sồi với thiết kế chai sang trọng và hương vị đẳng cấp.",
+        "rating": 5,
+        "reviews": 8,
+        "inStock": true,
+        "features": [
+          "Xuất xứ: Úc",
+          "Độ cồn: 14.5%",
+          "Dung tích: 750ml",
+          "Thời gian ủ: 18 tháng"
+        ]
+      },
+      "quantity": 1,
+      "price": 1580000,
+      "total": 1580000
+    },
+    {
+      "id": "5d70",
+      "orderId": "fa04",
+      "productId": "4",
+      "product": {
+        "id": "4",
+        "name": "TORELLO DOLÇ",
+        "price": 720000,
+        "originalPrice": 800000,
+        "image": "/Product/4.jpg",
+        "category": "Rượu Vang Ngọt",
+        "description": "Rượu vang ngọt cao cấp với bọt khí tự nhiên, hương vị ngọt ngào và thanh thoát. Lý tưởng cho tráng miệng.",
+        "rating": 5,
+        "reviews": 12,
+        "inStock": true,
+        "features": [
+          "Xuất xứ: Tây Ban Nha",
+          "Độ cồn: 11%",
+          "Dung tích: 750ml",
+          "Loại: Sparkling Sweet"
+        ]
+      },
+      "quantity": 1,
+      "price": 720000,
+      "total": 720000
+    },
+    {
+      "id": "9cfc",
+      "orderId": "fa04",
+      "productId": "10",
+      "product": {
+        "id": "10",
+        "name": "PRIMARIO PUGLIA 2000",
+        "price": 890000,
+        "originalPrice": 980000,
+        "image": "/Product/10.jpg",
+        "category": "Rượu Vang Đỏ",
+        "description": "Rượu vang đỏ vintage từ vùng Puglia, Italia. Được sản xuất từ năm 2000 với hương vị đậm đà và truyền thống.",
+        "rating": 4,
+        "reviews": 15,
+        "inStock": true,
+        "features": [
+          "Xuất xứ: Italia",
+          "Độ cồn: 13.5%",
+          "Dung tích: 750ml",
+          "Năm sản xuất: 2000"
+        ]
+      },
+      "quantity": 5,
+      "price": 890000,
+      "total": 4450000
     }
   ],
   "carts": [
@@ -1375,66 +1468,84 @@
       "userId": "2",
       "items": [
         {
-          "productId": 2,
+          "productId": "10",
           "product": {
-            "id": 2,
-            "name": "RAMONDA ROURES",
-            "price": "680.000",
-            "originalPrice": "750.000",
-            "image": "/Product/2.jpg",
+            "id": "10",
+            "name": "PRIMARIO PUGLIA 2000",
+            "price": 890000,
+            "originalPrice": 980000,
+            "image": "/Product/10.jpg",
             "category": "Rượu Vang Đỏ",
-            "description": "Rượu vang đỏ cao cấp với thiết kế nhãn nghệ thuật độc đáo. Hương vị phức hợp với note của trái cây chín và gia vị.",
-            "rating": 5,
-            "reviews": 18,
-            "inStock": true,
+            "description": "Rượu vang đỏ vintage từ vùng Puglia, Italia. Được sản xuất từ năm 2000 với hương vị đậm đà và truyền thống.",
+            "rating": 4,
+            "reviews": 15,
+            "stock": 100,
             "features": [
-              "Xuất xứ: Tây Ban Nha",
+              "Xuất xứ: Italia",
+              "Độ cồn: 13.5%",
+              "Dung tích: 750ml",
+              "Năm sản xuất: 2000"
+            ],
+            "categoryId": 3,
+            "status": "",
+            "slug": "2"
+          },
+          "quantity": 2
+        },
+        {
+          "productId": "11",
+          "product": {
+            "id": "11",
+            "name": "ADMIT ONE RED BLEND",
+            "price": 750000,
+            "originalPrice": 850000,
+            "image": "/Product/11.jpg",
+            "category": "Rượu Vang Đỏ",
+            "description": "Rượu vang đỏ blend hiện đại với thiết kế nhãn độc đáo. Hương vị cân bằng giữa các giống nho khác nhau tạo nên sự phức hợp thú vị.",
+            "rating": 4,
+            "reviews": 22,
+            "stock": 400,
+            "features": [
+              "Xuất xứ: Úc",
               "Độ cồn: 14%",
               "Dung tích: 750ml",
-              "Thời gian ủ: 12 tháng"
+              "Phong cách: Modern Blend"
+            ]
+          },
+          "quantity": 6
+        },
+        {
+          "productId": "12",
+          "product": {
+            "id": "12",
+            "name": "EL GUAPO RED WINE",
+            "price": 520000,
+            "originalPrice": 580000,
+            "image": "/Product/12.jpg",
+            "category": "Rượu Vang Đỏ",
+            "description": "Rượu vang đỏ với thiết kế nhãn nghệ thuật đầy màu sắc, thể hiện tinh thần vui tươi và sáng tạo. Hương vị trái cây đậm đà.",
+            "rating": 4,
+            "reviews": 28,
+            "stock": 100,
+            "features": [
+              "Xuất xứ: Argentina",
+              "Độ cồn: 13.5%",
+              "Dung tích: 750ml",
+              "Phong cách: Artistic"
             ]
           },
           "quantity": 1
         }
       ],
-      "totalPrice": "0680.000",
+      "totalPrice": 6800000,
       "createdAt": "2024-02-15T08:30:00.000Z",
-      "updatedAt": "2025-08-06T06:13:57.146Z"
+      "updatedAt": "2025-08-13T11:29:47.197Z"
     },
     {
       "id": "2",
       "userId": "3",
-      "items": [
-        {
-          "productId": "3",
-          "product": {
-            "id": "3",
-            "name": "Rượu vang trắng Đà Lạt Chardonnay",
-            "slug": "ruou-vang-trang-da-lat-chardonnay",
-            "description": "Rượu vang trắng Đà Lạt với hương vị tươi mát, thích hợp cho mùa hè.",
-            "price": 370000,
-            "originalPrice": 450000,
-            "image": "Image_Rudu/wine5.jpg",
-            "images": [
-              "Image_Rudu/wine5.jpg",
-              "Image_Rudu/wine6.jpg"
-            ],
-            "categoryId": "19",
-            "stock": 40,
-            "isNew": false,
-            "isHot": true,
-            "isSale": false,
-            "discount": 0,
-            "rating": 4.3,
-            "reviewCount": 15,
-            "status": "active",
-            "createdAt": "2024-01-20T10:00:00.000Z",
-            "updatedAt": "2024-07-18T10:00:00.000Z"
-          },
-          "quantity": 1
-        }
-      ],
-      "totalPrice": 370000,
+      "items": [],
+      "totalPrice": 0,
       "createdAt": "2024-03-10T10:15:00.000Z",
       "updatedAt": "2024-03-10T10:15:00.000Z"
     },
@@ -1443,65 +1554,31 @@
       "userId": "4",
       "items": [
         {
-          "productId": "4",
+          "productId": "9",
           "product": {
-            "id": "4",
-            "name": "Rượu vang Đà Lạt Rosé",
-            "slug": "ruou-vang-da-lat-rose",
-            "description": "Rượu vang hồng Đà Lạt với màu sắc quyến rũ và hương vị nhẹ nhàng.",
-            "price": 370000,
-            "originalPrice": 450000,
-            "image": "Image_Rudu/wine8.jpg",
-            "images": [
-              "Image_Rudu/wine8.jpg",
-              "Image_Rudu/wine9.jpg"
-            ],
-            "categoryId": "19",
-            "stock": 25,
-            "isNew": false,
-            "isHot": false,
-            "isSale": true,
-            "discount": 18,
-            "rating": 4.6,
-            "reviewCount": 10,
-            "status": "active",
-            "createdAt": "2024-03-05T10:00:00.000Z",
-            "updatedAt": "2024-07-22T10:00:00.000Z"
+            "id": "9",
+            "name": "ROOT:1 CABERNET SAUVIGNON",
+            "price": 1580000,
+            "originalPrice": 1750000,
+            "image": "/Product/9.jpg",
+            "category": "Rượu Vang Đỏ",
+            "description": "Rượu vang đỏ cao cấp từ nho Cabernet Sauvignon, ủ trong thùng gỗ sồi với thiết kế chai sang trọng và hương vị đẳng cấp.",
+            "rating": 5,
+            "reviews": 8,
+            "stock": 100,
+            "features": [
+              "Xuất xứ: Úc",
+              "Độ cồn: 14.5%",
+              "Dung tích: 750ml",
+              "Thời gian ủ: 18 tháng"
+            ]
           },
           "quantity": 1
-        },
-        {
-          "productId": "5",
-          "product": {
-            "id": "5",
-            "name": "Champagne Moët & Chandon",
-            "slug": "champagne-moet-chandon",
-            "description": "Champagne cao cấp từ Pháp với hương vị tinh tế và bọt khí mịn màng.",
-            "price": 2500000,
-            "originalPrice": 2800000,
-            "image": "Image_Rudu/wine10.jpg",
-            "images": [
-              "Image_Rudu/wine10.jpg",
-              "Image_Rudu/wine11.jpg"
-            ],
-            "categoryId": "15",
-            "stock": 15,
-            "isNew": true,
-            "isHot": true,
-            "isSale": false,
-            "discount": 0,
-            "rating": 5,
-            "reviewCount": 5,
-            "status": "active",
-            "createdAt": "2024-04-01T10:00:00.000Z",
-            "updatedAt": "2024-07-25T10:00:00.000Z"
-          },
-          "quantity": 2
         }
       ],
-      "totalPrice": 5370000,
+      "totalPrice": 1580000,
       "createdAt": "2024-03-10T10:15:00.000Z",
-      "updatedAt": "2024-03-10T10:15:00.000Z"
+      "updatedAt": "2025-08-13T10:55:42.246Z"
     },
     {
       "id": "b0fb",

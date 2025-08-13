@@ -12,9 +12,9 @@ import Image from "next/image";
 import titleleftdark from "@/public/Image_Rudu/titleleft-dark.png";
 import BreadcrumbComponent from "@/components/breadcrumb/BreadcrumbComponent";
 import { useState, useMemo } from "react";
-import { useUser as useUserContext } from "@/contexts/UserContext";
+import { useUserStore } from "@/stores/user.store";
 import { MapPin, Phone, User } from "lucide-react";
-import { formatCurrency } from "@/ultis/format.currency";
+import { formatCurrency } from "@/utils/format.currency";
 import { useRequireAuth } from "@/hooks/useRequireAuth";
 import { OrderStatus } from "@/types/order.types";
 import { useAddress } from "@/hooks/useAddressByUser";
@@ -22,7 +22,7 @@ import { useOrders } from "@/hooks/useOrders";
 
 const OrdersPage = () => {
   const ready = useRequireAuth();
-  const { user: currentUser } = useUserContext();
+  const { user: currentUser } = useUserStore();
   const userId = currentUser?.id || "";
 
   const [status, setStatus] = useState<string>("all");

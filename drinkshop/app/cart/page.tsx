@@ -6,7 +6,6 @@ import titleleftdark from "@/public/Image_Rudu/titleleft-dark.png";
 import Link from "next/link";
 import axios from "axios";
 import { useEffect, useMemo } from "react";
-import { useCartContext } from "@/contexts/CartContext";
 import {
   Table,
   TableBody,
@@ -30,11 +29,12 @@ import { Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { ConfirmDialog } from "@/components/confirmdialog/ConfirmDialog";
 import { useRouter } from "next/navigation";
-import { formatCurrency } from "@/ultis/format.currency";
+import { formatCurrency } from "@/utils/format.currency";
 import { useRequireAuth } from "@/hooks/useRequireAuth";
+import { useCartStore } from "@/stores/cart.store";
 const CartPage = () => {
   const router = useRouter();
-  const { cart, setCart, isChange, setIsChange } = useCartContext();
+  const { cart, setCart, isChange, setIsChange } = useCartStore();
   const ready = useRequireAuth();
 
   const cartLabel = useMemo(
@@ -48,17 +48,6 @@ const CartPage = () => {
     ],
     []
   );
-
-  useEffect(() => {
-    const onBeforeUnload = (e: BeforeUnloadEvent) => {
-      if (isChange) {
-        e.preventDefault();
-        e.returnValue = "";
-      }
-    };
-    window.addEventListener("beforeunload", onBeforeUnload);
-    return () => window.removeEventListener("beforeunload", onBeforeUnload);
-  }, [isChange]);
 
   useEffect(() => {
     if (!cart) return;

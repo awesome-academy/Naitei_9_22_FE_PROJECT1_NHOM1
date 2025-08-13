@@ -3,10 +3,11 @@
 import { usePathname } from "next/navigation";
 import Header from "./Header";
 import Footer from "./Footer";
-import { CartProvider } from "@/contexts/CartContext";
-import { UserProvider } from "@/contexts/UserContext";
-import { LayoutProvider, useLayout } from "@/contexts/LayoutContext";
 import { Toaster } from "sonner";
+import { useLayoutStore } from "@/stores/layout.store";
+import { useUserStore } from "@/stores/user.store";
+import { useCartStore } from "@/stores/cart.store";
+import { useEffect } from "react";
 
 interface ClientLayoutProps {
   children: React.ReactNode;
@@ -14,28 +15,38 @@ interface ClientLayoutProps {
 
 function LayoutContent({ children }: ClientLayoutProps) {
   const pathname = usePathname();
-  const { hideHeaderFooter } = useLayout();
+  const hideHeaderFooter = useLayoutStore((state) => state.hideHeaderFooter);
 
-  // Hide Header and Footer for admin pages or when explicitly set (for 404)
+  const initUser = useUserStore((state) => state.initUser);
+  const userId = useUserStore((state) => state.user?.id);
+
+  const fetchCart = useCartStore((state) => state.fetchCart);
+
   const shouldHideHeaderFooter =
     pathname?.startsWith("/admin") || hideHeaderFooter;
 
+  // Khởi tạo user khi mount
+  useEffect(() => {
+    initUser();
+  }, [initUser]);
+
+  // Lấy cart khi đã có userId
+  useEffect(() => {
+    if (userId) {
+      fetchCart(userId);
+    }
+  }, [userId, fetchCart]);
+
   return (
-    <UserProvider>
-      <CartProvider>
-        {!shouldHideHeaderFooter && <Header />}
-        <Toaster position="top-right" richColors />
-        <div className={shouldHideHeaderFooter ? "" : "px-72"}>{children}</div>
-        {!shouldHideHeaderFooter && <Footer />}
-      </CartProvider>
-    </UserProvider>
+    <>
+      {!shouldHideHeaderFooter && <Header />}
+      <Toaster position="top-right" richColors />
+      <div className={shouldHideHeaderFooter ? "" : "px-72"}>{children}</div>
+      {!shouldHideHeaderFooter && <Footer />}
+    </>
   );
 }
 
 export default function ClientLayout({ children }: ClientLayoutProps) {
-  return (
-    <LayoutProvider>
-      <LayoutContent>{children}</LayoutContent>
-    </LayoutProvider>
-  );
+  return <LayoutContent>{children}</LayoutContent>;
 }

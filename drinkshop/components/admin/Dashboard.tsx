@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 import { CiMenuBurger } from "react-icons/ci";
 import { useRouter } from "next/navigation";
 import { useDashboard } from "@/hooks/useDashboard";
-import { formatCurrency } from "@/ultis/format.currency";
+import { formatCurrency } from "@/utils/format.currency";
 import { RevenueChart } from "./RevenueChart";
 import { StatsCard, StatItem } from "./StartsCard";
 
@@ -111,9 +111,14 @@ export default function Dashboard() {
     return (
       <div className="flex min-h-screen bg-gray-100 items-center justify-center">
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-bold text-red-600 mb-2">Lỗi tải dữ liệu</h2>
+          <h2 className="text-xl font-bold text-red-600 mb-2">
+            Lỗi tải dữ liệu
+          </h2>
           <p className="text-gray-700 mb-4">{error}</p>
-          <Button onClick={refreshData} className="bg-blue-500 hover:bg-blue-600">
+          <Button
+            onClick={refreshData}
+            className="bg-blue-500 hover:bg-blue-600"
+          >
             <FaSync className="mr-2" />
             Thử lại
           </Button>

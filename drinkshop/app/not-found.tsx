@@ -1,22 +1,21 @@
 "use client";
 
+import { useEffect } from "react";
+import { useLayoutStore } from "@/stores/layout.store";
 import Link from "next/link";
 import Image from "next/image";
 import wine404 from "@/public/Image_Rudu/wine404.png";
 import logo3 from "@/public/Image_Rudu/logo3.jpg";
-import { useLayout } from "@/contexts/LayoutContext";
-import { useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 
 export default function NotFound() {
-  const { setHideHeaderFooter } = useLayout();
+  const setHideHeaderFooter = useLayoutStore(
+    (state) => state.setHideHeaderFooter
+  );
 
   useEffect(() => {
-    // Hide header and footer when 404 page mounts
     setHideHeaderFooter(true);
-
-    // Show header and footer when component unmounts (user navigates away)
     return () => setHideHeaderFooter(false);
   }, [setHideHeaderFooter]);
 

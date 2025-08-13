@@ -1,8 +1,4 @@
-import {
-  DialogContent,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
+import { DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -35,7 +31,7 @@ const ModalAddress = ({
   return (
     <DialogContent>
       <DialogTitle>Chọn địa chỉ giao hàng</DialogTitle>
-      <DialogDescription>
+      <div className="grid gap-6 overflow-y-auto max-h-[60vh] pr-2">
         <RadioGroup
           value={selectedId}
           onValueChange={(value) => setSelectedId(value)}
@@ -48,30 +44,31 @@ const ModalAddress = ({
             >
               <RadioGroupItem value={addr.id} id={addr.id} />
               <Label htmlFor={addr.id} className="cursor-pointer ">
-                <div className="flex flex-col gap-1">
-                  <p className="text-sm text-gray-600">
+                <span className="flex flex-col gap-1">
+                  <span className="text-sm text-gray-600">
                     {addr.address}, {addr.city}, {addr.country}
-                  </p>
-                  <p className="text-sm text-gray-600">SĐT: {addr.phone}</p>
-                </div>
+                  </span>
+                  <span className="text-sm text-gray-600">
+                    SĐT: {addr.phone}
+                  </span>
+                </span>
               </Label>
             </div>
           ))}
         </RadioGroup>
-
-        <div className="mt-6 flex justify-end gap-2">
-          <Button variant="outline" onClick={onClose}>
-            Hủy
-          </Button>
-          <Button
-            className="bg-black hover:bg-gray-800"
-            onClick={handleConfirm}
-            disabled={!selectedId}
-          >
-            Xác nhận
-          </Button>
-        </div>
-      </DialogDescription>
+      </div>
+      <div className="mt-6 flex justify-end gap-2">
+        <Button variant="outline" onClick={onClose}>
+          Hủy
+        </Button>
+        <Button
+          className="bg-black hover:bg-gray-800"
+          onClick={handleConfirm}
+          disabled={!selectedId}
+        >
+          Xác nhận
+        </Button>
+      </div>
     </DialogContent>
   );
 };

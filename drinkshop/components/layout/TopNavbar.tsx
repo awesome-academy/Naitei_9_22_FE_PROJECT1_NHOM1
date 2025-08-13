@@ -3,7 +3,7 @@
 import { Search } from "lucide-react";
 import Link from "next/link";
 import { Input } from "../ui/input";
-import { useUser } from "@/contexts/UserContext";
+import { useUserStore } from "@/stores/user.store";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "../ui/button";
 
@@ -21,7 +21,7 @@ const guestNavItems = [
 ];
 
 const TopNavbar = () => {
-  const { user } = useUser();
+  const { user } = useUserStore();
   const { logout } = useAuth();
 
   const handleLogout = async () => {
