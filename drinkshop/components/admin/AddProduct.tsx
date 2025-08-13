@@ -18,7 +18,7 @@ const DEFAULT_FORM_DATA: Partial<Product> = {
     stock: 0,
     rating: 0,
     reviews: 0,
-    image: '/Product/1.jpg',
+    image: '',
     features: [],
 };
 
