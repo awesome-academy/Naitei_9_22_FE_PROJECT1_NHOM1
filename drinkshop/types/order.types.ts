@@ -33,6 +33,7 @@ export enum OrderStatus {
   SHIPPING = "Đang giao hàng",
   COMPLETED = "Đã hoàn thành",
   CANCELED = "Đã hủy",
+  ALL = "ALL",
 }
 
 export enum OrderStore {
