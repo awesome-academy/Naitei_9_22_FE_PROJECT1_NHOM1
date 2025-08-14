@@ -84,6 +84,14 @@ export const useAuth = (): UseAuth => {
         throw new Error(result.message || "Login failed");
       }
 
+      // Check if 2FA is required
+      if (result.requiresTwoFactor) {
+        // Redirect to 2FA page with email
+        router.push(`/two-factor?email=${encodeURIComponent(result.email)}`);
+        return;
+      }
+
+      // Normal login flow
       setToken(result.data);
       setUser(result.data);
 

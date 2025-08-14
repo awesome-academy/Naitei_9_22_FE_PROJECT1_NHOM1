@@ -25,7 +25,7 @@ import { useRouter } from "next/navigation";
 import { toast, Toaster } from "sonner";
 
 const formSchema = z.object({
-  email: z.string().email({ message: "Email không hợp lệ" }).optional(),
+  email: z.email({ message: "Email không hợp lệ" }).optional(),
   firstName: z.string().min(1, "Vui lòng nhập tên"),
   lastName: z.string().min(1, "Vui lòng nhập họ"),
   receiveNews: z.boolean(),
@@ -213,6 +213,15 @@ export default function AccountPage() {
                 {loading ? "ĐANG XỬ LÝ..." : "Cập nhật thông tin"}
               </Button>
               <Button
+                type="button"
+                onClick={() => router.push("/account/security")}
+                variant="outline"
+                className="w-min tracking-tighter text-sm px-4 py-1 rounded-none cursor-pointer"
+              >
+                Cài đặt bảo mật
+              </Button>
+              <Button
+                type="button"
                 onClick={() => router.push("/")}
                 className="w-min bg-black text-white tracking-tighter text-sm px-4 py-1 rounded-none cursor-pointer hover:bg-gray-700"
               >
