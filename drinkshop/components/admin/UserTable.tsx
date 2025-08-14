@@ -68,7 +68,7 @@ export default function UserTable({ onEdit }: Props) {
         if (userToDelete) {
             try {
                 await deleteUser(userToDelete.id);
-                toast.success(`User ${userToDelete.username} deleted successfully`);
+                toast.success(`User ${userToDelete.firstName} deleted successfully`);
                 await loadUsers();
             } catch {
                 toast.error('Failed to delete user. Please try again.');
@@ -96,10 +96,9 @@ export default function UserTable({ onEdit }: Props) {
 
     const columns: Column[] = [
         { key: 'id', label: 'ID' },
-        { key: 'username', label: 'Username' },
-        { key: 'email', label: 'Email' },
         { key: 'firstName', label: 'First Name' },
         { key: 'lastName', label: 'Last Name' },
+        { key: 'email', label: 'Email' },
         { key: 'role', label: 'Role' },
         {
             key: 'receiveNews',
@@ -173,7 +172,7 @@ export default function UserTable({ onEdit }: Props) {
                                 <TableRow key={user.id}>
                                     {columns.map((column) => (
                                         <TableCell key={String(column.key)}>
-                                            {column.render ? column.render(user) : user[column.key as keyof User]}
+                                            {column.render ? column.render(user) : (user[column.key as keyof User] as React.ReactNode)}
                                         </TableCell>
                                     ))}
                                 </TableRow>
@@ -188,7 +187,7 @@ export default function UserTable({ onEdit }: Props) {
                     <AlertDialogHeader>
                         <AlertDialogTitle>Confirm Delete User</AlertDialogTitle>
                         <AlertDialogDescription>
-                            Are you sure you want to delete user <strong>{userToDelete?.username}</strong>? This action cannot be undone.
+                            Are you sure you want to delete user <strong>{String(userToDelete?.firstName ?? '')}</strong>? This action cannot be undone.
                         </AlertDialogDescription>
                     </AlertDialogHeader>
                     <AlertDialogFooter>
