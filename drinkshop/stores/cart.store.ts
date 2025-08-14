@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import axios from "axios";
+import { publicApi } from "@/lib/api/axios";
 import { Cart } from "@/types/cart.type";
 
 interface CartState {
@@ -19,10 +19,13 @@ export const useCartStore = create<CartState>((set) => ({
       set({ cart: null });
       return;
     }
-    const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_BASE}/carts?userId=${userId}`
-    );
-    set({ cart: res.data[0] || null });
+    try {
+      const res = await publicApi.get(`/carts?userId=${userId}`);
+      set({ cart: res[0] || null });
+    } catch (error) {
+      console.error("Error fetching cart:", error);
+      set({ cart: null });
+    }
   },
 
   setCart: (cart) => set({ cart }),
