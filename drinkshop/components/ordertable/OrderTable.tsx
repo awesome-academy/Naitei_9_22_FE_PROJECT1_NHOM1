@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/table";
 import Image from "next/image";
 import { Product } from "@/types/product.types";
-import { formatCurrency } from "@/ultis/format.currency";
+import { formatCurrency } from "@/utils/format.currency";
 
 export interface ProductItem {
   id: string;

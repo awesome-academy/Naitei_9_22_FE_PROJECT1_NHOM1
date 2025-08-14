@@ -12,27 +12,27 @@ import {
   OrderStore,
   OrderDetailCreate,
 } from "@/types/order.types";
-import { createOrder, createOrderDetails } from "@/ultis/api/order.api";
+import { createOrder, createOrderDetails } from "@/utils/api/order.api";
 import { useState, useMemo, useEffect } from "react";
-import { useCartContext } from "@/contexts/CartContext";
-import { formatCurrency } from "@/ultis/format.currency";
+import { formatCurrency } from "@/utils/format.currency";
 import { useRequireAuth } from "@/hooks/useRequireAuth";
-import { fetchVoucher } from "@/ultis/api/voucher.api";
+import { fetchVoucher } from "@/utils/api/voucher.api";
 import { ProductItem } from "@/components/ordertable/OrderTable";
 import { useAddress } from "@/hooks/useAddressByUser";
-import { clearCart } from "@/ultis/api/cart.api";
+import { clearCart } from "@/utils/api/cart.api";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { X } from "lucide-react";
-import { useUser as useUserContext } from "@/contexts/UserContext";
+import { useUserStore } from "@/stores/user.store";
 import { Address } from "@/types/user.types";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import ModalAddress from "@/components/address/ModalAddress";
+import { useCartStore } from "@/stores/cart.store";
 
 const CheckoutPage = () => {
-  const { user: currentUser } = useUserContext();
+  const { user: currentUser } = useUserStore();
   const userId = currentUser?.id;
   const router = useRouter();
   const ready = useRequireAuth();
@@ -51,7 +51,8 @@ const CheckoutPage = () => {
 
   const { addresses } = useAddress(userId!);
 
-  const { cart, setCart, setIsChange } = useCartContext();
+  //const { cart, setCart, setIsChange } = useCartContext();
+  const { cart, setCart, setIsChange } = useCartStore();
   const cartItems: ProductItem[] = useMemo(() => {
     return (
       cart?.items.map((item) => ({
@@ -201,7 +202,7 @@ const CheckoutPage = () => {
         product: item.product!,
         quantity: item.quantity,
         price: item.product?.price || 0,
-        total: item.quantity * (item.product?.price || 0),
+        totalPrice: item.quantity * (item.product?.price || 0),
       }));
 
       await Promise.all([createOrderDetails(orderDetails), clearCart(cart)]);

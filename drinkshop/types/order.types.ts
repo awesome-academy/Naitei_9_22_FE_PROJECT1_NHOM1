@@ -17,14 +17,13 @@ export interface Order {
 }
 
 export interface OrderDetail {
-  totalPrice: number;
   id: string;
   orderId: string;
   productId: string;
   product: Product;
   quantity: number;
   price: number;
-  total: number;
+  totalPrice: number;
 }
 
 export enum OrderStatus {

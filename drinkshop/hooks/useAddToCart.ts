@@ -2,12 +2,12 @@
 
 import axios from "axios";
 import { Product } from "@/types/product.types";
-import { useCartContext } from "@/contexts/CartContext";
+import { useCartStore } from "@/stores/cart.store";
 import { CartItem } from "@/types/cart.type";
 import { toast } from "sonner";
 
 export const useAddToCart = () => {
-  const { cart, setCart, setIsChange } = useCartContext();
+  const { cart, setCart, setIsChange } = useCartStore();
 
   const addToCart = async (product: Product | null) => {
     if (!product) {
@@ -15,7 +15,7 @@ export const useAddToCart = () => {
       return;
     }
     if (!cart) {
-      toast.error("Không tìm thấy giỏ hàng!");
+      toast.error("Không tìm thấy giỏ hàng! Vui lòng đăng nhập");
       return;
     }
 
@@ -42,10 +42,11 @@ export const useAddToCart = () => {
     };
 
     try {
-      // Cập nhật DB
-      await axios.patch(`${process.env.NEXT_PUBLIC_API_BASE}/carts/${cart.id}`, updatedCart);
+      await axios.patch(
+        `${process.env.NEXT_PUBLIC_API_BASE}/carts/${cart.id}`,
+        updatedCart
+      );
 
-      // Cập nhật context
       setCart(updatedCart);
       setIsChange(true);
 

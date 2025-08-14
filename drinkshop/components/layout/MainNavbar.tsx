@@ -15,6 +15,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { useCartStore } from "@/stores/cart.store";
+
 const menuItems = [
   {
     label: "TRANG CHỦ",
@@ -81,7 +83,7 @@ const menuItems = [
 const MainNavbar = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const { cart } = useCartStore();
   return (
     <header className="bg-black text-white sticky top-0 z-50">
       <div className="container mx-auto px-4">
@@ -160,7 +162,7 @@ const MainNavbar = () => {
                 <ShoppingCart className="w-4 h-4 lg:w-5 lg:h-5" />
               </Button>
               <Badge className="absolute -top-2 -right-2 bg-yellow-500 text-black text-xs">
-                3
+                {cart?.items.length || 0}
               </Badge>
             </Link>
 
