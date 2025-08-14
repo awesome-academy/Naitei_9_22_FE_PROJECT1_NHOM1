@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useUser } from "@/contexts/UserContext";
+import { useUserStore } from "@/stores/user.store";
 import { useAccount } from "@/hooks/useAccount";
 import {
   Card,
@@ -21,7 +21,7 @@ import { authService } from "@/services/authService";
 import { PasswordManagementCard, AccountInfoCard } from "@/components/security";
 
 export default function SecurityPage() {
-  const { user } = useUser();
+  const user = useUserStore((state) => state.user);
   const { getUserById, updateUser } = useAccount();
   const [loading, setLoading] = useState(false);
   const [twoFactorEnabled, setTwoFactorEnabled] = useState(false);
