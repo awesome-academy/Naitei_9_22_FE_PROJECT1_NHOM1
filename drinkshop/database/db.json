@@ -3,12 +3,12 @@
     {
       "id": "1",
       "email": "admin@drinkshop.com",
-      "password": "12345678",
+      "password": "",
       "firstName": "Admin",
       "lastName": "User",
       "avatar": "placeholder/avatar.png",
       "role": "admin",
-      "receiveNews": false,
+      "receiveNews": true,
       "twoFactorEnabled": false
     },
     {
@@ -646,7 +646,7 @@
       "id": "1",
       "userId": "2",
       "addressId": "1",
-      "status": "Đã hoàn thành",
+      "status": "Tất cả",
       "store": "HÀ ĐÔNG",
       "totalPrice": 2605000,
       "subtotal": 2590000,
@@ -655,7 +655,7 @@
       "discount": 0,
       "paymentMethod": "Thanh toán khi nhận hàng",
       "orderDate": "2024-02-15T08:30:00.000Z",
-      "updatedAt": "2024-02-15T08:30:00.000Z",
+      "updatedAt": "2025-08-15T02:19:50.937Z",
       "isReviewed": true
     },
     {

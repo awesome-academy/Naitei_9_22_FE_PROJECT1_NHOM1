@@ -26,7 +26,6 @@ interface Props {
 
 export default function UserForm({ user, onSave, onReload }: Props) {
     const INITIAL_FORM_STATE: Omit<User, 'id'> = {
-        username: '',
         email: '',
         password: '',
         firstName: '',
@@ -34,6 +33,7 @@ export default function UserForm({ user, onSave, onReload }: Props) {
         avatar: 'placeholder/avatar.png',
         role: 'customer',
         receiveNews: false,
+        twoFactorEnabled: false
     };
 
     const [form, setForm] = useState<Omit<User, 'id'>>(user ? { ...user, password: '' } : INITIAL_FORM_STATE);
@@ -44,7 +44,7 @@ export default function UserForm({ user, onSave, onReload }: Props) {
     const validateForm = (currentForm: Omit<User, 'id'> = form): boolean => {
         const newErrors: Partial<Record<keyof Omit<User, 'id'>, string>> = {};
 
-        if (!currentForm.username) newErrors.username = 'Vui lòng nhập username';
+        if (!currentForm.firstName) newErrors.firstName = 'Vui lòng nhập tên';
         if (!currentForm.email) {
             newErrors.email = 'Vui lòng nhập email';
         } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(currentForm.email)) {
@@ -89,7 +89,7 @@ export default function UserForm({ user, onSave, onReload }: Props) {
             } else {
                 await addUser(userData);
                 toast.success('Thêm người dùng thành công', {
-                    description: `Người dùng ${userData.username} đã được tạo.`,
+                    description: `Người dùng ${userData.firstName} đã được tạo.`,
                 });
             }
             setForm(INITIAL_FORM_STATE);
@@ -119,21 +119,6 @@ export default function UserForm({ user, onSave, onReload }: Props) {
             </CardHeader>
             <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="space-y-2">
-                        <Label htmlFor="username">
-                            Username <span className="text-red-500">*</span>
-                        </Label>
-                        <Input
-                            id="username"
-                            name="username"
-                            value={form.username}
-                            onChange={handleChange}
-                            required
-                            className={errors.username ? 'border-red-500' : ''}
-                        />
-                        {errors.username && <p className="text-red-500 text-sm">{errors.username}</p>}
-                    </div>
-
                     <div className="space-y-2">
                         <Label htmlFor="email">
                             Email <span className="text-red-500">*</span>

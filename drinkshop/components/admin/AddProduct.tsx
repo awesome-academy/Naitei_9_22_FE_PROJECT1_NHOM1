@@ -1,13 +1,17 @@
 'use client';
 
 import React, { useState } from 'react';
-import { toast, Toaster } from 'sonner';
+import { toast } from 'sonner';
 import { useProducts, useCategories } from '../../hooks/useProduct';
 import { Product } from '../../types/product.types';
+import { Button } from '@/components/ui/button';
+import { FaMinus } from 'react-icons/fa';
 import axios from 'axios';
+import AdminPageLayout from '@/components/layout/AdminPageLayout';
 
 import ProductForm from './products/ProductForm';
 import ProductTable from './products/ProductTable';
+import ProductHeader from './products/ProductHeader';
 
 const DEFAULT_FORM_DATA: Partial<Product> = {
     name: '',
@@ -45,48 +49,62 @@ export default function AddProduct() {
     const [formData, setFormData] = useState<Partial<Product>>(DEFAULT_FORM_DATA);
     const [editingProductId, setEditingProductId] = useState<string | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
-
-    if (error) {
-        return (
-            <div className="min-h-screen bg-gray-50 py-12 px-4 flex items-center justify-center">
-                <div className="bg-white p-6 rounded-lg shadow-md max-w-md">
-                    <h2 className="text-xl font-bold text-red-600 mb-4">Lỗi tải dữ liệu</h2>
-                    {productsError && (
-                        <p className="text-red-600 mb-2">Products: {productsError.message}</p>
-                    )}
-                    {categoriesError && (
-                        <p className="text-red-600 mb-2">Categories: {categoriesError.message}</p>
-                    )}
-                    <button
-                        onClick={refreshProducts}
-                        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
-                    >
-                        Thử lại
-                    </button>
-                </div>
-            </div>
-        );
-    }
-
-    if (loading) {
-        return (
-            <div className="min-h-screen bg-gray-50 py-12 px-4 flex items-center justify-center">
-                <div className="text-center">
-                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600 mx-auto mb-4"></div>
-                    <p className="text-gray-600">Đang tải dữ liệu...</p>
-                    <p className="text-sm text-gray-500 mt-2">
-                        Products: {productsLoading ? 'Loading...' : `✓ (${products.length})`} |
-                        Categories: {categoriesLoading ? 'Loading...' : `✓ (${categories.length})`}
-                    </p>
-                </div>
-            </div>
-        );
-    }
+    const [showForm, setShowForm] = useState(false);
 
     const resetForm = () => {
         setFormData({ ...DEFAULT_FORM_DATA });
         setEditingProductId(null);
     };
+
+    const toggleForm = () => {
+        if (showForm) {
+            setShowForm(false);
+            resetForm();
+        } else {
+            setShowForm(true);
+        }
+    };
+
+    if (error) {
+        return (
+            <AdminPageLayout>
+                <div className="flex items-center justify-center h-64">
+                    <div className="bg-white p-6 rounded-lg shadow-md max-w-md">
+                        <h2 className="text-xl font-bold text-red-600 mb-4">Lỗi tải dữ liệu</h2>
+                        {productsError && (
+                            <p className="text-red-600 mb-2">Products: {productsError.message}</p>
+                        )}
+                        {categoriesError && (
+                            <p className="text-red-600 mb-2">Categories: {categoriesError.message}</p>
+                        )}
+                        <Button
+                            onClick={refreshProducts}
+                            className="bg-blue-500 hover:bg-blue-600 w-full"
+                        >
+                            Thử lại
+                        </Button>
+                    </div>
+                </div>
+            </AdminPageLayout>
+        );
+    }
+
+    if (loading) {
+        return (
+            <AdminPageLayout>
+                <div className="flex items-center justify-center h-64">
+                    <div className="text-center">
+                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600 mx-auto mb-4"></div>
+                        <p className="text-gray-600">Đang tải dữ liệu...</p>
+                        <p className="text-sm text-gray-500 mt-2">
+                            Products: {productsLoading ? 'Loading...' : `✓ (${products.length})`} |
+                            Categories: {categoriesLoading ? 'Loading...' : `✓ (${categories.length})`}
+                        </p>
+                    </div>
+                </div>
+            </AdminPageLayout>
+        );
+    }
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -123,6 +141,7 @@ export default function AddProduct() {
             }
 
             resetForm();
+            setShowForm(false);
         } catch (error) {
             console.error('Error submitting form:', error);
             toast.error('Có lỗi xảy ra!', {
@@ -161,6 +180,12 @@ export default function AddProduct() {
     const handleEdit = (product: Product) => {
         setFormData({ ...product });
         setEditingProductId(product.id.toString());
+        setShowForm(true);
+    };
+
+    const handleCancelEdit = () => {
+        resetForm();
+        setShowForm(false);
     };
 
     const handleDelete = async (productId: string) => {
@@ -191,20 +216,46 @@ export default function AddProduct() {
     };
 
     return (
-        <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-            <Toaster position="top-right" richColors />
-            <div className="max-w-7xl mx-auto space-y-8">
-                <ProductForm
-                    formData={formData}
-                    categories={categories}
-                    editingProductId={editingProductId}
-                    isSubmitting={isSubmitting}
-                    onSubmit={handleSubmit}
-                    onChange={handleChange}
-                    onSelectChange={handleSelectChange}
-                    onCheckboxChange={handleCheckboxChange}
-                    onCancelEdit={resetForm}
-                />
+        <AdminPageLayout>
+            <ProductHeader
+                loading={loading}
+                showForm={showForm}
+                isSubmitting={isSubmitting}
+                onRefresh={refreshProducts}
+                onToggleForm={toggleForm}
+            />
+
+            <div className="space-y-8">
+                {showForm && (
+                    <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+                        <div className="flex justify-between items-center mb-4">
+                            <h3 className="text-lg font-semibold text-gray-800">
+                                {editingProductId ? 'Chỉnh sửa sản phẩm' : 'Thêm sản phẩm mới'}
+                            </h3>
+                            <Button
+                                onClick={handleCancelEdit}
+                                variant="outline"
+                                size="sm"
+                                className="text-gray-500 hover:text-gray-700"
+                            >
+                                <FaMinus className="mr-2" />
+                                Đóng
+                            </Button>
+                        </div>
+                        <ProductForm
+                            formData={formData}
+                            categories={categories}
+                            editingProductId={editingProductId}
+                            isSubmitting={isSubmitting}
+                            onSubmit={handleSubmit}
+                            onChange={handleChange}
+                            onSelectChange={handleSelectChange}
+                            onCheckboxChange={handleCheckboxChange}
+                            onCancelEdit={handleCancelEdit}
+                        />
+                    </div>
+                )}
+
                 <ProductTable
                     products={products}
                     categories={categories}
@@ -215,6 +266,6 @@ export default function AddProduct() {
                     onRefresh={refreshProducts}
                 />
             </div>
-        </div>
+        </AdminPageLayout>
     );
 }

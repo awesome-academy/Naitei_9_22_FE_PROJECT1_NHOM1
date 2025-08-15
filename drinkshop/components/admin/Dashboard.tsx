@@ -19,6 +19,7 @@ import { useDashboard } from "@/hooks/useDashboard";
 import { formatCurrency } from "@/utils/format.currency";
 import { RevenueChart } from "./RevenueChart";
 import { StatsCard, StatItem } from "./StartsCard";
+import { ExportData } from "./ExportData";
 
 interface MenuItem {
   icon: IconType;
@@ -93,6 +94,7 @@ export default function Dashboard() {
     ],
     [loading, stats]
   );
+
   const toggleSidebar = useMemo(
     () => () => {
       setIsSidebarOpen(!isSidebarOpen);
@@ -185,6 +187,7 @@ export default function Dashboard() {
             <h1 className="text-xl font-bold">Dashboard</h1>
           </div>
           <div className="flex items-center space-x-4">
+            <ExportData loading={loading} />
             <Button
               onClick={refreshData}
               variant="outline"
