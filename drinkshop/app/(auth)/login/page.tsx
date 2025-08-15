@@ -21,6 +21,7 @@ import { z } from "zod";
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { OAuthButtons } from "@/components/auth";
 
 const formSchema = z.object({
   email: z.email("Email không hợp lệ"),
@@ -151,6 +152,9 @@ export default function RegisterPage() {
             >
               {loading ? "ĐANG XỬ LÝ..." : "ĐĂNG NHẬP"}
             </Button>
+
+            {/* OAuth Login Buttons */}
+            <OAuthButtons />
           </div>
         </form>
       </Form>
