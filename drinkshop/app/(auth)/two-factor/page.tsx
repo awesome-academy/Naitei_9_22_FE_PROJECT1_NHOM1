@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/form";
 import { FormLabel } from "@/components/ui/form-label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { useUser } from "@/contexts/UserContext";
+import { useUserStore } from "@/stores/user.store";
 import { setToken } from "@/lib/utils";
 import { authService } from "@/services/authService";
 import { AuthLayout } from "@/components/auth";
@@ -38,7 +38,7 @@ type FormValues = z.infer<typeof twoFactorSchema>;
 export default function TwoFactorPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { setUser } = useUser();
+  const { setUser } = useUserStore();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [resendLoading, setResendLoading] = useState(false);

@@ -162,7 +162,10 @@ const MainNavbar = () => {
                 <ShoppingCart className="w-4 h-4 lg:w-5 lg:h-5" />
               </Button>
               <Badge className="absolute -top-2 -right-2 bg-yellow-500 text-black text-xs">
-                {cart?.items.length || 0}
+                {cart?.items.reduce(
+                  (total, item) => total + item.quantity,
+                  0
+                ) || 0}
               </Badge>
             </Link>
 

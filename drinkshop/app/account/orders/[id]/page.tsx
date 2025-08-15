@@ -216,7 +216,7 @@ const OrderDetailPage = ({ params }: { params: Promise<{ id: string }> }) => {
             {orderDetails.map((detail, index) => (
               <Link
                 key={index}
-                href={`/product/${detail.product.id}`}
+                href={`/products/${detail.product.id}`}
                 className="text-[var(--chart-5)] hover:text-[var(--chart-4)] underline"
               >
                 {detail.product.name}

@@ -23,23 +23,35 @@ export const useAddToCart = () => {
       (item) => item.productId === product.id
     );
 
+    let updatedCart;
+
     if (existingItem) {
-      toast.info("Sản phẩm đã có trong giỏ hàng.");
-      return;
+      const updatedItems = cart.items.map((item) =>
+        item.productId === product.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      );
+
+      updatedCart = {
+        ...cart,
+        items: updatedItems,
+        totalPrice: cart.totalPrice + product.price,
+        updatedAt: new Date().toISOString(),
+      };
+    } else {
+      const newItem: CartItem = {
+        productId: product.id,
+        product: product,
+        quantity: 1,
+      };
+
+      updatedCart = {
+        ...cart,
+        items: [...cart.items, newItem],
+        totalPrice: cart.totalPrice + product.price,
+        updatedAt: new Date().toISOString(),
+      };
     }
-
-    const newItem: CartItem = {
-      productId: product.id,
-      product: product,
-      quantity: 1,
-    };
-
-    const updatedCart = {
-      ...cart,
-      items: [...cart.items, newItem],
-      totalPrice: cart.totalPrice + product.price,
-      updatedAt: new Date().toISOString(),
-    };
 
     try {
       await axios.patch(
