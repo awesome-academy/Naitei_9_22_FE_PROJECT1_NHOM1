@@ -798,7 +798,7 @@
       "id": "13d0",
       "userId": "2",
       "addressId": "2",
-      "status": "Đã đặt, chưa duyệt",
+      "status": "Đã đặt, chờ duyệt",
       "store": "HÀ ĐÔNG",
       "totalPrice": 905000,
       "subtotal": 890000,
@@ -813,7 +813,7 @@
       "id": "fa04",
       "userId": "2",
       "addressId": "2",
-      "status": "Đã đặt, chưa duyệt",
+      "status": "Đã đặt, chờ duyệt",
       "store": "HÀ ĐÔNG",
       "totalPrice": 6765000,
       "subtotal": 6750000,
@@ -837,11 +837,8 @@
         "description": "Rượu vang đỏ Đà Lạt với hương vị đậm đà, thích hợp cho các bữa tiệc trang trọng.",
         "price": 370000,
         "originalPrice": 450000,
-        "image": "Image_Rudu/wine1.jpg",
-        "images": [
-          "Image_Rudu/wine1.jpg",
-          "Image_Rudu/wine2.jpg"
-        ],
+        "image": "/Product/1.jpg",
+        "images": ["/Product/1.jpg", "/Product/2.jpg"],
         "categoryId": "19",
         "stock": 50,
         "isNew": false,
@@ -869,11 +866,8 @@
         "description": "Rượu vang đỏ cao cấp từ Đà Lạt với quy trình sản xuất đặc biệt.",
         "price": 370000,
         "originalPrice": 450000,
-        "image": "Image_Rudu/wine3.jpg",
-        "images": [
-          "Image_Rudu/wine3.jpg",
-          "Image_Rudu/wine4.jpg"
-        ],
+        "image": "/Product/3.jpg",
+        "images": ["/Product/3.jpg", "/Product/4.jpg"],
         "categoryId": "19",
         "stock": 30,
         "isNew": true,
@@ -901,11 +895,8 @@
         "description": "Rượu vang đỏ Đà Lạt với hương vị đậm đà, thích hợp cho các bữa tiệc trang trọng.",
         "price": 370000,
         "originalPrice": 450000,
-        "image": "Image_Rudu/wine1.jpg",
-        "images": [
-          "Image_Rudu/wine1.jpg",
-          "Image_Rudu/wine2.jpg"
-        ],
+        "image": "/Product/1.jpg",
+        "images": ["/Product/1.jpg", "/Product/2.jpg"],
         "categoryId": "19",
         "stock": 50,
         "isNew": false,
@@ -933,11 +924,8 @@
         "description": "Rượu vang đỏ Đà Lạt với hương vị đậm đà, thích hợp cho các bữa tiệc trang trọng.",
         "price": 370000,
         "originalPrice": 450000,
-        "image": "Image_Rudu/wine1.jpg",
-        "images": [
-          "Image_Rudu/wine1.jpg",
-          "Image_Rudu/wine2.jpg"
-        ],
+        "image": "/Product/1.jpg",
+        "images": ["/Product/1.jpg", "/Product/2.jpg"],
         "categoryId": "19",
         "stock": 50,
         "isNew": false,
@@ -965,11 +953,8 @@
         "description": "Rượu vang đỏ Đà Lạt với hương vị đậm đà, thích hợp cho các bữa tiệc trang trọng.",
         "price": 370000,
         "originalPrice": 450000,
-        "image": "Image_Rudu/wine1.jpg",
-        "images": [
-          "Image_Rudu/wine1.jpg",
-          "Image_Rudu/wine2.jpg"
-        ],
+        "image": "/Product/1.jpg",
+        "images": ["/Product/1.jpg", "/Product/2.jpg"],
         "categoryId": "19",
         "stock": 50,
         "isNew": false,
@@ -997,11 +982,8 @@
         "description": "Rượu vang đỏ cao cấp từ Đà Lạt với quy trình sản xuất đặc biệt.",
         "price": 370000,
         "originalPrice": 450000,
-        "image": "Image_Rudu/wine3.jpg",
-        "images": [
-          "Image_Rudu/wine3.jpg",
-          "Image_Rudu/wine4.jpg"
-        ],
+        "image": "/Product/3.jpg",
+        "images": ["/Product/3.jpg", "/Product/4.jpg"],
         "categoryId": "19",
         "stock": 30,
         "isNew": true,
@@ -1029,11 +1011,8 @@
         "description": "Rượu vang đỏ Đà Lạt với hương vị đậm đà, thích hợp cho các bữa tiệc trang trọng.",
         "price": 370000,
         "originalPrice": 450000,
-        "image": "Image_Rudu/wine1.jpg",
-        "images": [
-          "Image_Rudu/wine1.jpg",
-          "Image_Rudu/wine2.jpg"
-        ],
+        "image": "/Product/1.jpg",
+        "images": ["/Product/1.jpg", "/Product/2.jpg"],
         "categoryId": "19",
         "stock": 50,
         "isNew": false,
@@ -1061,11 +1040,8 @@
         "description": "Rượu vang đỏ cao cấp từ Đà Lạt với quy trình sản xuất đặc biệt.",
         "price": 370000,
         "originalPrice": 450000,
-        "image": "Image_Rudu/wine3.jpg",
-        "images": [
-          "Image_Rudu/wine3.jpg",
-          "Image_Rudu/wine4.jpg"
-        ],
+        "image": "/Product/3.jpg",
+        "images": ["/Product/3.jpg", "/Product/4.jpg"],
         "categoryId": "19",
         "stock": 30,
         "isNew": true,
@@ -1093,11 +1069,8 @@
         "description": "Rượu vang đỏ cao cấp từ Đà Lạt với quy trình sản xuất đặc biệt.",
         "price": 370000,
         "originalPrice": 450000,
-        "image": "Image_Rudu/wine3.jpg",
-        "images": [
-          "Image_Rudu/wine3.jpg",
-          "Image_Rudu/wine4.jpg"
-        ],
+        "image": "/Product/3.jpg",
+        "images": ["/Product/3.jpg", "/Product/4.jpg"],
         "categoryId": "19",
         "stock": 30,
         "isNew": true,
@@ -1125,11 +1098,8 @@
         "description": "Rượu vang đỏ Đà Lạt với hương vị đậm đà, thích hợp cho các bữa tiệc trang trọng.",
         "price": 370000,
         "originalPrice": 450000,
-        "image": "Image_Rudu/wine1.jpg",
-        "images": [
-          "Image_Rudu/wine1.jpg",
-          "Image_Rudu/wine2.jpg"
-        ],
+        "image": "/Product/1.jpg",
+        "images": ["/Product/1.jpg", "/Product/2.jpg"],
         "categoryId": "19",
         "stock": 50,
         "isNew": false,
@@ -1157,11 +1127,8 @@
         "description": "Rượu vang đỏ cao cấp từ Đà Lạt với quy trình sản xuất đặc biệt.",
         "price": 370000,
         "originalPrice": 450000,
-        "image": "Image_Rudu/wine3.jpg",
-        "images": [
-          "Image_Rudu/wine3.jpg",
-          "Image_Rudu/wine4.jpg"
-        ],
+        "image": "/Product/3.jpg",
+        "images": ["/Product/3.jpg", "/Product/4.jpg"],
         "categoryId": 19,
         "stock": 30,
         "isNew": true,
@@ -1190,10 +1157,7 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "Image_Rudu/wine8.jpg",
-        "images": [
-          "Image_Rudu/wine8.jpg",
-          "Image_Rudu/wine9.jpg"
-        ],
+        "images": ["Image_Rudu/wine8.jpg", "Image_Rudu/wine9.jpg"],
         "categoryId": "19",
         "stock": 25,
         "isNew": false,
@@ -1221,11 +1185,8 @@
         "description": "Champagne cao cấp từ Pháp với hương vị tinh tế và bọt khí mịn màng.",
         "price": 2500000,
         "originalPrice": 2800000,
-        "image": "Image_Rudu/wine10.jpg",
-        "images": [
-          "Image_Rudu/wine10.jpg",
-          "Image_Rudu/wine11.jpg"
-        ],
+        "image": "/Product/5.jpg",
+        "images": ["/Product/5.jpg", "/Product/6.jpg"],
         "categoryId": "15",
         "stock": 15,
         "isNew": true,
@@ -1253,11 +1214,8 @@
         "description": "Rượu vang trắng Đà Lạt với hương vị tươi mát, thích hợp cho mùa hè.",
         "price": 370000,
         "originalPrice": 450000,
-        "image": "Image_Rudu/wine5.jpg",
-        "images": [
-          "Image_Rudu/wine5.jpg",
-          "Image_Rudu/wine6.jpg"
-        ],
+        "image": "/Product/5.jpg",
+        "images": ["/Product/5.jpg", "/Product/6.jpg"],
         "categoryId": "19",
         "stock": 40,
         "isNew": false,
@@ -1285,11 +1243,8 @@
         "description": "Rượu vang trắng Đà Lạt với hương vị tươi mát, thích hợp cho mùa hè.",
         "price": 370000,
         "originalPrice": 450000,
-        "image": "Image_Rudu/wine5.jpg",
-        "images": [
-          "Image_Rudu/wine5.jpg",
-          "Image_Rudu/wine6.jpg"
-        ],
+        "image": "/Product/5.jpg",
+        "images": ["/Product/5.jpg", "/Product/6.jpg"],
         "categoryId": "19",
         "stock": 40,
         "isNew": false,
@@ -1512,7 +1467,7 @@
               "Phong cách: Modern Blend"
             ]
           },
-          "quantity": 6
+          "quantity": 2
         },
         {
           "productId": "12",
@@ -1537,9 +1492,9 @@
           "quantity": 1
         }
       ],
-      "totalPrice": 6800000,
+      "totalPrice": 3800000,
       "createdAt": "2024-02-15T08:30:00.000Z",
-      "updatedAt": "2025-08-13T11:29:47.197Z"
+      "updatedAt": "2025-08-14T02:58:07.247Z"
     },
     {
       "id": "2",
