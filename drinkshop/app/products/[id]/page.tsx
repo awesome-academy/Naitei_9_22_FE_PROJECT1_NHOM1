@@ -9,16 +9,16 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Heart, Share2, ShoppingCart, Plus, Minus } from "lucide-react"
 
 import { getProductById, getAllProducts, getBestSellers } from "@/lib/api"
-import type { Product } from "@/lib/api"
+import type { Product as ApiProduct } from "@/lib/api"
+import { Product as CartProduct } from "@/types/product.types"
 import ProductCard from "@/components/products/ProductCard"
 import BreadcrumbComponent from "@/components/breadcrumb/BreadcrumbComponent"
 import SocialShare from "@/components/blog/SocialShare"
 import { useAddToCart } from "@/hooks/useAddToCart"
-import { Product as ProductType } from "@/types/product.types"
 export default function ProductDetailPageClient() {
     const params = useParams();
-    const [product, setProduct] = useState<Product | null>(null);
-    const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
+    const [product, setProduct] = useState<ApiProduct | null>(null);
+    const [relatedProducts, setRelatedProducts] = useState<ApiProduct[]>([]);
     const [loading, setLoading] = useState(true);
     const [quantity, setQuantity] = useState(1);
     const addToCart = useAddToCart();
@@ -51,7 +51,7 @@ export default function ProductDetailPageClient() {
 
     const handleAddToCart = () => {
         if (product) {
-            addToCart(product);
+            addToCart(product as unknown as CartProduct);
         }
     };
 

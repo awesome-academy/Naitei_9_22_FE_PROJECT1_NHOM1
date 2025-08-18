@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLayoutStore } from "@/stores/layout.store";
+import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import wine404 from "@/public/Image_Rudu/wine404.png";
@@ -13,11 +14,27 @@ export default function NotFound() {
   const setHideHeaderFooter = useLayoutStore(
     (state) => state.setHideHeaderFooter
   );
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const [searchQuery, setSearchQuery] = useState("");
+  const failedSearch = searchParams.get('search');
 
   useEffect(() => {
     setHideHeaderFooter(true);
     return () => setHideHeaderFooter(false);
   }, [setHideHeaderFooter]);
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      router.push(`/products?search=${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center my-12">
@@ -48,14 +65,24 @@ export default function NotFound() {
             </div>
             <div className="flex flex-col items-center bg-[#E5AE49]">
               <div className="text-black text-4xl font-light uppercase tracking-wider">
-                ĐÂY KHÔNG PHẢI LÀ
+                {failedSearch ? "KHÔNG TÌM THẤY" : "ĐÂY KHÔNG PHẢI LÀ"}
               </div>
               <div className="text-black text-lg md:text-4xl italic font-bold">
-                trang web bạn đang tìm kiếm
+                {failedSearch
+                  ? `kết quả cho "${failedSearch}"`
+                  : "trang web bạn đang tìm kiếm"
+                }
               </div>
             </div>
           </div>
         </div>
+
+        {/* Additional message for failed search */}
+        {failedSearch && (
+          <div className="mt-8 text-black text-lg">
+            <p className="mb-4">Thử tìm kiếm với từ khóa khác hoặc duyệt qua các danh mục sản phẩm của chúng tôi.</p>
+          </div>
+        )}
 
         {/* Navigation Links */}
         <div className="mt-20 flex items-center justify-center gap-4 text-black text-sm font-semibold uppercase tracking-wider">
@@ -75,14 +102,29 @@ export default function NotFound() {
             TRANG CHỦ ▸
           </Link>
           <Link
+            href="/products"
+            className="hover:underline transition-all duration-300 hover:text-gray-700"
+          >
+            SẢN PHẨM ▸
+          </Link>
+          <Link
             href="/lien-he"
             className="hover:underline transition-all duration-300 hover:text-gray-700"
           >
             LIÊN HỆ ▸
           </Link>
           <div className="flex items-center space-x-2 border-2 border-gray-300 px-4">
-            <Search className="size-6 cursor-pointer " />
-            <Input className="border-none focus-visible:ring-0" />
+            <Search
+              className="size-6 cursor-pointer hover:text-gray-600"
+              onClick={handleSearch}
+            />
+            <Input
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyDown={handleKeyDown}
+              placeholder="Tìm kiếm lại..."
+              className="border-none focus-visible:ring-0"
+            />
           </div>
         </div>
       </div>

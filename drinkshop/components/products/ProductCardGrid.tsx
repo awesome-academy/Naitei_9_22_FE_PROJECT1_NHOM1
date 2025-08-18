@@ -6,12 +6,14 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Heart, ShoppingCart, Star } from "lucide-react"
-import type { Product } from "@/types/product.types"
+import type { Product as ApiProduct } from "@/lib/api"
+import type { Product as CartProduct } from "@/types/product.types"
 import styles from "./product-card.module.css"
 import { useAddToCart } from "@/hooks/useAddToCart"
+import { formatCurrency } from "@/utils/format.currency"
 
 interface ProductCardGridProps {
-    product: Product
+    product: ApiProduct
     badge?: string
     badgeColor?: string
 }
@@ -23,10 +25,31 @@ export default function ProductCardGrid({
 }: ProductCardGridProps) {
     const addToCart = useAddToCart()
 
+    // Convert ApiProduct to CartProduct format
+    const convertToCartProduct = (apiProduct: ApiProduct): CartProduct => {
+        return {
+            status: "active", // Default status
+            reviewCount: apiProduct.reviews,
+            id: apiProduct.id,
+            name: apiProduct.name,
+            price: apiProduct.price,
+            originalPrice: apiProduct.originalPrice,
+            image: apiProduct.image,
+            category: apiProduct.category,
+            description: apiProduct.description,
+            rating: apiProduct.rating,
+            reviews: apiProduct.reviews,
+            stock: apiProduct.inStock ? 100 : 0, // Convert inStock boolean to stock number
+            features: apiProduct.features,
+            discount: apiProduct.discount,
+        }
+    }
+
     const handleAddToCart = (e: React.MouseEvent) => {
         e.preventDefault()
         e.stopPropagation()
-        addToCart(product)
+        const cartProduct = convertToCartProduct(product)
+        addToCart(cartProduct)
     }
 
     return (
@@ -53,7 +76,7 @@ export default function ProductCardGrid({
                 <div className="absolute inset-x-0 bottom-0 flex-col items-center hidden group-hover:flex">
                     <Button
                         className="bg-black hover:bg-gray-800 text-white w-full rounded-none py-2 text-sm"
-                        onClick={() => addToCart(product)}
+                        onClick={handleAddToCart}
                     >
                         <ShoppingCart className="w-4 h-4 mr-2" />
                         Thêm vào giỏ
@@ -78,10 +101,9 @@ export default function ProductCardGrid({
                     </h3>
                 </Link>
                 <div className="flex items-center gap-2">
-                    <span className="font-bold text-yellow-600">{product.price}</span>
-                    <span className="text-xs">đ</span>
+                    <span className="font-bold text-yellow-600">{formatCurrency(product.price)}</span>
                     {product.originalPrice && (
-                        <span className="text-xs text-gray-500 line-through">{product.originalPrice}đ</span>
+                        <span className="text-xs text-gray-500 line-through">{formatCurrency(product.originalPrice)}</span>
                     )}
                 </div>
             </CardContent>

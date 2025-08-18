@@ -6,12 +6,14 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Heart, ShoppingCart, Star } from "lucide-react"
-import type { Product } from "@/lib/api"
+import type { Product as ApiProduct } from "@/lib/api"
+import type { Product as CartProduct } from "@/types/product.types"
 import { useAddToCart } from "@/hooks/useAddToCart"
 import styles from "./ProductCard.module.css"
+import { formatCurrency } from "@/utils/format.currency"
 
 interface ProductCardListProps {
-    product: Product
+    product: ApiProduct
     badge?: string
     badgeColor?: string
 }
@@ -23,10 +25,31 @@ export default function ProductCardList({
 }: ProductCardListProps) {
     const addToCart = useAddToCart()
 
+    // Convert ApiProduct to CartProduct format
+    const convertToCartProduct = (apiProduct: ApiProduct): CartProduct => {
+        return {
+            status: "active", // Default status
+            reviewCount: apiProduct.reviews,
+            id: apiProduct.id,
+            name: apiProduct.name,
+            price: apiProduct.price,
+            originalPrice: apiProduct.originalPrice,
+            image: apiProduct.image,
+            category: apiProduct.category,
+            description: apiProduct.description,
+            rating: apiProduct.rating,
+            reviews: apiProduct.reviews,
+            stock: apiProduct.inStock ? 100 : 0, // Convert inStock boolean to stock number
+            features: apiProduct.features,
+            discount: apiProduct.discount,
+        }
+    }
+
     const handleAddToCart = (e: React.MouseEvent) => {
         e.preventDefault()
         e.stopPropagation()
-        addToCart(product)
+        const cartProduct = convertToCartProduct(product)
+        addToCart(cartProduct)
     }
 
     return (
@@ -80,11 +103,10 @@ export default function ProductCardList({
                     </div>
                     <div className="flex flex-wrap items-center gap-4">
                         <div className="flex items-center gap-2">
-                            <span className="font-bold text-yellow-600">{product.price}</span>
-                            <span className="text-xs">đ</span>
+                            <span className="font-bold text-yellow-600">{formatCurrency(product.price)}</span>
                             {product.originalPrice && (
                                 <span className="text-xs text-gray-500 line-through">
-                                    {product.originalPrice}đ
+                                    {formatCurrency(product.originalPrice)}
                                 </span>
                             )}
                         </div>
