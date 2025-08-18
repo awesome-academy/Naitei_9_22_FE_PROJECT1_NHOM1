@@ -7,6 +7,7 @@ import { Toaster } from "sonner";
 import { useLayoutStore } from "@/stores/layout.store";
 import { useUserStore } from "@/stores/user.store";
 import { useCartStore } from "@/stores/cart.store";
+import { useNextAuthSync } from "@/hooks/useNextAuthSync";
 import { useEffect } from "react";
 
 interface ClientLayoutProps {
@@ -17,18 +18,14 @@ function LayoutContent({ children }: ClientLayoutProps) {
   const pathname = usePathname();
   const hideHeaderFooter = useLayoutStore((state) => state.hideHeaderFooter);
 
-  const initUser = useUserStore((state) => state.initUser);
   const userId = useUserStore((state) => state.user?.id);
-
   const fetchCart = useCartStore((state) => state.fetchCart);
+
+  // Sync NextAuth with Zustand (this handles initUser internally)
+  useNextAuthSync();
 
   const shouldHideHeaderFooter =
     pathname?.startsWith("/admin") || hideHeaderFooter;
-
-  // Khởi tạo user khi mount
-  useEffect(() => {
-    initUser();
-  }, [initUser]);
 
   // Lấy cart khi đã có userId
   useEffect(() => {
