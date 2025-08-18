@@ -27,7 +27,7 @@ export interface OrderDetail {
 }
 
 export enum OrderStatus {
-  PENDING = "Đã đặt, chưa duyệt",
+  PENDING = "Đã đặt, chờ duyệt",
   APPROVED = "Đã duyệt",
   SHIPPING = "Đang giao hàng",
   COMPLETED = "Đã hoàn thành",
