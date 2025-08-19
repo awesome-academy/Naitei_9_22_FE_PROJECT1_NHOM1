@@ -6,6 +6,7 @@ import { Input } from "../ui/input";
 import { useUserStore } from "@/stores/user.store";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "../ui/button";
+import { ThemeSwitcher } from "@/components/theme";
 
 const commonNavItems = [
   { href: "/account", label: "Tài khoản của tôi" },
@@ -33,9 +34,9 @@ const TopNavbar = () => {
   };
 
   return (
-    <nav className="w-full bg-white border-b px-72">
+    <nav className="w-full bg-background border-b px-72">
       <div className="flex justify-between items-center h-7 text-xs tracking-tight">
-        <div className="flex items-center space-x-6 text-black">
+        <div className="flex items-center space-x-6 text-foreground">
           {commonNavItems.map((item) => (
             <Link key={item.href} href={item.href} className="hover:underline">
               {item.label}
@@ -62,12 +63,13 @@ const TopNavbar = () => {
           )}
         </div>
 
-        <div className="flex items-center space-x-6">
+        <div className="flex items-center space-x-4">
           <Input
-            className="placeholder:text-xs placeholder:italic placeholder:text-gray-400 border-none focus-visible:ring-0"
+            className="placeholder:text-xs placeholder:italic placeholder:text-muted-foreground border-none focus-visible:ring-0"
             placeholder="Tìm kiếm ở đây..."
           />
-          <Search className="size-4 cursor-pointer" />
+          <Search className="size-4 cursor-pointer text-foreground" />
+          <ThemeSwitcher />
         </div>
       </div>
     </nav>
