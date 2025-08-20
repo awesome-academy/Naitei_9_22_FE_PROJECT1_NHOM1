@@ -18,7 +18,7 @@ export default function AboutSection({
     about,
     imageUrl = "/Image_Rudu/title-dark.png",
     buttonText = "ĐỌC THÊM",
-    buttonLink = "/about",
+    buttonLink = "/gioi-thieu",
 }: AboutSectionProps) {
     return (
         <section className="py-12 lg:py-16 bg-gray-50">

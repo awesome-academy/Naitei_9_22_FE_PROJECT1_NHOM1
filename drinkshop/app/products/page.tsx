@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
 import Image from "next/image"
+import Link from "next/link"
 import BreadcrumbComponent from "@/components/breadcrumb/BreadcrumbComponent"
 import { products } from "@/lib/products"
 import styles from "./products.module.css"
@@ -10,6 +11,7 @@ import CustomPagination from "@/components/pagination/CustomPagination"
 import ProductSidebar from "@/components/products/ProductSidebar"
 import ProductToolbar from "@/components/products/ProductToolbar"
 import ProductGrid from "@/components/products/ProductGrid"
+import ProductEmptyState from "@/components/products/ProductEmptyState"
 
 export default function ProductsPage() {
   const searchParams = useSearchParams()
@@ -17,15 +19,30 @@ export default function ProductsPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all")
   const [sortBy, setSortBy] = useState<string>("default")
   const [currentPage, setCurrentPage] = useState<number>(1)
+  const [searchQuery, setSearchQuery] = useState<string>("")
+  const [urlSearchQuery, setUrlSearchQuery] = useState<string>("") // Separate state for URL search
   const itemsPerPage = 6
 
-  // Set category from URL params when component mounts
+  // Set category and search from URL params when component mounts
   useEffect(() => {
     const categoryFromUrl = searchParams.get('category')
+    const searchFromUrl = searchParams.get('search')
+
     if (categoryFromUrl) {
       setSelectedCategory(decodeURIComponent(categoryFromUrl))
     }
+
+    if (searchFromUrl) {
+      setUrlSearchQuery(decodeURIComponent(searchFromUrl)) // Set URL search but don't populate input
+    } else {
+      setUrlSearchQuery("") // Clear URL search if no param
+    }
   }, [searchParams])
+
+  // Reset current page when search query or category changes
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [searchQuery, urlSearchQuery, selectedCategory])
 
   const categories = [
     { name: "Tất cả", value: "all", count: products.length },
@@ -58,14 +75,23 @@ export default function ProductsPage() {
   let filteredProducts =
     selectedCategory === "all" ? products : products.filter((product) => product.category === selectedCategory)
 
+  // Apply search filter (combine both local search and URL search)
+  const activeSearchQuery = searchQuery.trim() || urlSearchQuery.trim()
+  if (activeSearchQuery !== "") {
+    filteredProducts = filteredProducts.filter((product) =>
+      product.name.toLowerCase().includes(activeSearchQuery.toLowerCase()) ||
+      product.description?.toLowerCase().includes(activeSearchQuery.toLowerCase())
+    )
+  }
+
   // Sort products
   if (sortBy === "price-low") {
     filteredProducts = [...filteredProducts].sort(
-      (a, b) => Number.parseInt(a.price.replace(/\./g, "")) - Number.parseInt(b.price.replace(/\./g, "")),
+      (a, b) => a.price - b.price
     )
   } else if (sortBy === "price-high") {
     filteredProducts = [...filteredProducts].sort(
-      (a, b) => Number.parseInt(b.price.replace(/\./g, "")) - Number.parseInt(a.price.replace(/\./g, "")),
+      (a, b) => b.price - a.price
     )
   } else if (sortBy === "name") {
     filteredProducts = [...filteredProducts].sort((a, b) => a.name.localeCompare(b.name))
@@ -138,13 +164,29 @@ export default function ProductsPage() {
               setSortBy={setSortBy}
               viewMode={viewMode}
               setViewMode={setViewMode}
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
             />
 
             {/* Products Grid */}
-            <ProductGrid products={currentProducts} viewMode={viewMode} />
+            {currentProducts.length > 0 ? (
+              <ProductGrid products={currentProducts} viewMode={viewMode} />
+            ) : (
+              <ProductEmptyState
+                activeSearchQuery={activeSearchQuery}
+                setSearchQuery={setSearchQuery}
+                setUrlSearchQuery={setUrlSearchQuery}
+                setCurrentPage={setCurrentPage}
+              />
+
+            )}
 
             {/* Pagination */}
-            <CustomPagination />
+            <CustomPagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
           </div>
         </div>
       </div>
