@@ -668,7 +668,7 @@
       "id": "1",
       "userId": "2",
       "addressId": "1",
-      "status": "Đã hoàn thành",
+      "status": "Đang giao hàng",
       "store": "HÀ ĐÔNG",
       "totalPrice": 2605000,
       "subtotal": 2590000,
@@ -677,7 +677,7 @@
       "discount": 0,
       "paymentMethod": "Thanh toán khi nhận hàng",
       "orderDate": "2024-02-15T08:30:00.000Z",
-      "updatedAt": "2025-08-15T02:19:50.937Z",
+      "updatedAt": "2025-08-21T02:59:13.557Z",
       "isReviewed": true
     },
     {
@@ -708,7 +708,7 @@
       "discount": 0,
       "paymentMethod": "Thanh toán khi nhận hàng",
       "orderDate": "2024-03-10T10:15:00.000Z",
-      "updatedAt": "2024-03-10T10:15:00.000Z"
+      "updatedAt": "2025-08-21T03:02:48.764Z"
     },
     {
       "id": "4",
@@ -820,7 +820,7 @@
       "id": "13d0",
       "userId": "2",
       "addressId": "2",
-      "status": "Đã đặt, chờ duyệt",
+      "status": "Đã duyệt",
       "store": "HÀ ĐÔNG",
       "totalPrice": 905000,
       "subtotal": 890000,
@@ -829,7 +829,7 @@
       "discount": 0,
       "paymentMethod": "Thanh toán khi nhận hàng",
       "orderDate": "2025-08-06T05:51:39.333Z",
-      "updatedAt": "2025-08-06T05:51:39.333Z"
+      "updatedAt": "2025-08-21T03:09:30.775Z"
     },
     {
       "id": "fa04",
@@ -1224,7 +1224,7 @@
       },
       "quantity": 1,
       "price": 370000,
-      "total": 370000
+      "totalPrice": 370000
     },
     {
       "id": "828f",
@@ -1253,7 +1253,7 @@
       },
       "quantity": 2,
       "price": 2500000,
-      "total": 5000000
+      "totalPrice": 5000000
     },
     {
       "id": "0db4",
@@ -1282,7 +1282,7 @@
       },
       "quantity": 1,
       "price": 370000,
-      "total": 370000
+      "totalPrice": 370000
     },
     {
       "id": "710a",
@@ -1311,7 +1311,7 @@
       },
       "quantity": 5,
       "price": 370000,
-      "total": 1850000
+      "totalPrice": 1850000
     },
     {
       "id": "2c61",
@@ -1336,7 +1336,7 @@
       },
       "quantity": 1,
       "price": "850.000",
-      "total": 850
+      "totalPrice": 850000
     },
     {
       "id": "0824",
@@ -1362,7 +1362,7 @@
       },
       "quantity": 1,
       "price": "590.000",
-      "total": 590
+      "totalPrice": 590000
     },
     {
       "id": "c8af",
@@ -1388,7 +1388,7 @@
       },
       "quantity": 1,
       "price": 890000,
-      "total": 890000
+      "totalPrice": 890000
     },
     {
       "id": "7ba9",
@@ -1414,7 +1414,7 @@
       },
       "quantity": 1,
       "price": 1580000,
-      "total": 1580000
+      "totalPrice": 1580000
     },
     {
       "id": "5d70",
@@ -1466,7 +1466,7 @@
       },
       "quantity": 5,
       "price": 890000,
-      "total": 4450000
+      "totalPrice": 4450000
     },
     {
       "id": "3f4f",
@@ -1602,7 +1602,7 @@
       },
       "quantity": 1,
       "price": "680.000",
-      "totalPrice": 680
+      "totalPrice": 680000
     }
   ],
   "carts": [
@@ -2068,6 +2068,33 @@
       "isSeen": true,
       "createdAt": "2025-08-19T11:29:22.783Z",
       "link": "/account/orders/1eb4"
+    },
+    {
+      "id": "0591",
+      "userId": "3",
+      "title": "Cập nhật đơn hàng #3",
+      "message": "Trạng thái đơn hàng của bạn đã được cập nhật thành: Tất cả",
+      "isSeen": false,
+      "createdAt": "2025-08-21T03:02:46.702Z",
+      "link": "/orders/3"
+    },
+    {
+      "id": "82f4",
+      "userId": "3",
+      "title": "Cập nhật đơn hàng #3",
+      "message": "Trạng thái đơn hàng của bạn đã được cập nhật thành: Đã hoàn thành",
+      "isSeen": false,
+      "createdAt": "2025-08-21T03:02:48.790Z",
+      "link": "/orders/3"
+    },
+    {
+      "id": "1ef7",
+      "userId": "2",
+      "title": "Cập nhật đơn hàng #13d0",
+      "message": "Trạng thái đơn hàng của bạn đã được cập nhật thành: Đã duyệt",
+      "isSeen": false,
+      "createdAt": "2025-08-21T03:09:30.802Z",
+      "link": "/orders/13d0"
     }
   ]
 }
