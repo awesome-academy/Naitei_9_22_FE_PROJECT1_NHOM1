@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
 import OrderFilters from '@/components/admin/orders/OrderFilters';
 import OrderTable from '@/components/admin/orders/OrderTable';
 import OrderDetailsDialog from '@/components/admin/orders/OrderDetailsDialog';
@@ -12,6 +13,7 @@ import { useOrderDetails } from '@/hooks/useOrderDetails';
 
 import type { Address as OrderTableRowAddress } from '@/components/admin/orders/OrderTableRow';
 import { ORDER_STATUS, ORDER_STATUS_OPTIONS } from '@/constants/order-status';
+import { Order, OrderStatus } from '@/types/order.types';
 
 const OrderManagement = () => {
     const [filterStatus, setFilterStatus] = useState<string>(ORDER_STATUS.ALL);
@@ -43,8 +45,10 @@ const OrderManagement = () => {
         if (!orders.length) return [];
 
         return orders.filter((order) => {
-            if (filterStatus !== ORDER_STATUS.ALL && order.status !== filterStatus) {
-                return false;
+            if (filterStatus !== ORDER_STATUS.ALL) {
+                if (order.status !== filterStatus) {
+                    return false;
+                }
             }
 
             if (searchQuery.trim()) {
@@ -68,11 +72,7 @@ const OrderManagement = () => {
             const address = addressesMap.get(order.addressId);
 
             const addressForRow: OrderTableRowAddress | undefined = address ? {
-                ...address,
-                userId: user?.id ?? '',
-                firstName: user?.firstName ?? '',
-                lastName: user?.lastName ?? '',
-                country: address.country ?? '',
+                ...address
             } : undefined;
 
             return {
@@ -82,6 +82,15 @@ const OrderManagement = () => {
             };
         });
     }, [filteredOrders, usersMap, addressesMap]);
+
+    const handleOpenDetails = async (order: Order) => {
+        try {
+            await openDetails(order);
+        } catch (error) {
+            console.error('Error opening order details:', error);
+            toast.error('Có lỗi xảy ra khi mở chi tiết đơn hàng');
+        }
+    };
 
     if (error) {
         return (
@@ -108,9 +117,10 @@ const OrderManagement = () => {
                 <h1 className="text-3xl font-bold text-gray-900 mb-2">Quản lý đơn hàng</h1>
                 <p className="text-gray-600">
                     Tổng cộng: {filteredOrders.length} đơn hàng
-                    {filterStatus !== ORDER_STATUS.ALL && ` (lọc: ${ORDER_STATUS_OPTIONS.find(opt => opt.value === filterStatus)?.label})`}
+                    {filterStatus !== ORDER_STATUS.ALL && ` (lọc: ${filterStatus})`}
                 </p>
             </div>
+
 
             {/* Filters */}
             <OrderFilters
@@ -132,7 +142,7 @@ const OrderManagement = () => {
                     tableData={tableData}
                     searchQuery={searchQuery}
                     filterStatus={filterStatus}
-                    onOpenDetails={openDetails}
+                    onOpenDetails={handleOpenDetails}
                     onUpdateStatus={updateOrderStatus}
                 />
             )}

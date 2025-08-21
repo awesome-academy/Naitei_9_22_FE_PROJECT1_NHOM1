@@ -16,7 +16,7 @@ interface SliderListProps {
     loading: boolean;
     error: string | null;
     refetch: () => void;
-    onEditSlider?: (slider: Slider) => void;
+    onEditSlider: (slider: Slider) => void;
 }
 
 const SliderList = ({ sliders, loading, error, refetch, onEditSlider }: SliderListProps) => {
@@ -106,7 +106,8 @@ const SliderList = ({ sliders, loading, error, refetch, onEditSlider }: SliderLi
                                                     <Button
                                                         variant="outline"
                                                         size="sm"
-                                                        onClick={() => onEditSlider && onEditSlider(slider)}
+                                                        onClick={() => onEditSlider(slider)} // Đảm bảo có dấu ? để tránh lỗi
+                                                        disabled={!onEditSlider} // Disable nếu không có function
                                                     >
                                                         <Edit className="w-4 h-4 mr-1" />
                                                         Edit
