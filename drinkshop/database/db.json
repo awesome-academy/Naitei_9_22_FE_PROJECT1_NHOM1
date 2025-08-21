@@ -890,10 +890,7 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "/Product/1.jpg",
-        "images": [
-          "/Product/1.jpg",
-          "/Product/2.jpg"
-        ],
+        "images": ["/Product/1.jpg", "/Product/2.jpg"],
         "categoryId": "19",
         "stock": 50,
         "isNew": false,
@@ -922,10 +919,7 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "/Product/3.jpg",
-        "images": [
-          "/Product/3.jpg",
-          "/Product/4.jpg"
-        ],
+        "images": ["/Product/3.jpg", "/Product/4.jpg"],
         "categoryId": "19",
         "stock": 30,
         "isNew": true,
@@ -954,10 +948,7 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "/Product/1.jpg",
-        "images": [
-          "/Product/1.jpg",
-          "/Product/2.jpg"
-        ],
+        "images": ["/Product/1.jpg", "/Product/2.jpg"],
         "categoryId": "19",
         "stock": 50,
         "isNew": false,
@@ -986,10 +977,7 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "/Product/1.jpg",
-        "images": [
-          "/Product/1.jpg",
-          "/Product/2.jpg"
-        ],
+        "images": ["/Product/1.jpg", "/Product/2.jpg"],
         "categoryId": "19",
         "stock": 50,
         "isNew": false,
@@ -1018,10 +1006,7 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "/Product/1.jpg",
-        "images": [
-          "/Product/1.jpg",
-          "/Product/2.jpg"
-        ],
+        "images": ["/Product/1.jpg", "/Product/2.jpg"],
         "categoryId": "19",
         "stock": 50,
         "isNew": false,
@@ -1050,10 +1035,7 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "/Product/3.jpg",
-        "images": [
-          "/Product/3.jpg",
-          "/Product/4.jpg"
-        ],
+        "images": ["/Product/3.jpg", "/Product/4.jpg"],
         "categoryId": "19",
         "stock": 30,
         "isNew": true,
@@ -1082,10 +1064,7 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "/Product/1.jpg",
-        "images": [
-          "/Product/1.jpg",
-          "/Product/2.jpg"
-        ],
+        "images": ["/Product/1.jpg", "/Product/2.jpg"],
         "categoryId": "19",
         "stock": 50,
         "isNew": false,
@@ -1114,10 +1093,7 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "/Product/3.jpg",
-        "images": [
-          "/Product/3.jpg",
-          "/Product/4.jpg"
-        ],
+        "images": ["/Product/3.jpg", "/Product/4.jpg"],
         "categoryId": "19",
         "stock": 30,
         "isNew": true,
@@ -1146,10 +1122,7 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "/Product/3.jpg",
-        "images": [
-          "/Product/3.jpg",
-          "/Product/4.jpg"
-        ],
+        "images": ["/Product/3.jpg", "/Product/4.jpg"],
         "categoryId": "19",
         "stock": 30,
         "isNew": true,
@@ -1178,10 +1151,7 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "/Product/1.jpg",
-        "images": [
-          "/Product/1.jpg",
-          "/Product/2.jpg"
-        ],
+        "images": ["/Product/1.jpg", "/Product/2.jpg"],
         "categoryId": "19",
         "stock": 50,
         "isNew": false,
@@ -1210,10 +1180,7 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "/Product/3.jpg",
-        "images": [
-          "/Product/3.jpg",
-          "/Product/4.jpg"
-        ],
+        "images": ["/Product/3.jpg", "/Product/4.jpg"],
         "categoryId": 19,
         "stock": 30,
         "isNew": true,
@@ -1242,10 +1209,7 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "/Product/8.jpg",
-        "images": [
-          "/Product/8.jpg",
-          "/Product/9.jpg"
-        ],
+        "images": ["/Product/8.jpg", "/Product/9.jpg"],
         "categoryId": "19",
         "stock": 25,
         "isNew": false,
@@ -1274,10 +1238,7 @@
         "price": 2500000,
         "originalPrice": 2800000,
         "image": "/Product/5.jpg",
-        "images": [
-          "/Product/5.jpg",
-          "/Product/6.jpg"
-        ],
+        "images": ["/Product/5.jpg", "/Product/6.jpg"],
         "categoryId": "15",
         "stock": 15,
         "isNew": true,
@@ -1306,10 +1267,7 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "/Product/6.jpg",
-        "images": [
-          "/Product/6.jpg",
-          "/Product/7.jpg"
-        ],
+        "images": ["/Product/6.jpg", "/Product/7.jpg"],
         "categoryId": "19",
         "stock": 40,
         "isNew": false,
@@ -1338,10 +1296,7 @@
         "price": 370000,
         "originalPrice": 450000,
         "image": "/Product/5.jpg",
-        "images": [
-          "/Product/5.jpg",
-          "/Product/6.jpg"
-        ],
+        "images": ["/Product/5.jpg", "/Product/6.jpg"],
         "categoryId": "19",
         "stock": 40,
         "isNew": false,
