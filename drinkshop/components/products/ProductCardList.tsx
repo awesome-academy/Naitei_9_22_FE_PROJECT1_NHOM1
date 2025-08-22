@@ -12,6 +12,8 @@ import { useAddToCart } from "@/hooks/useAddToCart";
 import styles from "./ProductCard.module.css";
 import { formatCurrency } from "@/utils/format.currency";
 import { useProductCompareStore } from "@/stores/product.compare.store";
+import ProductDiscountBadge from "./ProductDiscountBadge";
+import StarRating from "./StarRating";
 
 interface ProductCardListProps {
   product: ApiProduct;
@@ -68,35 +70,15 @@ export default function ProductCardList({
             />
           </Link>
           {badge && (
-            <Badge
-              className={`absolute top-2 right-2 ${badgeColor} text-black`}
-            >
+            <Badge className={`absolute top-2 right-2 ${badgeColor} text-black`}>
               {badge}
             </Badge>
           )}
-          {product.discount && (
-            <Badge className="absolute top-2 left-2 bg-red-500 text-white">
-              -{product.discount}%
-            </Badge>
-          )}
+          <ProductDiscountBadge discount={product.discount} />
         </div>
         <CardContent className="p-4 md:w-2/3 flex flex-col justify-between">
           <div>
-            <div className="mb-1 flex items-center">
-              {[...Array(5)].map((_, i) => (
-                <span
-                  key={i}
-                  className={`text-xs ${
-                    i < product.rating ? "text-yellow-500" : "text-gray-300"
-                  }`}
-                >
-                  ★
-                </span>
-              ))}
-              <span className="text-xs text-gray-500 ml-1">
-                ({product.reviews})
-              </span>
-            </div>
+            <StarRating rating={product.rating} reviews={product.reviews} className="mb-1" />
             <Link href={`/products/${product.id}`}>
               <h3 className="font-medium text-base mb-2 hover:text-yellow-600 transition-colors">
                 {product.name}

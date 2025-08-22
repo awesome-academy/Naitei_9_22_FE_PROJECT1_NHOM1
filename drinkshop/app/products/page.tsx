@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -86,34 +86,32 @@ export default function ProductsPage() {
     "Đặc biệt",
   ];
 
-  // Filter and sort products
-  let filteredProducts =
-    selectedCategory === "all"
-      ? products
-      : products.filter((product) => product.category === selectedCategory);
-
-  // Apply search filter (combine both local search and URL search)
+  // Filter, search, and sort products with useMemo
   const activeSearchQuery = searchQuery.trim() || urlSearchQuery.trim();
-  if (activeSearchQuery !== "") {
-    filteredProducts = filteredProducts.filter(
-      (product) =>
-        product.name.toLowerCase().includes(activeSearchQuery.toLowerCase()) ||
-        product.description
-          ?.toLowerCase()
-          .includes(activeSearchQuery.toLowerCase())
-    );
-  }
+  const filteredProducts = useMemo(() => {
+    let result =
+      selectedCategory === "all"
+        ? products
+        : products.filter((product) => product.category === selectedCategory);
 
-  // Sort products
-  if (sortBy === "price-low") {
-    filteredProducts = [...filteredProducts].sort((a, b) => a.price - b.price);
-  } else if (sortBy === "price-high") {
-    filteredProducts = [...filteredProducts].sort((a, b) => b.price - a.price);
-  } else if (sortBy === "name") {
-    filteredProducts = [...filteredProducts].sort((a, b) =>
-      a.name.localeCompare(b.name)
-    );
-  }
+    if (activeSearchQuery !== "") {
+      result = result.filter(
+        (product) =>
+          product.name.toLowerCase().includes(activeSearchQuery.toLowerCase()) ||
+          product.description?.toLowerCase().includes(activeSearchQuery.toLowerCase())
+      );
+    }
+
+    if (sortBy === "price-low") {
+      result = [...result].sort((a, b) => a.price - b.price);
+    } else if (sortBy === "price-high") {
+      result = [...result].sort((a, b) => b.price - a.price);
+    } else if (sortBy === "name") {
+      result = [...result].sort((a, b) => a.name.localeCompare(b.name));
+    }
+
+    return result;
+  }, [products, selectedCategory, activeSearchQuery, sortBy]);
 
   // Pagination logic
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);

@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import { IMAGE_DIMENSIONS } from "@/constants/image-dimensions";
 
 type Category = {
     name: string;
@@ -23,8 +24,8 @@ export default function CategoryList({ categories, selectedCategory, onSelectCat
                 <Image
                     src="/Image_Rudu/titleleft-dark.png"
                     alt="arrow-trang-tri"
-                    width={16}
-                    height={16}
+                    width={IMAGE_DIMENSIONS.TITLE_DECORATION.width}
+                    height={IMAGE_DIMENSIONS.TITLE_DECORATION.height}
                 />
             </h3>
 
@@ -36,8 +37,8 @@ export default function CategoryList({ categories, selectedCategory, onSelectCat
                             size="sm"
                             onClick={() => onSelectCategory(category.value)}
                             className={`w-full flex justify-between p-1 h-auto font-normal ${selectedCategory === category.value
-                                    ? "text-yellow-600 font-medium"
-                                    : "text-gray-600"
+                                ? "text-yellow-600 font-medium"
+                                : "text-gray-600"
                                 }`}
                         >
                             <span>{category.name}</span>

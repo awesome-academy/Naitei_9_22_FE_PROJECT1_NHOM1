@@ -8,6 +8,7 @@ import type { Product } from "@/lib/api"
 import styles from "./product-card.module.css"
 import ProductCardList from "./ProductCardList"
 import ProductCardGrid from "./ProductCardGrid"
+import ProductDiscountBadge from "./ProductDiscountBadge"
 
 interface ProductCardProps {
   product: Product
@@ -26,5 +27,7 @@ export default function ProductCard({
     return <ProductCardList product={product} badge={badge} badgeColor={badgeColor} />
   }
 
-  return <ProductCardGrid product={product} badge={badge} badgeColor={badgeColor} />
+  return (
+    <ProductCardGrid product={product} badge={badge} badgeColor={badgeColor} />
+  )
 }

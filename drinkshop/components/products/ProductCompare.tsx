@@ -1,6 +1,7 @@
 import Link from "next/dist/client/link";
 import Image from "next/image";
 import { useProductCompareStore } from "@/stores/product.compare.store";
+import { IMAGE_DIMENSIONS } from "@/constants/image-dimensions";
 export default function ProductCompare() {
   const { products } = useProductCompareStore();
   return (
@@ -10,8 +11,8 @@ export default function ProductCompare() {
         <Image
           src="/Image_Rudu/titleleft-dark.png"
           alt="arrow-trang-tri"
-          width={16}
-          height={16}
+          width={IMAGE_DIMENSIONS.TITLE_DECORATION.width}
+          height={IMAGE_DIMENSIONS.TITLE_DECORATION.height}
         />
       </h3>
       <div className="map">
