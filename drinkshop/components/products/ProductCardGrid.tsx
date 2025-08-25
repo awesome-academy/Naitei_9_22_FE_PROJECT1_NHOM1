@@ -5,13 +5,15 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ChartColumnStacked, Heart, ShoppingCart, Star } from "lucide-react";
+import { ChartColumnStacked, Heart, ShoppingCart } from "lucide-react";
 import type { Product as ApiProduct } from "@/lib/api";
 import type { Product as CartProduct } from "@/types/product.types";
 import styles from "./product-card.module.css";
 import { useAddToCart } from "@/hooks/useAddToCart";
 import { formatCurrency } from "@/utils/format.currency";
 import { useProductCompareStore } from "@/stores/product.compare.store";
+import ProductDiscountBadge from "./ProductDiscountBadge";
+import StarRating from "./StarRating";
 
 interface ProductCardGridProps {
   product: ApiProduct;
@@ -70,11 +72,7 @@ export default function ProductCardGrid({
             {badge}
           </Badge>
         )}
-        {product.discount && (
-          <Badge className="absolute top-2 left-2 bg-red-500 text-white">
-            -{product.discount}%
-          </Badge>
-        )}
+        <ProductDiscountBadge discount={product.discount} />
         <div className="absolute top-2 right-2 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
           <Button
             size="icon"
@@ -106,21 +104,7 @@ export default function ProductCardGrid({
         </div>
       </div>
       <CardContent className="p-4">
-        <div className="mb-1 flex items-center">
-          {[...Array(5)].map((_, i) => (
-            <span
-              key={i}
-              className={`text-xs ${
-                i < product.rating ? "text-yellow-500" : "text-gray-300"
-              }`}
-            >
-              ★
-            </span>
-          ))}
-          <span className="text-xs text-gray-500 ml-1">
-            ({product.reviews})
-          </span>
-        </div>
+        <StarRating rating={product.rating} reviews={product.reviews} className="mb-1" />
         <Link href={`/products/${product.id}`}>
           <h3 className="font-medium text-sm mb-1 line-clamp-2 hover:text-yellow-600 transition-colors">
             {product.name}
